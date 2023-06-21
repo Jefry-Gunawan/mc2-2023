@@ -34,6 +34,7 @@
 		B9D4B3EA2A44326500989FC7 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3E92A44326500989FC7 /* VideoView.swift */; };
 		B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3EB2A44327200989FC7 /* Home.swift */; };
 		B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */; };
+		97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +85,7 @@
 		B9D4B3E92A44326500989FC7 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		B9D4B3EB2A44327200989FC7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
+		97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 				940A35132A44251500274414 /* Topics */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
 				B9D4B3E92A44326500989FC7 /* VideoView.swift */,
+				97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */,
 			);
 			path = "mc2-2023";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */,
 				B9D4B3EA2A44326500989FC7 /* VideoView.swift in Sources */,
 				B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */,
+				97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
