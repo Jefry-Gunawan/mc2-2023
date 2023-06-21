@@ -17,6 +17,7 @@
 		94582FBC2A42E59B00F8B131 /* mc2_2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */; };
 		94582FBE2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */; };
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
+		97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITests.swift; sourceTree = "<group>"; };
 		94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				94582FA42A42E59B00F8B131 /* Persistence.swift */,
 				94582FA62A42E59B00F8B131 /* mc2_2023.xcdatamodeld */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
+				97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */,
 			);
 			path = "mc2-2023";
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
+				97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
