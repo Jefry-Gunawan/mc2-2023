@@ -26,6 +26,7 @@ struct OverviewView: View {
                             .fill(.white)
                             .cornerRadius(40)
                             .frame(width: geometry.size.width, height: 700)
+                            .shadow(radius: 5, x: 0, y: 6)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
                                     Text("Sentence Structure")
@@ -34,12 +35,11 @@ struct OverviewView: View {
                                         .padding(.top, 20)
                                         .padding(.leading, 30)
                                     
-                                    
                                     //BLUE RECTANGLE
                                     Group{
                                         Rectangle()
                                             .fill(Color("Blue"))
-                                            //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
+                                        //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
                                             .frame(width: 360, height: 120)
                                             .cornerRadius(20)
                                             .padding(.horizontal,20)
@@ -56,7 +56,7 @@ struct OverviewView: View {
                                                         Text("s/es")
                                                             .foregroundColor(Color("Yellow"))
                                                     }
-                                                    .font(.largeTitle)
+                                                    .font(.title)
                                                     .fontWeight(.bold)
                                                     .padding(.top, 5)
                                                     Spacer()
@@ -74,7 +74,7 @@ struct OverviewView: View {
                                         .padding(.horizontal, 40)
                                         HStack{
                                             Text("Annie")
-                                            + Text("eats")
+                                            Text("eats")
                                                 .foregroundColor(.red)
                                         }
                                         .fontWeight(.bold)
@@ -84,8 +84,8 @@ struct OverviewView: View {
                                     //RED RECTANGLE
                                     Group{
                                         Rectangle()
-                                            .fill(Color("Light Blue"))
-                                            //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
+                                            .fill(Color("Light Red"))
+                                        //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
                                             .frame(width: 360, height: 120)
                                             .cornerRadius(20)
                                             .padding(.horizontal,20)
@@ -135,7 +135,7 @@ struct OverviewView: View {
                                     Group{
                                         Rectangle()
                                             .fill(Color("Light Yellow"))
-                                            //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
+                                        //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
                                             .frame(width: 360, height: 120)
                                             .cornerRadius(20)
                                             .padding(.horizontal, 20)
@@ -179,17 +179,9 @@ struct OverviewView: View {
                                     }
                                     
                                 }
-                                //                        .alignmentGuide(.overlayHeight) { dimension in
-                                //                            DispatchQueue.main.async {
-                                //                                overlayHeight = dimension.height
-                                //                            }
-                                //                            return dimension[.top]
-                                //                        }
+                                
                             }
                             .padding(.bottom, 10)
-                        //                    .onAppear {
-                        //                        overlayHeight = geometry.size.height
-                        //                    }
                         
                         
                         //USAGE RECTANGLE
@@ -197,6 +189,7 @@ struct OverviewView: View {
                             .fill(.white)
                             .cornerRadius(40)
                             .frame(width: geometry.size.width, height: 400)
+                            .shadow(radius: 5, x: 0, y: 6)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
                                     Text("Usage")
@@ -262,13 +255,14 @@ struct OverviewView: View {
                                 }
                             }
                             .padding(.bottom, 10)
-    
+                        
                         
                         //NEW VOCAB RECTANGLE
                         Rectangle()
                             .fill(.white)
                             .cornerRadius(40)
                             .frame(width: geometry.size.width, height: 400)
+                            .shadow(radius: 5, x: 0, y: 6)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
                                     Text("New Vocabularies")
@@ -276,24 +270,26 @@ struct OverviewView: View {
                                         .font(.title)
                                         .padding(.vertical, 20)
                                         .padding(.trailing, 80)
+                                    
                                     Group{
                                         Text("1. Excercise")
                                             .fontWeight(.semibold)
                                             .font(.title3)
-                                        Text("      Example:")
+                                        Text("     Example:")
                                             .font(.headline)
                                         HStack{
-                                            Text("      He ")
+                                            Text("     He ")
                                             Text("excercises").foregroundColor(.red)
                                             Text(" later.")
                                         }
                                         HStack{
-                                            Text("      Annie ")
+                                            Text("     Annie ")
                                             Text("does").foregroundColor(.red)
                                             Text(" excercise.")
                                         }
                                         .padding(.bottom, 5)
                                     }
+                                    
                                     Group{
                                         Text("2. Sleep")
                                             .fontWeight(.semibold)
@@ -312,6 +308,7 @@ struct OverviewView: View {
                                         }
                                         .padding(.bottom, 5)
                                     }
+                                    
                                     Group{
                                         Text("3. Drink")
                                             .fontWeight(.semibold)
@@ -330,9 +327,26 @@ struct OverviewView: View {
                                         }
                                         .padding(.bottom, 5)
                                     }
+                                    
                                 }
+                                
                             }
                         
+                        //BUTTON CONTINUE
+                        Button(action: {}) {
+                            Text("CONTINUE")
+                                .frame(width: 360, height: 40)
+                                .font(.body)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color("Dark Blue"))
+
+                        }
+                        .frame(width: 340, height: 50)
+                        .cornerRadius(10)
+                        .padding(.vertical, 15)
+                        .shadow(radius: 10, x: 0, y: 5)
                     }
                 }
             }
@@ -342,27 +356,8 @@ struct OverviewView: View {
         .background(Color("Pale Blue"))
     }
     
-    func calculateRectangleHeight(for text: String, width: CGFloat) -> CGFloat {
-        let textHeight = text.size(withAttributes: [.font: UIFont.systemFont(ofSize: 20)]).height
-        let padding: CGFloat = 30 // Adjust as needed
-        return textHeight + (padding * 2)
-    }
-    
-    func sentenceRectangle() {
-        
-    }
-    
 }
 
-//extension VerticalAlignment {
-//    private enum OverlayHeightAlignment: AlignmentID {
-//        static func defaultValue(in context: ViewDimensions) -> CGFloat {
-//            return context[.top]
-//        }
-//    }
-
-//    static let overlayHeight = VerticalAlignment(OverlayHeightAlignment.self)
-//}
 
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
