@@ -9,7 +9,32 @@ import SwiftUI
 
 struct ChapterListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView {
+                ForEach(1...5, id: \.self) { i in
+                    Button {
+                        
+                    } label: {
+                        ZStack {
+                            Text("")
+                                .frame(width: 100, height: 100)
+                                .foregroundColor(Color.white)
+                                .background(Color.black)
+                                .clipShape(Circle())
+                            Text("\(i)")
+                                .frame(width: 80, height: 80)
+                                .foregroundColor(Color.white)
+                                .background(Color.green)
+                                .clipShape(Circle())
+                                .font(.title)
+                            }
+                        }
+                }
+            }
+            
+            .navigationTitle("Classroom")
+            .navigationBarTitleDisplayMode(.inline)
+        }
     }
 }
 
