@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct OverviewView: View {
-    @State private var overlayHeight: CGFloat = 0
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -345,8 +344,8 @@ struct OverviewView: View {
                         }
                         .frame(width: 340, height: 50)
                         .cornerRadius(10)
-                        .padding(.vertical, 15)
-                        .shadow(radius: 10, x: 0, y: 5)
+                        .padding(.top, 20)
+                        .shadow(radius: 10, x: 0, y: 6)
                     }
                 }
             }
