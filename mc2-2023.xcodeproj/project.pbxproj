@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		940A35192A44290B00274414 /* ChapterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A35182A44290B00274414 /* ChapterListView.swift */; };
 		94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */; };
 		94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9D2A42E59A00F8B131 /* ContentView.swift */; };
 		94582FA02A42E59B00F8B131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94582F9F2A42E59B00F8B131 /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		940A35182A44290B00274414 /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
 		94582F982A42E59A00F8B131 /* mc2-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mc2-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023App.swift; sourceTree = "<group>"; };
 		94582F9D2A42E59A00F8B131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		940A35132A44251500274414 /* Topics */ = {
 			isa = PBXGroup;
 			children = (
+				940A35182A44290B00274414 /* ChapterListView.swift */,
 			);
 			path = Topics;
 			sourceTree = "<group>";
@@ -108,12 +111,12 @@
 		94582F9A2A42E59A00F8B131 /* mc2-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */,
 				94582F9D2A42E59A00F8B131 /* ContentView.swift */,
 				94582F9F2A42E59B00F8B131 /* Assets.xcassets */,
 				94582FA42A42E59B00F8B131 /* Persistence.swift */,
 				94582FA62A42E59B00F8B131 /* mc2_2023.xcdatamodeld */,
 				940A35132A44251500274414 /* Topics */,
-				94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
 			);
 			path = "mc2-2023";
@@ -276,6 +279,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
+				940A35192A44290B00274414 /* ChapterListView.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
