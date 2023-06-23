@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7453293E2A45928900D95025 /* RoundedCorner.swift */; };
+		74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCEBEC2A445266006D4877 /* ChapterView.swift */; };
+		74FCEBF12A44717B006D4877 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCEBF02A44717B006D4877 /* CardView.swift */; };
 		940A35192A44290B00274414 /* ChapterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A35182A44290B00274414 /* ChapterListView.swift */; };
 		940A351B2A4440F100274414 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A351A2A4440F100274414 /* ProgressBar.swift */; };
 		94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7453293E2A45928900D95025 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
+		74FCEBEC2A445266006D4877 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
+		74FCEBF02A44717B006D4877 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		940A35182A44290B00274414 /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
 		940A351A2A4440F100274414 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		94582F982A42E59A00F8B131 /* mc2-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mc2-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +92,9 @@
 			children = (
 				940A35182A44290B00274414 /* ChapterListView.swift */,
 				940A351A2A4440F100274414 /* ProgressBar.swift */,
+				7453293E2A45928900D95025 /* RoundedCorner.swift */,
+				74FCEBEC2A445266006D4877 /* ChapterView.swift */,
+				74FCEBF02A44717B006D4877 /* CardView.swift */,
 			);
 			path = Topics;
 			sourceTree = "<group>";
@@ -281,8 +290,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
+				74FCEBF12A44717B006D4877 /* CardView.swift in Sources */,
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				940A35192A44290B00274414 /* ChapterListView.swift in Sources */,
+				74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				940A351B2A4440F100274414 /* ProgressBar.swift in Sources */,
