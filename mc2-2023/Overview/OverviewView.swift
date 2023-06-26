@@ -149,7 +149,7 @@ struct OverviewView: View {
                                                     HStack{
                                                         Text("Do/")
                                                         Text("Does")
-                                                            .foregroundColor(Color("Blue"))
+                                                            .foregroundColor(Color("Dark Blue"))
                                                         Text("+ S + V1 ?")
                                                     }
                                                     .font(.largeTitle)
@@ -332,7 +332,7 @@ struct OverviewView: View {
                             }
                         
                         //BUTTON CONTINUE
-                        Button(action: {}) {
+                        NavigationLink(destination: EmptyView()) {
                             Text("CONTINUE")
                                 .frame(width: 360, height: 40)
                                 .font(.body)
