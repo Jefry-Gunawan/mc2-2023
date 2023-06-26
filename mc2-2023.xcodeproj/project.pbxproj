@@ -22,6 +22,14 @@
 		94582FBC2A42E59B00F8B131 /* mc2_2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */; };
 		94582FBE2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */; };
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
+		D0F159272A496D0900BE4147 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159212A496D0900BE4147 /* Lora-Bold.ttf */; };
+		D0F159282A496D0900BE4147 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D0F159222A496D0900BE4147 /* OFL.txt */; };
+		D0F159292A496D0900BE4147 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */; };
+		D0F1592A2A496D0900BE4147 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159242A496D0900BE4147 /* Poppins-Black.ttf */; };
+		D0F1592B2A496D0900BE4147 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F159252A496D0900BE4147 /* FontManager.swift */; };
+		D0F1592C2A496D0900BE4147 /* Lora-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159262A496D0900BE4147 /* Lora-Regular.ttf */; };
+		D0F159322A496D9800BE4147 /* TopicsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F159312A496D9800BE4147 /* TopicsView.swift */; };
+		D0F1593A2A496F8600BE4147 /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F159392A496F8600BE4147 /* Topic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +68,15 @@
 		94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITests.swift; sourceTree = "<group>"; };
 		94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D0F159212A496D0900BE4147 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
+		D0F159222A496D0900BE4147 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		D0F159242A496D0900BE4147 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		D0F159252A496D0900BE4147 /* FontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
+		D0F159262A496D0900BE4147 /* Lora-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Regular.ttf"; sourceTree = "<group>"; };
+		D0F159312A496D9800BE4147 /* TopicsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopicsView.swift; sourceTree = "<group>"; };
+		D0F159392A496F8600BE4147 /* Topic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
+		D0F1593B2A49701D00BE4147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +107,8 @@
 		940A35132A44251500274414 /* Topics */ = {
 			isa = PBXGroup;
 			children = (
+				D0F159382A496F5600BE4147 /* Model */,
+				D0F159302A496D8900BE4147 /* View */,
 				940A35182A44290B00274414 /* ChapterListView.swift */,
 				940A351A2A4440F100274414 /* ProgressBar.swift */,
 				7453293E2A45928900D95025 /* RoundedCorner.swift */,
@@ -123,6 +142,8 @@
 		94582F9A2A42E59A00F8B131 /* mc2-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				D0F1593B2A49701D00BE4147 /* Info.plist */,
+				D0F159202A496CD900BE4147 /* Font */,
 				94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */,
 				94582F9D2A42E59A00F8B131 /* ContentView.swift */,
 				94582F9F2A42E59B00F8B131 /* Assets.xcassets */,
@@ -157,6 +178,35 @@
 				94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */,
 			);
 			path = "mc2-2023UITests";
+			sourceTree = "<group>";
+		};
+		D0F159202A496CD900BE4147 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				D0F159252A496D0900BE4147 /* FontManager.swift */,
+				D0F159212A496D0900BE4147 /* Lora-Bold.ttf */,
+				D0F159262A496D0900BE4147 /* Lora-Regular.ttf */,
+				D0F159222A496D0900BE4147 /* OFL.txt */,
+				D0F159242A496D0900BE4147 /* Poppins-Black.ttf */,
+				D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		D0F159302A496D8900BE4147 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D0F159312A496D9800BE4147 /* TopicsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D0F159382A496F5600BE4147 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0F159392A496F8600BE4147 /* Topic.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,7 +313,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F159282A496D0900BE4147 /* OFL.txt in Resources */,
+				D0F1592C2A496D0900BE4147 /* Lora-Regular.ttf in Resources */,
 				94582FA32A42E59B00F8B131 /* Preview Assets.xcassets in Resources */,
+				D0F159272A496D0900BE4147 /* Lora-Bold.ttf in Resources */,
+				D0F1592A2A496D0900BE4147 /* Poppins-Black.ttf in Resources */,
+				D0F159292A496D0900BE4147 /* Poppins-Regular.ttf in Resources */,
 				94582FCB2A42E5E700F8B131 /* .gitignore in Resources */,
 				94582FA02A42E59B00F8B131 /* Assets.xcassets in Resources */,
 			);
@@ -290,8 +345,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0F1592B2A496D0900BE4147 /* FontManager.swift in Sources */,
+				D0F1593A2A496F8600BE4147 /* Topic.swift in Sources */,
 				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
 				74FCEBF12A44717B006D4877 /* CardView.swift in Sources */,
+				D0F159322A496D9800BE4147 /* TopicsView.swift in Sources */,
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				940A35192A44290B00274414 /* ChapterListView.swift in Sources */,
 				74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */,
@@ -460,6 +518,7 @@
 				DEVELOPMENT_TEAM = 4QQ5D4534V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mc2-2023/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -489,6 +548,7 @@
 				DEVELOPMENT_TEAM = 4QQ5D4534V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "mc2-2023/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
