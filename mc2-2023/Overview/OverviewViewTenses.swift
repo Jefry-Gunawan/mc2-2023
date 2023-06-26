@@ -45,21 +45,21 @@ struct OverviewViewTenses: View {
                                             Rectangle()
                                                 .fill(Color("Blue"))
                                             //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
-                                                .frame(width: 360, height: 120)
-                                                .cornerRadius(20)
-                                                .padding(.horizontal,20)
+                                                .frame(width: 320, height: 120)
+                                                .cornerRadius(30)
+                                                .padding(.horizontal,40)
                                                 .overlay(
                                                     VStack(alignment: .leading) {
                                                         Text("Positive Form")
                                                             .font(.headline)
                                                             .fontWeight(.bold)
                                                             .foregroundColor(Color(.gray))
-                                                            .padding(.leading, -80)
+                                                            .padding(.leading, -70)
                                                             .padding(.top, 10)
                                                         HStack{
                                                             Text("S + V1 ")
                                                             Text("s/es")
-                                                                .foregroundColor(Color("Yellow"))
+                                                                .foregroundColor(Color("Very Light Yellow"))
                                                         }
                                                         .font(.title)
                                                         .fontWeight(.bold)
@@ -69,19 +69,20 @@ struct OverviewViewTenses: View {
                                                 )
                                             Text("Example: ")
                                                 .fontWeight(.bold)
-                                                .padding(.horizontal, 40)
+                                                .padding(.horizontal, 50)
                                             HStack{
                                                 Text("He")
                                                 Text("studies")
                                                     .foregroundColor(.red)
                                             }
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 50)
                                             HStack{
                                                 Text("Annie")
                                                 Text("eats")
                                                     .foregroundColor(.red)
                                             }
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 50)
+                                            .padding(.bottom, 10)
                                         }
                                         
                                         //RED RECTANGLE
@@ -89,9 +90,9 @@ struct OverviewViewTenses: View {
                                             Rectangle()
                                                 .fill(Color("Light Red"))
                                             //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
-                                                .frame(width: 360, height: 120)
-                                                .cornerRadius(20)
-                                                .padding(.horizontal,20)
+                                                .frame(width: 320, height: 120)
+                                                .cornerRadius(30)
+                                                .padding(.horizontal,40)
                                                 .overlay(
                                                     VStack(alignment: .leading) {
                                                         Text("Negative Form")
@@ -102,12 +103,12 @@ struct OverviewViewTenses: View {
                                                         HStack{
                                                             Text("S + Do/")
                                                             Text("Does")
-                                                                .foregroundColor(Color("Light Yellow"))
+                                                                .foregroundColor(Color("Very Light Yellow"))
                                                             Text("not")
-                                                                .foregroundColor(Color("Yellow"))
+                                                                .foregroundColor(Color("Orange"))
                                                             Text("+ V1")
                                                         }
-                                                        .font(.largeTitle)
+                                                        .font(.title)
                                                         .fontWeight(.bold)
                                                         .padding(.top, 5)
                                                         Spacer()
@@ -115,21 +116,22 @@ struct OverviewViewTenses: View {
                                                 )
                                             Text("Example: ")
                                                 .fontWeight(.bold)
-                                                .padding(.horizontal, 40)
+                                                .padding(.horizontal, 50)
                                             HStack{
                                                 Text("He")
                                                 Text("does not")
                                                     .foregroundColor(.red)
                                                 Text("eat.")
                                             }
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 50)
                                             HStack{
                                                 Text("I")
                                                 Text("do not")
                                                     .foregroundColor(.red)
                                                 Text("eat.")
                                             }
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 50)
+                                            .padding(.bottom, 10)
                                         }
                                         
                                         //YELLOW RECTANGLE
@@ -137,9 +139,9 @@ struct OverviewViewTenses: View {
                                             Rectangle()
                                                 .fill(Color("Light Yellow"))
                                             //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
-                                                .frame(width: 360, height: 120)
-                                                .cornerRadius(20)
-                                                .padding(.horizontal, 20)
+                                                .frame(width: 320, height: 120)
+                                                .cornerRadius(30)
+                                                .padding(.horizontal, 40)
                                                 .overlay(
                                                     VStack(alignment: .leading) {
                                                         Text("Question Form")
@@ -154,7 +156,7 @@ struct OverviewViewTenses: View {
                                                                 .foregroundColor(Color("Dark Blue"))
                                                             Text("+ S + V1 ?")
                                                         }
-                                                        .font(.largeTitle)
+                                                        .font(.title)
                                                         .fontWeight(.bold)
                                                         .padding(.top, 5)
                                                         Spacer()
@@ -162,19 +164,19 @@ struct OverviewViewTenses: View {
                                                 )
                                             Text("Example: ")
                                                 .fontWeight(.bold)
-                                                .padding(.horizontal, 40)
+                                                .padding(.horizontal, 50)
                                             HStack{
                                                 Text("Does")
                                                     .foregroundColor(.red)
                                                 Text("he study?")
                                             }
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 50)
                                             HStack{
                                                 Text("Do")
                                                     .foregroundColor(.red)
                                                 Text("you eat?")
                                             }
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 50)
                                         }
                                         
                                         //USAGE
@@ -183,8 +185,8 @@ struct OverviewViewTenses: View {
                                                 Text("Usage")
                                                     .fontWeight(.bold)
                                                     .font(.title2)
-                                                    .padding(.top, 40)
-                                                    .padding(.bottom, 10)
+                                                    .padding(.top, 30)
+                                                    .padding(.bottom, 5)
                                                     .padding(.leading, 30)
                                                 Group{
                                                     Text("1. To express habits")
@@ -242,7 +244,7 @@ struct OverviewViewTenses: View {
                                                         Text("blandit").foregroundColor(.red)
                                                         Text(" ante.")
                                                     }
-                                                    .padding(.bottom, 5)
+                                                    .padding(.bottom, 10)
                                                 }
                                                 .padding(.leading, 30)
                                                 
