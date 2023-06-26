@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		944EA3AB2A498A6A006E8224 /* SpeechRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944EA3AA2A498A6A006E8224 /* SpeechRecognition.swift */; };
+		9450184B2A4593C5008C6945 /* SpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450184A2A4593C5008C6945 /* SpeakingView.swift */; };
 		94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */; };
 		94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9D2A42E59A00F8B131 /* ContentView.swift */; };
 		94582FA02A42E59B00F8B131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94582F9F2A42E59B00F8B131 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		944EA3AA2A498A6A006E8224 /* SpeechRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognition.swift; sourceTree = "<group>"; };
+		9450184A2A4593C5008C6945 /* SpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingView.swift; sourceTree = "<group>"; };
 		94582F982A42E59A00F8B131 /* mc2-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mc2-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023App.swift; sourceTree = "<group>"; };
 		94582F9D2A42E59A00F8B131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		945018492A459392008C6945 /* Speaking */ = {
+			isa = PBXGroup;
+			children = (
+				9450184A2A4593C5008C6945 /* SpeakingView.swift */,
+				944EA3AA2A498A6A006E8224 /* SpeechRecognition.swift */,
+			);
+			path = Speaking;
+			sourceTree = "<group>";
+		};
 		94582F8F2A42E59A00F8B131 = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +119,7 @@
 				94582F9F2A42E59B00F8B131 /* Assets.xcassets */,
 				94582FA42A42E59B00F8B131 /* Persistence.swift */,
 				94582FA62A42E59B00F8B131 /* mc2_2023.xcdatamodeld */,
+				945018492A459392008C6945 /* Speaking */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
 			);
 			path = "mc2-2023";
@@ -268,6 +282,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
+				944EA3AB2A498A6A006E8224 /* SpeechRecognition.swift in Sources */,
+				9450184B2A4593C5008C6945 /* SpeakingView.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
@@ -432,6 +448,8 @@
 				DEVELOPMENT_TEAM = 4QQ5D4534V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio will be recorded";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -461,6 +479,8 @@
 				DEVELOPMENT_TEAM = 4QQ5D4534V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio will be recorded";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
