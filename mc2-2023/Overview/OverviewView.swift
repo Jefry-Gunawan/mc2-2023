@@ -53,9 +53,9 @@ struct OverviewView: View {
                                                     HStack{
                                                         Text("S + V1 ")
                                                         Text("s/es")
-                                                            .foregroundColor(Color("Yellow"))
+                                                            .foregroundColor(Color("Very Light Yellow"))
                                                     }
-                                                    .font(.title)
+                                                    .font(.largeTitle)
                                                     .fontWeight(.bold)
                                                     .padding(.top, 5)
                                                     Spacer()
@@ -98,9 +98,9 @@ struct OverviewView: View {
                                                     HStack{
                                                         Text("S + Do/")
                                                         Text("Does")
-                                                            .foregroundColor(Color("Light Yellow"))
+                                                            .foregroundColor(Color("Very Light Yellow"))
                                                         Text("not")
-                                                            .foregroundColor(Color("Yellow"))
+                                                            .foregroundColor(Color("Orange"))
                                                         Text("+ V1")
                                                     }
                                                     .font(.largeTitle)
