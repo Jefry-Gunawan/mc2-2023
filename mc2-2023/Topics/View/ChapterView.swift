@@ -3,7 +3,7 @@ import UIKit
 
 struct ChapterView: View {
     var body: some View {
-        ScrollView {
+        VStack {
             VStack {
                 
                 Rectangle()
@@ -40,6 +40,7 @@ struct ChapterView: View {
                     }
                     .background(Color("Blue"))
                     .navigationTitle("Classroom")
+                    .navigationBarTitleDisplayMode(.large)
                     .toolbarBackground(
                         Color("Blue"),
                         for: .navigationBar)
