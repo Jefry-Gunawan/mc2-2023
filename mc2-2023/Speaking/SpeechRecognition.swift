@@ -26,7 +26,7 @@ class SpeechRecognizer: ObservableObject {
                     throw RecognizerError.notPermittedToRecord
                 }
             } catch {
-//                speakError(error)
+                //                speakError(error)
             }
         }
     }
@@ -36,12 +36,66 @@ class SpeechRecognizer: ObservableObject {
     }
     
     func reset() {
-            task?.cancel()
-            audioEngine?.stop()
-            audioEngine = nil
-            request = nil
-            task = nil
+        task?.cancel()
+        audioEngine?.stop()
+        audioEngine = nil
+        request = nil
+        task = nil
+    }
+    
+    func transcribe() {
+        DispatchQueue(label: "Speech Recognizer Queue", qos: .background).async { [weak self] in
+            guard let self = self, let recognizer = self.recognizer, recognizer.isAvailable else {
+                self?.speakError(RecognizerError.recognizerIsUnavailable)
+                return
+            }
+            
+            do {
+                let (audioEngine, request) = try Self.prepareEngine()
+                self.audioEngine = audioEngine
+                self.request = request
+                
+                self.task = recognizer.recognitionTask(with: request) { result, error in
+                    let receivedFinalResult = result?.isFinal ?? false
+                    let receivedError = error != nil // != nil mean there's error (true)
+                    
+                    if receivedFinalResult || receivedError {
+                        audioEngine.stop()
+                        audioEngine.inputNode.removeTap(onBus: 0)
+                    }
+                    
+                    if let result = result {
+                        self.speak(result.bestTranscription.formattedString)
+                    }
+                }
+            } catch {
+                self.reset()
+                self.speakError(error)
+            }
         }
+    }
+    
+    private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
+        let audioEngine = AVAudioEngine()
+        
+        let request = SFSpeechAudioBufferRecognitionRequest()
+        request.shouldReportPartialResults = true
+        
+        let audioSession = AVAudioSession.sharedInstance()
+        try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
+        try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
+        let inputNode = audioEngine.inputNode
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {
+            (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            request.append(buffer)
+        }
+        audioEngine.prepare()
+        try audioEngine.start()
+        
+        return (audioEngine, request)
+    }
     
     enum RecognizerError: Error {
         case nilRecognizer
@@ -60,7 +114,7 @@ class SpeechRecognizer: ObservableObject {
     }
     
     @Published var transcript: String = ""
-        
+    
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
