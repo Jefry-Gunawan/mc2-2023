@@ -14,11 +14,11 @@ struct CardView: View {
             Spacer()
             Image(systemName: "chevron.right")
         }
-        .frame(maxWidth: .infinity)
+        .frame(width: .infinity, height: 65)
         .padding()
         .background(Color.white)
         .cornerRadius(10)
-        .shadow(radius: 3)
+        .shadow(color: Color.gray.opacity(0.1), radius: 3, y: 10)
     }
 }
 
