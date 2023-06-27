@@ -5,7 +5,6 @@ struct ChapterView: View {
     var body: some View {
         VStack {
             VStack {
-                
                 Rectangle()
                     .fill(Color("Blue"))
                     .frame(height:120)
@@ -52,7 +51,7 @@ struct ChapterView: View {
                 //VStack for List
                 
                 VStack {
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: OverviewViewTenses()) {
                         CardView(title: "Overview")
                     }
                     

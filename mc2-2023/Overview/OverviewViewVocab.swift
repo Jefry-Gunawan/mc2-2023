@@ -10,11 +10,9 @@ import SwiftUI
 struct OverviewViewVocab: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Overview")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .frame(width: 300, height: 100)
-                .padding(.leading, -60)
+            Rectangle()
+                .opacity(0)
+                .frame(height: 10)
             
             
             GeometryReader { geometry in
@@ -121,11 +119,14 @@ struct OverviewViewVocab: View {
         }
         .padding(.horizontal, 10)
         .background(Color("Pale Blue"))
+        .navigationTitle("Vocabulary")
     }
 }
 
 struct OverviewViewVocab_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewViewVocab()
+        NavigationStack {
+            OverviewViewVocab()
+        }
     }
 }
