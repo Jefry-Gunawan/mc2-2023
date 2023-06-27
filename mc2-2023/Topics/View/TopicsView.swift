@@ -12,80 +12,82 @@ struct TopicsView: View {
     @State var offsetY: CGFloat = 0
     @State var currentIndex: CGFloat = 0
     var body: some View {
-        GeometryReader{
-            let size = $0.size
-            //Card sizing
-            let cardSize = size.width * 0.8
-            
-            Image("sunset")
-               .resizable()
-               .scaledToFill()
-               .edgesIgnoringSafeArea(.all)
-               .opacity(0.9)
-            
-            LinearGradient(colors: [
-                .clear,
-                Color("Yellow").opacity(0.5),
-                Color("Yellow").opacity(0.85),
-                Color("Yellow")
+        NavigationStack {
+            GeometryReader{
+                let size = $0.size
+                //Card sizing
+                let cardSize = size.width * 0.8
                 
-            ], startPoint: .bottom, endPoint: .top)
-            .frame(height: 500)
-            .frame(maxHeight: .infinity, alignment: .top)
-            .ignoresSafeArea()
-            
-            //Bottom gradient
-            LinearGradient(colors: [
-                .clear,
-                Color("Blue").opacity(0.3),
-                Color("Blue").opacity(0.55),
-                Color("Blue")
+                Image("sunset")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                    .opacity(0.9)
                 
-            ], startPoint: .top, endPoint: .bottom)
-            .frame(height: 500)
-            .frame(maxHeight: .infinity, alignment: .bottom)
-            .ignoresSafeArea()
-            
-            HeaderView()
-            
-            VStack(spacing: 0) {
-                ForEach(topicList){topic in
-                    TopicView(topic: topic, size: size)
-                }
-            }
-            .frame(width: size.width)
-            .padding(.top, size.height - cardSize)
-            .offset(y:offsetY)
-            .offset(y: -currentIndex * cardSize)
-        }
-        .coordinateSpace(name: "SCROLL")
-        .contentShape(Rectangle())
-        .gesture(
-            DragGesture()
-                .onChanged({ value in
-                    offsetY = value.translation.height * 0.4
-                }).onEnded({ value in
-                    let translation = value.translation.height
+                LinearGradient(colors: [
+                    .clear,
+                    Color("Yellow").opacity(0.5),
+                    Color("Yellow").opacity(0.85),
+                    Color("Yellow")
                     
-                    withAnimation(.easeInOut){
-                        if translation > 0{
-                            if currentIndex > 0 && translation > 100{
-                                currentIndex -= 1
-                            }
-                        }else{
-                            if currentIndex  < CGFloat(topicList.count - 1) && -translation > 250{
-                                currentIndex += 1
-                            }
-                        }
-                        offsetY = .zero
+                ], startPoint: .bottom, endPoint: .top)
+                .frame(height: 500)
+                .frame(maxHeight: .infinity, alignment: .top)
+                .ignoresSafeArea()
+                
+                //Bottom gradient
+                LinearGradient(colors: [
+                    .clear,
+                    Color("Blue").opacity(0.3),
+                    Color("Blue").opacity(0.55),
+                    Color("Blue")
+                    
+                ], startPoint: .top, endPoint: .bottom)
+                .frame(height: 500)
+                .frame(maxHeight: .infinity, alignment: .bottom)
+                .ignoresSafeArea()
+                
+                HeaderView()
+                
+                VStack(spacing: 0) {
+                    ForEach(topicList){topic in
+                        TopicView(topic: topic, size: size)
                     }
-                })
-        )
-        .preferredColorScheme(.light)
+                }
+                .frame(width: size.width)
+                .padding(.top, size.height - cardSize)
+                .offset(y:offsetY)
+                .offset(y: -currentIndex * cardSize)
+            }
+            .coordinateSpace(name: "SCROLL")
+            .contentShape(Rectangle())
+            .gesture(
+                DragGesture()
+                    .onChanged({ value in
+                        offsetY = value.translation.height * 0.4
+                    }).onEnded({ value in
+                        let translation = value.translation.height
+                        
+                        withAnimation(.easeInOut){
+                            if translation > 0{
+                                if currentIndex > 0 && translation > 100{
+                                    currentIndex -= 1
+                                }
+                            }else{
+                                if currentIndex  < CGFloat(topicList.count - 1) && -translation > 250{
+                                    currentIndex += 1
+                                }
+                            }
+                            offsetY = .zero
+                        }
+                    })
+            )
+            .preferredColorScheme(.light)
+        }
     }
     
-
-//Header View
+    
+    //Header View
     @ViewBuilder
     func HeaderView()-> some View{
         VStack(alignment: .leading){
@@ -139,18 +141,20 @@ struct TopicView: View{
             let reducedScale = 1 + scale
             let currentCardScale = offset / cardSize
             
-            Image(topic.imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: _size.width, height: _size.height)
+            NavigationLink(destination: ChapterListView()) {
+                Image(topic.imageName)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: _size.width, height: _size.height)
                 // Update anchor based on current card scale
-                .scaleEffect(reducedScale < 0 ? 0.001 : reducedScale, anchor: .init(x:0.5, y: 1 - (currentCardScale / 2.5)))
+                    .scaleEffect(reducedScale < 0 ? 0.001 : reducedScale, anchor: .init(x:0.5, y: 1 - (currentCardScale / 2.5)))
                 // Animate size when new topic is selected
-                .scaleEffect(offset > 0 ? 1 + currentCardScale : 1, anchor: .top)
+                    .scaleEffect(offset > 0 ? 1 + currentCardScale : 1, anchor: .top)
                 // Remove excess next view
-                .offset(y: offset > 0 ? currentCardScale * 200 : 0)
+                    .offset(y: offset > 0 ? currentCardScale * 200 : 0)
                 // Make it more compact
-                .offset(y: currentCardScale * -130)
+                    .offset(y: currentCardScale * -130)
+            }
         }
         .frame(height: cardSize)
     }
