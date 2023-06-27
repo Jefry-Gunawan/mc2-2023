@@ -36,7 +36,6 @@
 		B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */; };
 		975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074ED2A4976A900341011 /* OverviewViewTenses.swift */; };
 		975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074EF2A4976BB00341011 /* OverviewViewVocab.swift */; };
-		97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +89,6 @@
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
-		97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,7 +243,6 @@
 		97BCF1542A442E92008A79F6 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */,
 				975074ED2A4976A900341011 /* OverviewViewTenses.swift */,
 				975074EF2A4976BB00341011 /* OverviewViewVocab.swift */,
 			);

@@ -31,8 +31,6 @@ struct OverviewViewVocab: View {
                                     Text("New Vocabularies")
                                         .fontWeight(.bold)
                                         .font(.title)
-//                                        .padding(.top, 20)
-//                                        .padding(.leading, 10)
                                         .padding(.vertical, 20)
                                         .padding(.trailing, 80)
                                     
@@ -100,10 +98,6 @@ struct OverviewViewVocab: View {
                             }
                             .padding(.bottom, 10)
                         
-                        
-                        //USAGE RECTANGLE
-                        
-                       
                         
                         //BUTTON CONTINUE
                         NavigationLink(destination: EmptyView()){

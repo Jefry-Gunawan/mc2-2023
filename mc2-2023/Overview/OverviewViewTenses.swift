@@ -44,7 +44,6 @@ struct OverviewViewTenses: View {
                                         Group{
                                             Rectangle()
                                                 .fill(Color("Blue"))
-                                            //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
                                                 .frame(width: 320, height: 120)
                                                 .cornerRadius(30)
                                                 .padding(.horizontal,40)
@@ -89,7 +88,6 @@ struct OverviewViewTenses: View {
                                         Group{
                                             Rectangle()
                                                 .fill(Color("Light Red"))
-                                            //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
                                                 .frame(width: 320, height: 120)
                                                 .cornerRadius(30)
                                                 .padding(.horizontal,40)
@@ -138,7 +136,6 @@ struct OverviewViewTenses: View {
                                         Group{
                                             Rectangle()
                                                 .fill(Color("Light Yellow"))
-                                            //.frame(width: geometry.size.width, height: calculateRectangleHeight(for: "Text", width: geometry.size.width))
                                                 .frame(width: 320, height: 120)
                                                 .cornerRadius(30)
                                                 .padding(.horizontal, 40)
