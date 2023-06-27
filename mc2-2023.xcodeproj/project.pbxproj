@@ -184,7 +184,10 @@
 				975074ED2A4976A900341011 /* OverviewViewTenses.swift */,
 				975074EF2A4976BB00341011 /* OverviewViewVocab.swift */,
 			);
-			path = Overview;
+			name = Overview;
+			path = "mc2-2023/Overview";
+			sourceTree = SOURCE_ROOT;
+		};
 		D0F159202A496CD900BE4147 /* Font */ = {
 			isa = PBXGroup;
 			children = (
