@@ -19,7 +19,6 @@
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
 		975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074ED2A4976A900341011 /* OverviewViewTenses.swift */; };
 		975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074EF2A4976BB00341011 /* OverviewViewVocab.swift */; };
-		97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +54,6 @@
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
-		97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +144,6 @@
 		97BCF1542A442E92008A79F6 /* Overview */ = {
 			isa = PBXGroup;
 			children = (
-				97BCF14E2A42FA4B008A79F6 /* OverviewView.swift */,
 				975074ED2A4976A900341011 /* OverviewViewTenses.swift */,
 				975074EF2A4976BB00341011 /* OverviewViewVocab.swift */,
 			);
@@ -287,7 +284,6 @@
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
-				97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
 				975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */,
 				975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */,
