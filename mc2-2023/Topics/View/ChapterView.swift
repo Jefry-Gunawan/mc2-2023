@@ -54,7 +54,7 @@ struct ChapterView: View {
                         CardView(title: "Overview")
                     }
                     
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: VideoView()) {
                         CardView(title: "Video")
                     }
                     

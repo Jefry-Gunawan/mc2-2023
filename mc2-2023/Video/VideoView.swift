@@ -16,11 +16,14 @@ struct VideoView: View {
             Home(size: size, safeArea: safeArea)
                 .ignoresSafeArea()
         }
+        .navigationTitle("Video")
     }
 }
 
 struct VideoView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoView()
+        NavigationStack {
+            VideoView()
+        }
     }
 }
