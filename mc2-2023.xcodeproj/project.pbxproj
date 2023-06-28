@@ -17,6 +17,7 @@
 		94582FBC2A42E59B00F8B131 /* mc2_2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */; };
 		94582FBE2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */; };
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
+		B9D95EAA2A4AC7C20021B054 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D95EA92A4AC7C20021B054 /* QuizView.swift */; };
 		9758709D2A4C45C8009B1A8D /* SummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9758709C2A4C45C8009B1A8D /* SummaryView.swift */; };
 		D061D4A02A4984FD00F06578 /* ScratchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061D49F2A4984FD00F06578 /* ScratchCardView.swift */; };
 		D0F1593F2A497EB100BE4147 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F1593E2A497EB100BE4147 /* ScoreView.swift */; };
@@ -53,6 +54,7 @@
 		94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITests.swift; sourceTree = "<group>"; };
 		94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		B9D95EA92A4AC7C20021B054 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		9758709C2A4C45C8009B1A8D /* SummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryView.swift; sourceTree = "<group>"; };
 		D061D49F2A4984FD00F06578 /* ScratchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardView.swift; sourceTree = "<group>"; };
 		D0F1593E2A497EB100BE4147 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		94582F9A2A42E59A00F8B131 /* mc2-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				B9D95EA82A4AC79D0021B054 /* Quiz */,
 				9758709B2A4C45BC009B1A8D /* Summary */,
 				D0F1593C2A497D1C00BE4147 /* Quiz */,
 				94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */,
@@ -142,6 +145,14 @@
 				94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */,
 			);
 			path = "mc2-2023UITests";
+			sourceTree = "<group>";
+		};
+		B9D95EA82A4AC79D0021B054 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				B9D95EA92A4AC7C20021B054 /* QuizView.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		9758709B2A4C45BC009B1A8D /* Summary */ = {
@@ -303,6 +314,7 @@
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				9758709D2A4C45C8009B1A8D /* SummaryView.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
+				B9D95EAA2A4AC7C20021B054 /* QuizView.swift in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				D061D4A02A4984FD00F06578 /* ScratchCardView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
