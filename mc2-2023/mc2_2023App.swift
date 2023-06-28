@@ -13,7 +13,7 @@ struct mc2_2023App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ScoreView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
