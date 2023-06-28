@@ -8,17 +8,17 @@ struct CardView: View {
     var body: some View {
         HStack {
             Text(title)
-                .font(.title)
+                .font(.subheadline)
                 .fontWeight(.bold)
                 .foregroundColor(.black)
             Spacer()
             Image(systemName: "chevron.right")
         }
-        .frame(width: .infinity, height: 65)
+        .frame(width: 325, height: 50)
         .padding()
-        .background(Color.white)
+        .background(Color("Pale Blue").opacity(0.5))
         .cornerRadius(10)
-        .shadow(color: Color.gray.opacity(0.1), radius: 3, y: 10)
+        //.shadow(color: Color.gray.opacity(0.1), radius: 3, y: 10)
     }
 }
 
