@@ -95,7 +95,7 @@ struct TopicsView: View {
                 .font(.largeTitle.bold())
                 .padding(.top)
                 .foregroundColor(Color("White"))
-            Text("Choose your desired topic")
+            Text("Slide to choose your desired topic")
                 .font(.subheadline)
                 .foregroundColor(Color("White"))
             
