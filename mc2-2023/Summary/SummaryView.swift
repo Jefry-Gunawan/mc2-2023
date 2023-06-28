@@ -27,7 +27,7 @@ struct SummaryView: View {
                     ForEach(0..<10) { index in
                         Rectangle()
                             .fill(.white)
-                            .cornerRadius(40)
+                            .cornerRadius(20)
                             .frame(width: geometry.size.width, height: 400)
                             .padding(.bottom, 20)
                             .shadow(radius: 5, x: 0, y: 6)
@@ -74,7 +74,6 @@ struct SummaryView: View {
                     }
                     .frame(width: 340, height: 50)
                     .cornerRadius(10)
-                    .padding(.top, 10)
                 }
             }
         }
