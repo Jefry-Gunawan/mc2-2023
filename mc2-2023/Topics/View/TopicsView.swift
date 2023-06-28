@@ -136,7 +136,8 @@ struct TopicsView: View {
             }
             .padding(.top, 100)
         }
-        .padding(15)
+        .padding(.horizontal,20)
+        .padding(.vertical, 15)
     }
 }
 
