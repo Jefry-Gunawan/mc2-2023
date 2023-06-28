@@ -10,7 +10,7 @@ import SwiftUI
 struct ScoreView: View {
     @State var expandCard: Bool = false
     @State var showContent: Bool = false
-    @State var isPass: Bool = true
+    @State var isPass: Bool = false
     @Namespace var animation
     var body: some View {
         VStack{
@@ -59,8 +59,8 @@ struct ScoreView: View {
                     .padding(.vertical, 17)
                     .frame(maxWidth: .infinity)
                     .background{
-                        Rectangle()
-                            .fill(.linearGradient(colors: [Color("Yellow"), Color("Light Yellow")], startPoint: .leading, endPoint: .trailing))
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color("Yellow"))
                     }
             }
             .padding(.top, 15)
