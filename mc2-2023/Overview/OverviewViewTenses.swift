@@ -9,15 +9,9 @@ import SwiftUI
 
 struct OverviewViewTenses: View {
     var body: some View {
-        NavigationStack{
             VStack(alignment: .leading) {
-                Text("Overview")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .frame(width: 300, height: 100)
-                    .padding(.leading, -60)
                 
-                
+                //RECTANGLE
                 GeometryReader { geometry in
                     ScrollView(.vertical){
                         VStack {
@@ -43,7 +37,7 @@ struct OverviewViewTenses: View {
                                         //BLUE RECTANGLE
                                         Group{
                                             Rectangle()
-                                                .fill(Color("Blue"))
+                                                .fill(Color("Very Light Yellow"))
                                                 .frame(width: 320, height: 120)
                                                 .cornerRadius(30)
                                                 .padding(.horizontal,40)
@@ -58,7 +52,7 @@ struct OverviewViewTenses: View {
                                                         HStack{
                                                             Text("S + V1 ")
                                                             Text("s/es")
-                                                                .foregroundColor(Color("Very Light Yellow"))
+                                                                .foregroundColor(Color("Dark Blue"))
                                                         }
                                                         .font(.title)
                                                         .fontWeight(.bold)
@@ -72,14 +66,16 @@ struct OverviewViewTenses: View {
                                             HStack{
                                                 Text("He")
                                                 Text("studies")
-                                                    .foregroundColor(.red)
+                                                    .foregroundColor(Color("Dark Blue"))
                                             }
+                                            .fontWeight(.semibold)
                                             .padding(.horizontal, 50)
                                             HStack{
                                                 Text("Annie")
                                                 Text("eats")
-                                                    .foregroundColor(.red)
+                                                    .foregroundColor(Color("Dark Blue"))
                                             }
+                                            .fontWeight(.semibold)
                                             .padding(.horizontal, 50)
                                             .padding(.bottom, 10)
                                         }
@@ -87,7 +83,7 @@ struct OverviewViewTenses: View {
                                         //RED RECTANGLE
                                         Group{
                                             Rectangle()
-                                                .fill(Color("Light Red"))
+                                                .fill(Color("Very Light Yellow"))
                                                 .frame(width: 320, height: 120)
                                                 .cornerRadius(30)
                                                 .padding(.horizontal,40)
@@ -101,9 +97,9 @@ struct OverviewViewTenses: View {
                                                         HStack{
                                                             Text("S + Do/")
                                                             Text("Does")
-                                                                .foregroundColor(Color("Very Light Yellow"))
+                                                                .foregroundColor(.red)
                                                             Text("not")
-                                                                .foregroundColor(Color("Orange"))
+                                                                .foregroundColor(.red)
                                                             Text("+ V1")
                                                         }
                                                         .font(.title)
@@ -121,6 +117,7 @@ struct OverviewViewTenses: View {
                                                     .foregroundColor(.red)
                                                 Text("eat.")
                                             }
+                                            .fontWeight(.semibold)
                                             .padding(.horizontal, 50)
                                             HStack{
                                                 Text("I")
@@ -128,6 +125,7 @@ struct OverviewViewTenses: View {
                                                     .foregroundColor(.red)
                                                 Text("eat.")
                                             }
+                                            .fontWeight(.semibold)
                                             .padding(.horizontal, 50)
                                             .padding(.bottom, 10)
                                         }
@@ -135,7 +133,7 @@ struct OverviewViewTenses: View {
                                         //YELLOW RECTANGLE
                                         Group{
                                             Rectangle()
-                                                .fill(Color("Light Yellow"))
+                                                .fill(Color("Very Light Yellow"))
                                                 .frame(width: 320, height: 120)
                                                 .cornerRadius(30)
                                                 .padding(.horizontal, 40)
@@ -150,7 +148,7 @@ struct OverviewViewTenses: View {
                                                         HStack{
                                                             Text("Do/")
                                                             Text("Does")
-                                                                .foregroundColor(Color("Dark Blue"))
+                                                                .foregroundColor(Color("Yellow"))
                                                             Text("+ S + V1 ?")
                                                         }
                                                         .font(.title)
@@ -164,15 +162,17 @@ struct OverviewViewTenses: View {
                                                 .padding(.horizontal, 50)
                                             HStack{
                                                 Text("Does")
-                                                    .foregroundColor(.red)
+                                                    .foregroundColor(Color("Yellow"))
                                                 Text("he study?")
                                             }
+                                            .fontWeight(.semibold)
                                             .padding(.horizontal, 50)
                                             HStack{
                                                 Text("Do")
-                                                    .foregroundColor(.red)
+                                                    .foregroundColor(Color("Yellow"))
                                                 Text("you eat?")
                                             }
+                                            .fontWeight(.semibold)
                                             .padding(.horizontal, 50)
                                         }
                                         
@@ -253,21 +253,6 @@ struct OverviewViewTenses: View {
                                 }
                                 .padding(.bottom, 10)
                             
-                            //BUTTON CONTINUE
-                            NavigationLink(destination: OverviewViewVocab()){
-                                Text("CONTINUE")
-                                    .frame(width: 360, height: 40)
-                                    .font(.body)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(.white)
-                                    .padding()
-                                    .background(Color("Dark Blue"))
-                                
-                            }
-                            .frame(width: 340, height: 50)
-                            .cornerRadius(10)
-                            .padding(.top, 20)
-                            .shadow(radius: 10, x: 0, y: 6)
                         }
                     }
                 }
@@ -275,7 +260,7 @@ struct OverviewViewTenses: View {
             }
             .padding(.horizontal, 10)
             .background(Color("Pale Blue"))
-        }
+        //}
     }
 }
 

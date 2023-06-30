@@ -10,22 +10,16 @@ import SwiftUI
 struct OverviewViewVocab: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Overview")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .frame(width: 300, height: 100)
-                .padding(.leading, -60)
-            
-            
             GeometryReader { geometry in
                 ScrollView(.vertical){
                     VStack {
+                        
                         //NEW VOCAB RECTANGLE
                         Rectangle()
                             .fill(.white)
                             .cornerRadius(40)
                             .frame(width: geometry.size.width, height: 400)
-                            .shadow(radius: 5, x: 0, y: 6)
+                            //.shadow(radius: 5, x: 0, y: 6)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
                                     Text("New Vocabularies")
@@ -97,23 +91,6 @@ struct OverviewViewVocab: View {
                                 
                             }
                             .padding(.bottom, 10)
-                        
-                        
-                        //BUTTON CONTINUE
-                        NavigationLink(destination: EmptyView()){
-                            Text("CLOSE")
-                                .frame(width: 360, height: 40)
-                                .font(.body)
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                                .padding()
-                                .background(Color("Dark Blue"))
-
-                        }
-                        .frame(width: 340, height: 50)
-                        .cornerRadius(10)
-                        .padding(.top, 20)
-                        .shadow(radius: 10, x: 0, y: 6)
                     }
                 }
             }

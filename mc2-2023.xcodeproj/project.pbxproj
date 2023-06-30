@@ -24,6 +24,7 @@
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
 		975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074ED2A4976A900341011 /* OverviewViewTenses.swift */; };
 		975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074EF2A4976BB00341011 /* OverviewViewVocab.swift */; };
+		9758709F2A4EAE5D009B1A8D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9758709E2A4EAE5D009B1A8D /* OverviewView.swift */; };
 		D0F159272A496D0900BE4147 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159212A496D0900BE4147 /* Lora-Bold.ttf */; };
 		D0F159282A496D0900BE4147 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D0F159222A496D0900BE4147 /* OFL.txt */; };
 		D0F159292A496D0900BE4147 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */; };
@@ -72,6 +73,7 @@
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
+		9758709E2A4EAE5D009B1A8D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
 		D0F159212A496D0900BE4147 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
 		D0F159222A496D0900BE4147 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				975074ED2A4976A900341011 /* OverviewViewTenses.swift */,
 				975074EF2A4976BB00341011 /* OverviewViewVocab.swift */,
+				9758709E2A4EAE5D009B1A8D /* OverviewView.swift */,
 			);
 			name = Overview;
 			path = "mc2-2023/Overview";
@@ -371,6 +374,7 @@
 				940A351B2A4440F100274414 /* ProgressBar.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
 				975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */,
+				9758709F2A4EAE5D009B1A8D /* OverviewView.swift in Sources */,
 				975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
