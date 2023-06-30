@@ -10,10 +10,6 @@ import SwiftUI
 struct OverviewViewVocab: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Rectangle()
-                .opacity(0)
-                .frame(height: 10)
-            
             
             GeometryReader { geometry in
                 ScrollView(.vertical){
@@ -24,7 +20,6 @@ struct OverviewViewVocab: View {
                             .fill(.white)
                             .cornerRadius(40)
                             .frame(width: geometry.size.width, height: 400)
-                            //.shadow(radius: 5, x: 0, y: 6)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
                                     Text("New Vocabularies")
@@ -103,7 +98,6 @@ struct OverviewViewVocab: View {
         }
         .padding(.horizontal, 10)
         .background(Color("Pale Blue"))
-        .navigationTitle("Vocabulary")
     }
 }
 
