@@ -95,7 +95,7 @@ struct TopicsView: View {
                 .font(.largeTitle.bold())
                 .padding(.top)
                 .foregroundColor(Color("White"))
-            Text("Slide to choose your desired topic")
+            Text("Slide the buildings to choose your desired topic")
                 .font(.subheadline)
                 .foregroundColor(Color("White"))
             
@@ -112,7 +112,7 @@ struct TopicsView: View {
                             
                             Text(topic.difficulty)
                                 .font(.callout)
-                                .padding(.top, -12)
+                                .padding(.top, -9)
                                 .foregroundColor(Color("White"))
                             
                             NavigationLink(destination: ChapterListView()) {
@@ -134,7 +134,7 @@ struct TopicsView: View {
                 .offset(x: currentIndex * -size.width)
                 .animation(.interactiveSpring(response: 0.6, dampingFraction: 0.8, blendDuration: 0.8), value: currentIndex)
             }
-            .padding(.top, 100)
+            .padding(.top, 85)
         }
         .padding(.horizontal,20)
         .padding(.vertical, 15)
