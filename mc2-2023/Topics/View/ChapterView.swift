@@ -32,6 +32,7 @@ struct ChapterView: View {
                             Text("In this session, you will learn how to use Simple Present Tense and Simple Past Tense. Help Ducker to solve some of the puzzles and problems in the class. Good Luck!")
                                 .font(.body)
                                 .lineLimit(7)
+                                .padding(.top, 10)
                         }
                         .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 0))
                         
@@ -49,7 +50,7 @@ struct ChapterView: View {
                         Color("Blue"),
                         for: .navigationBar)
                     
-                    .roundedCorner(10, corners: [.bottomLeft, .bottomRight])
+                    .roundedCorner(30, corners: [.bottomLeft, .bottomRight])
                     
                     
                 }.padding(EdgeInsets(.init(top: -100, leading: -2, bottom: 0, trailing: -2)))
@@ -59,20 +60,25 @@ struct ChapterView: View {
                     NavigationLink(destination: OverviewViewTenses()) {
                         CardView(title: "Overview")
                     }
+                    .padding(2)
                     
                     NavigationLink(destination: VideoView()) {
                         CardView(title: "Video")
                     }
+                    .padding(2)
                     
                     NavigationLink(destination: EmptyView()) {
                         CardView(title: "Speaking")
                     }
+                    .padding(2)
                     
                     NavigationLink(destination: EmptyView()) {
                         CardView(title: "Quiz")
                     }
+                    .padding(2)
                 }
                 .background(Color("White"))
+                .padding(7)
             }.ignoresSafeArea()
         }
     }

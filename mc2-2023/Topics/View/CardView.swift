@@ -14,7 +14,7 @@ struct CardView: View {
             Spacer()
             Image(systemName: "chevron.right")
         }
-        .frame(width: 325, height: 50)
+        .frame(width: 330, height: 60)
         .padding()
         .background(Color("Pale Blue").opacity(0.5))
         .cornerRadius(10)
