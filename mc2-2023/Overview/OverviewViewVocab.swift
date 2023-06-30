@@ -10,6 +10,11 @@ import SwiftUI
 struct OverviewViewVocab: View {
     var body: some View {
         VStack(alignment: .leading) {
+            Rectangle()
+                .opacity(0)
+                .frame(height: 10)
+            
+            
             GeometryReader { geometry in
                 ScrollView(.vertical){
                     VStack {
@@ -98,11 +103,14 @@ struct OverviewViewVocab: View {
         }
         .padding(.horizontal, 10)
         .background(Color("Pale Blue"))
+        .navigationTitle("Vocabulary")
     }
 }
 
 struct OverviewViewVocab_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewViewVocab()
+        NavigationStack {
+            OverviewViewVocab()
+        }
     }
 }
