@@ -77,7 +77,7 @@
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
 		B9D4B3E32A44314400989FC7 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
-		B9D4B3E92A44326500989FC7 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = VideoView.swift; path = Video/VideoView.swift; sourceTree = "<group>"; };
+		B9D4B3E92A44326500989FC7 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		B9D4B3EB2A44327200989FC7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		D0F159212A496D0900BE4147 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
@@ -149,7 +149,6 @@
 		94582F9A2A42E59A00F8B131 /* mc2-2023 */ = {
 			isa = PBXGroup;
 			children = (
-				97BCF1542A442E92008A79F6 /* Overview */,
 				D0F159202A496CD900BE4147 /* Font */,
 				B9D4B3E62A4431B600989FC7 /* VideoHelpers */,
 				B9D4B3E52A44319700989FC7 /* Video */,
@@ -161,7 +160,6 @@
 				94582FA62A42E59B00F8B131 /* mc2_2023.xcdatamodeld */,
 				940A35132A44251500274414 /* Topics */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
-				B9D4B3E92A44326500989FC7 /* VideoView.swift */,
 			);
 			path = "mc2-2023";
 			sourceTree = "<group>";
@@ -205,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				B9D4B3EB2A44327200989FC7 /* Home.swift */,
+				B9D4B3E92A44326500989FC7 /* VideoView.swift */,
 				B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */,
 			);
 			path = Video;
