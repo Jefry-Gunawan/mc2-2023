@@ -149,6 +149,7 @@
 		94582F9A2A42E59A00F8B131 /* mc2-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				97BCF1542A442E92008A79F6 /* Overview */,
 				D0F159202A496CD900BE4147 /* Font */,
 				B9D4B3E62A4431B600989FC7 /* VideoHelpers */,
 				B9D4B3E52A44319700989FC7 /* Video */,
@@ -394,14 +395,13 @@
 				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
 				74FCEBF12A44717B006D4877 /* CardView.swift in Sources */,
 				D0F159322A496D9800BE4147 /* TopicsView.swift in Sources */,
+				B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */,
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				940A35192A44290B00274414 /* ChapterListView.swift in Sources */,
 				74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				940A351B2A4440F100274414 /* ProgressBar.swift in Sources */,
-				B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */,
-				B9D4B3EA2A44326500989FC7 /* VideoView.swift in Sources */,
 				B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */,
 				97BCF14F2A42FA4B008A79F6 /* OverviewView.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
