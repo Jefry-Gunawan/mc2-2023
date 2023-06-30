@@ -4,7 +4,7 @@ struct SpeakingView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isRecording = false
     
-    @State var textOut = [("My ", Color.black), ("name ", Color.black), ("is Jeff", Color.black)]
+    @State var textOut = [("I", Color.black), ("like", Color.black), ("physics", Color.black), ("and", Color.black), ("mathematics", Color.black), ("very", Color.black), ("much", Color.black)]
     
     var body: some View {
         VStack(alignment: .center) {
@@ -20,6 +20,9 @@ struct SpeakingView: View {
                 )
                 .font(.title)
                 .bold()
+                .multilineTextAlignment(.center)
+            
+            //            Text("^Read the sentences above^")
             Text(speechRecognizer.transcript)
             
             Spacer()
@@ -28,18 +31,21 @@ struct SpeakingView: View {
                 Button(action: {
                     speechRecognizer.stopTranscribing()
                     isRecording = false
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         checkTranscribe()
                     }
                 }) {
                     ZStack {
-                        Capsule()
+                        Circle()
                             .foregroundColor(Color.red)
-                            .frame(width: 150, height: 60)
-                        Text("Stop")
+                            .frame(width: 90, height: 90)
+                        Circle()
                             .foregroundColor(Color.white)
-                            .font(.title)
-                            .bold()
+                            .frame(width: 80, height: 80)
+                        Rectangle()
+                            .foregroundColor(Color.red)
+                            .frame(width: 35, height: 35)
+                            .cornerRadius(5)
                     }
                     .padding(.bottom, 70)
                 }
@@ -49,13 +55,12 @@ struct SpeakingView: View {
                     isRecording = true
                 }) {
                     ZStack {
-                        Capsule()
+                        Circle()
                             .foregroundColor(Color("Dark Blue"))
-                            .frame(width: 150, height: 60)
-                        Text("Start")
+                            .frame(width: 90, height: 90)
+                        Image(systemName: "mic.fill")
                             .foregroundColor(Color.white)
-                            .font(.title)
-                            .bold()
+                            .font(.system(size: 35))
                     }
                     .padding(.bottom, 70)
                 }
@@ -65,13 +70,13 @@ struct SpeakingView: View {
     }
     
     func checkTranscribe() {
-        let words = speechRecognizer.transcript.lowercased().components(separatedBy: " ")
-        print(words)
+        let tempTranscript = speechRecognizer.transcript.lowercased().components(separatedBy: " ")
+        print(tempTranscript)
         
         textOut = textOut.map { (word, color) in
-            print(word.lowercased())
-            if words.contains(word.lowercased()) {
-                print(word)
+            let trimmedWord = word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+            if tempTranscript.contains(trimmedWord) {
+                print(word + "black")
                 return (word, .black)
             } else {
                 print(word + "red")
