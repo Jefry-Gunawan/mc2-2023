@@ -18,7 +18,7 @@ struct OverviewViewVocab: View {
                         //NEW VOCAB RECTANGLE
                         Rectangle()
                             .fill(.white)
-                            .cornerRadius(40)
+                            .cornerRadius(30)
                             .frame(width: geometry.size.width, height: 400)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
