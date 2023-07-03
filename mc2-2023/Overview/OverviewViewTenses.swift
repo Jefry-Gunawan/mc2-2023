@@ -16,7 +16,7 @@ struct OverviewViewTenses: View {
                         //RECTANGLE
                         Rectangle()
                             .fill(.white)
-                            .cornerRadius(30)
+                            .cornerRadius(20)
                             .frame(width: geometry.size.width, height: 1150)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
@@ -36,7 +36,7 @@ struct OverviewViewTenses: View {
                                         Rectangle()
                                             .fill(Color("Light Gray"))
                                             .frame(width: 320, height: 120)
-                                            .cornerRadius(20)
+                                            .cornerRadius(10)
                                             .padding(.horizontal,40)
                                             .overlay(
                                                 VStack(alignment: .leading) {
@@ -82,7 +82,7 @@ struct OverviewViewTenses: View {
                                         Rectangle()
                                             .fill(Color("Light Gray"))
                                             .frame(width: 320, height: 120)
-                                            .cornerRadius(20)
+                                            .cornerRadius(10)
                                             .padding(.horizontal,40)
                                             .overlay(
                                                 VStack(alignment: .leading) {
@@ -132,7 +132,7 @@ struct OverviewViewTenses: View {
                                         Rectangle()
                                             .fill(Color("Light Gray"))
                                             .frame(width: 320, height: 120)
-                                            .cornerRadius(20)
+                                            .cornerRadius(10)
                                             .padding(.horizontal, 40)
                                             .overlay(
                                                 VStack(alignment: .leading) {
