@@ -76,10 +76,8 @@ struct SpeakingView: View {
         textOut = textOut.map { (word, color) in
             let trimmedWord = word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
             if tempTranscript.contains(trimmedWord) {
-                print(word + "black")
-                return (word, .black)
+                return (word, Color("Green"))
             } else {
-                print(word + "red")
                 return (word, .red)
             }
         }
