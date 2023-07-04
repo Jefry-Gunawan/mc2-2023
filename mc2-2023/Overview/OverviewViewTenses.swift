@@ -12,7 +12,7 @@ struct OverviewViewTenses: View {
         VStack(alignment: .leading) {
             GeometryReader { geometry in
                 ScrollView(.vertical){
-                    VStack {
+                    VStack(alignment: .center) {
                         //RECTANGLE
                         Rectangle()
                             .fill(.white)
@@ -31,21 +31,20 @@ struct OverviewViewTenses: View {
                                         .padding(.top, 20)
                                         .padding(.leading, 30)
                                     
-                                    //BLUE RECTANGLE
+                                    //POSITIVE RECTANGLE
                                     Group{
                                         Rectangle()
                                             .fill(Color("Light Gray"))
-                                            .frame(width: 320, height: 120)
+                                            .frame(width: geometry.size.width-20, height: 200)
                                             .cornerRadius(10)
-                                            .padding(.horizontal,40)
+                                            .padding(.horizontal,30)
                                             .overlay(
                                                 VStack(alignment: .leading) {
                                                     Text("Positive Form")
                                                         .font(.headline)
                                                         .fontWeight(.bold)
                                                         .foregroundColor(Color(.gray))
-                                                        .padding(.leading, -70)
-                                                        .padding(.top, 10)
+                                                        .padding(.leading, -80)
                                                     HStack{
                                                         Text("S + V1 ")
                                                         Text("s/es")
@@ -53,43 +52,45 @@ struct OverviewViewTenses: View {
                                                     }
                                                     .font(.title)
                                                     .fontWeight(.bold)
-                                                    .padding(.top, 5)
-                                                    Spacer()
+                                                    .padding(.vertical, 15)
+                                                    // Spacer()
+                                                    Text("Example: ")
+                                                        .fontWeight(.bold)
+                                                        .padding(.leading, -80)
+                                                    HStack{
+                                                        Text("He")
+                                                        Text("studies")
+                                                            .foregroundColor(Color("Dark Blue"))
+                                                    }
+                                                    .fontWeight(.semibold)
+                                                    .padding(.leading, -80)
+                                                    HStack{
+                                                        Text("Annie")
+                                                        Text("eats")
+                                                            .foregroundColor(Color("Dark Blue"))
+                                                    }
+                                                    .fontWeight(.semibold)
+                                                    .padding(.leading, -80)
+                                                    .padding(.bottom, 10)
                                                 }
                                             )
-                                        Text("Example: ")
-                                            .fontWeight(.bold)
-                                            .padding(.horizontal, 50)
-                                        HStack{
-                                            Text("He")
-                                            Text("studies")
-                                                .foregroundColor(Color("Dark Blue"))
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal, 50)
-                                        HStack{
-                                            Text("Annie")
-                                            Text("eats")
-                                                .foregroundColor(Color("Dark Blue"))
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal, 50)
-                                        .padding(.bottom, 10)
+                                        
                                     }
                                     
-                                    //RED RECTANGLE
+                                    //NEGATIVE RECTANGLE
                                     Group{
                                         Rectangle()
                                             .fill(Color("Light Gray"))
-                                            .frame(width: 320, height: 120)
+                                            .frame(width: geometry.size.width-20, height: 200)
                                             .cornerRadius(10)
-                                            .padding(.horizontal,40)
+                                            .padding(.horizontal,30)
                                             .overlay(
                                                 VStack(alignment: .leading) {
                                                     Text("Negative Form")
                                                         .font(.headline)
                                                         .fontWeight(.bold)
                                                         .foregroundColor(Color(.gray))
+                                                        .padding(.leading, -10)
                                                         .padding(.top, 10)
                                                     HStack{
                                                         Text("S + Do/")
@@ -101,47 +102,48 @@ struct OverviewViewTenses: View {
                                                     }
                                                     .font(.title)
                                                     .fontWeight(.bold)
-                                                    .padding(.top, 5)
-                                                    Spacer()
+                                                    .padding(.vertical, 15)
+                                                    //Spacer()
+                                                    Text("Example: ")
+                                                        .fontWeight(.bold)
+                                                        .padding(.leading, -10)
+                                                    HStack{
+                                                        Text("He")
+                                                        Text("does not")
+                                                            .foregroundColor(.red)
+                                                        Text("eat.")
+                                                    }
+                                                    .fontWeight(.semibold)
+                                                    .padding(.leading, -10)
+                                                    HStack{
+                                                        Text("I")
+                                                        Text("do not")
+                                                            .foregroundColor(.red)
+                                                        Text("eat.")
+                                                    }
+                                                    .fontWeight(.semibold)
+                                                    .padding(.leading, -10)
+                                                    .padding(.bottom, 20)
                                                 }
                                             )
-                                        Text("Example: ")
-                                            .fontWeight(.bold)
-                                            .padding(.horizontal, 50)
-                                        HStack{
-                                            Text("He")
-                                            Text("does not")
-                                                .foregroundColor(.red)
-                                            Text("eat.")
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal, 50)
-                                        HStack{
-                                            Text("I")
-                                            Text("do not")
-                                                .foregroundColor(.red)
-                                            Text("eat.")
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal, 50)
-                                        .padding(.bottom, 10)
+                                        
                                     }
                                     
-                                    //YELLOW RECTANGLE
+                                    //QUESTION RECTANGLE
                                     Group{
                                         Rectangle()
                                             .fill(Color("Light Gray"))
-                                            .frame(width: 320, height: 120)
+                                            .frame(width: geometry.size.width-20, height: 200)
                                             .cornerRadius(10)
-                                            .padding(.horizontal, 40)
+                                            .padding(.horizontal, 30)
                                             .overlay(
                                                 VStack(alignment: .leading) {
                                                     Text("Question Form")
                                                         .font(.headline)
                                                         .fontWeight(.bold)
                                                         .foregroundColor(Color(.gray))
-                                                        .padding(.leading, -15)
-                                                        .padding(.top, 10)
+                                                        .padding(.leading, -30)
+                                                        .padding(.vertical, 15)
                                                     HStack{
                                                         Text("Do/")
                                                         Text("Does")
@@ -152,25 +154,27 @@ struct OverviewViewTenses: View {
                                                     .fontWeight(.bold)
                                                     .padding(.top, 5)
                                                     Spacer()
+                                                    Text("Example: ")
+                                                        .fontWeight(.bold)
+                                                        .padding(.leading, -30)
+                                                    HStack{
+                                                        Text("Does")
+                                                            .foregroundColor(Color("Dark Yellow"))
+                                                        Text("he study?")
+                                                    }
+                                                    .fontWeight(.semibold)
+                                                    .padding(.leading, -30)
+                                                    HStack{
+                                                        Text("Do")
+                                                            .foregroundColor(Color("Dark Yellow"))
+                                                        Text("you eat?")
+                                                    }
+                                                    .fontWeight(.semibold)
+                                                    .padding(.leading, -30)
+                                                    .padding(.bottom, 20)
                                                 }
                                             )
-                                        Text("Example: ")
-                                            .fontWeight(.bold)
-                                            .padding(.horizontal, 50)
-                                        HStack{
-                                            Text("Does")
-                                                .foregroundColor(Color("Dark Yellow"))
-                                            Text("he study?")
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal, 50)
-                                        HStack{
-                                            Text("Do")
-                                                .foregroundColor(Color("Dark Yellow"))
-                                            Text("you eat?")
-                                        }
-                                        .fontWeight(.semibold)
-                                        .padding(.horizontal, 50)
+                                        
                                     }
                                     
                                     //USAGE
