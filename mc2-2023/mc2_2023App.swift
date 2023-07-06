@@ -13,8 +13,9 @@ struct mc2_2023App: App {
 
     var body: some Scene {
         WindowGroup {
-            SummaryView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            QuizView()
+//            SummaryView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

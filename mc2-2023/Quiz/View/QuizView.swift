@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct QuizView: View {
-    var number: Int
-    
     @State private var currentIndex: Int = 0
     
     @State private var doneAnswering = false
@@ -181,7 +179,7 @@ struct QuizView: View {
 
 struct QuizView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizView(number: 3)
+        QuizView()
     }
 }
 
