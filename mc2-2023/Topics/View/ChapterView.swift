@@ -57,7 +57,7 @@ struct ChapterView: View {
                 
                 //VStack for List
                 VStack {
-                    NavigationLink(destination: OverviewViewTenses()) {
+                    NavigationLink(destination: OverviewView()) {
                         CardView(title: "Overview")
                     }
                     .padding(2)
@@ -67,7 +67,7 @@ struct ChapterView: View {
                     }
                     .padding(2)
                     
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: SpeakingView()) {
                         CardView(title: "Speaking")
                     }
                     .padding(2)

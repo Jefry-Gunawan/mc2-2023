@@ -13,8 +13,6 @@ struct ChapterListView: View {
     
     var body: some View {
         VStack {
-            ProgressBar(progress: 0.2)
-                .padding(.vertical)
             ScrollView {
                 ForEach(1...5, id: \.self) { i in
                     
@@ -95,7 +93,7 @@ struct ChapterListView: View {
                 .frame(maxWidth: .infinity)
             }
         }
-        .padding(.top)
+        .padding(.top, 30)
         .scrollIndicators(.hidden)
         .background(
             Image("Classroom Background")

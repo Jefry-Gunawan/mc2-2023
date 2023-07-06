@@ -18,7 +18,7 @@ struct OverviewViewVocab: View {
                         //NEW VOCAB RECTANGLE
                         Rectangle()
                             .fill(.white)
-                            .cornerRadius(30)
+                            .cornerRadius(20)
                             .frame(width: geometry.size.width, height: 400)
                             .overlay(alignment: .top){
                                 VStack(alignment: .leading) {
@@ -26,7 +26,7 @@ struct OverviewViewVocab: View {
                                         .fontWeight(.bold)
                                         .font(.title)
                                         .padding(.vertical, 20)
-                                        .padding(.trailing, 80)
+                                        .padding(.leading, -45)
                                     
                                     Group{
                                         Text("1. Excercise")
@@ -46,6 +46,7 @@ struct OverviewViewVocab: View {
                                         }
                                         .padding(.bottom, 5)
                                     }
+                                    .padding(.leading, -30)
                                     
                                     Group{
                                         Text("2. Sleep")
@@ -65,6 +66,7 @@ struct OverviewViewVocab: View {
                                         }
                                         .padding(.bottom, 5)
                                     }
+                                    .padding(.leading, -30)
                                     
                                     Group{
                                         Text("3. Drink")
@@ -84,11 +86,8 @@ struct OverviewViewVocab: View {
                                         }
                                         .padding(.bottom, 5)
                                     }
-                                    
-                                    
-                                    
+                                    .padding(.leading, -30)
                                 }
-                                
                             }
                             .padding(.bottom, 10)
                     }
