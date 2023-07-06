@@ -4,23 +4,29 @@ struct SpeakingView: View {
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isRecording = false
     
-    @State var textOut = [("I", Color.black), ("like", Color.black), ("physics", Color.black), ("and", Color.black), ("mathematics", Color.black), ("very", Color.black), ("much", Color.black)]
+    @State private var changeText = false
+    
+    @State var textOut = [SpeakingTextVariable(text: "I"), SpeakingTextVariable(text: "like"), SpeakingTextVariable(text: "physics"), SpeakingTextVariable(text: "and"), SpeakingTextVariable(text: "mathematics"), SpeakingTextVariable(text: "very"), SpeakingTextVariable(text: "much")]
     
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
-            Text(textOut.reduce("", { $0 + $1.0 + " " }))
-                .foregroundColor(.blue)
-                .overlay(
-                    textOut.reduce(Text(""), { result, part in
-                        result + Text(part.0)
-                            .foregroundColor(part.1)
-                        + Text(" ")
+            
+            if changeText {
+                outputText()
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+                    .onAppear(perform:  {
+                        changeText = false
                     })
-                )
-                .font(.title)
-                .bold()
-                .multilineTextAlignment(.center)
+            } else {
+                outputText()
+                    .font(.title)
+                    .bold()
+                    .multilineTextAlignment(.center)
+            }
+            
             
             //            Text("^Read the sentences above^")
             Text(speechRecognizer.transcript)
@@ -29,10 +35,11 @@ struct SpeakingView: View {
             
             if isRecording {
                 Button(action: {
-                    speechRecognizer.stopTranscribing()
                     isRecording = false
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        speechRecognizer.stopTranscribing()
                         checkTranscribe()
+                        changeText = true
                     }
                 }) {
                     ZStack {
@@ -73,14 +80,25 @@ struct SpeakingView: View {
         let tempTranscript = speechRecognizer.transcript.lowercased().components(separatedBy: " ")
         print(tempTranscript)
         
-        textOut = textOut.map { (word, color) in
-            let trimmedWord = word.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-            if tempTranscript.contains(trimmedWord) {
-                return (word, Color("Green"))
+        for out in textOut {
+            if tempTranscript.contains(out.text.lowercased()) {
+                out.color = .green
             } else {
-                return (word, .red)
+                out.color = .red
             }
         }
+    }
+    
+    func outputText() -> some View{
+        var output = Text("")
+        
+        for out in textOut {
+            let temp = Text(out.text + " ").foregroundColor(out.color)
+            
+            output = output + temp
+        }
+        
+        return output
     }
 }
 

@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		944EA3AB2A498A6A006E8224 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */; };
-		9450184B2A4593C5008C6945 /* SpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450184A2A4593C5008C6945 /* SpeakingView.swift */; };
 		7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7453293E2A45928900D95025 /* RoundedCorner.swift */; };
 		74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCEBEC2A445266006D4877 /* ChapterView.swift */; };
 		74FCEBF12A44717B006D4877 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCEBF02A44717B006D4877 /* CardView.swift */; };
 		940A35192A44290B00274414 /* ChapterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A35182A44290B00274414 /* ChapterListView.swift */; };
 		940A351B2A4440F100274414 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A351A2A4440F100274414 /* ProgressBar.swift */; };
+		944EA3AB2A498A6A006E8224 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */; };
+		9450184B2A4593C5008C6945 /* SpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450184A2A4593C5008C6945 /* SpeakingView.swift */; };
 		94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */; };
 		94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9D2A42E59A00F8B131 /* ContentView.swift */; };
 		94582FA02A42E59B00F8B131 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94582F9F2A42E59B00F8B131 /* Assets.xcassets */; };
@@ -24,6 +24,7 @@
 		94582FBC2A42E59B00F8B131 /* mc2_2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */; };
 		94582FBE2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */; };
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
+		9471A3CD2A54241600D512BB /* SpeakingTextVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9471A3CC2A54241600D512BB /* SpeakingTextVariable.swift */; };
 		975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074ED2A4976A900341011 /* OverviewViewTenses.swift */; };
 		975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074EF2A4976BB00341011 /* OverviewViewVocab.swift */; };
 		B9D4B3E42A44314400989FC7 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B9D4B3E32A44314400989FC7 /* video.mp4 */; };
@@ -58,13 +59,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
-		9450184A2A4593C5008C6945 /* SpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingView.swift; sourceTree = "<group>"; };
 		7453293E2A45928900D95025 /* RoundedCorner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorner.swift; sourceTree = "<group>"; };
 		74FCEBEC2A445266006D4877 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		74FCEBF02A44717B006D4877 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		940A35182A44290B00274414 /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
 		940A351A2A4440F100274414 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		9450184A2A4593C5008C6945 /* SpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingView.swift; sourceTree = "<group>"; };
 		94582F982A42E59A00F8B131 /* mc2-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mc2-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023App.swift; sourceTree = "<group>"; };
 		94582F9D2A42E59A00F8B131 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -77,7 +78,8 @@
 		94582FB72A42E59B00F8B131 /* mc2-2023UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mc2-2023UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITests.swift; sourceTree = "<group>"; };
 		94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
-		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ".gitignore"; sourceTree = "<group>"; };
+		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9471A3CC2A54241600D512BB /* SpeakingTextVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingTextVariable.swift; sourceTree = "<group>"; };
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
 		B9D4B3E32A44314400989FC7 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
@@ -119,15 +121,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		945018492A459392008C6945 /* Speaking */ = {
-			isa = PBXGroup;
-			children = (
-				9450184A2A4593C5008C6945 /* SpeakingView.swift */,
-				944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */,
-			);
-			path = Speaking;
-			sourceTree = "<group>";
-		};
 		940A35132A44251500274414 /* Topics */ = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +128,16 @@
 				D0F159302A496D8900BE4147 /* View */,
 			);
 			path = Topics;
+			sourceTree = "<group>";
+		};
+		945018492A459392008C6945 /* Speaking */ = {
+			isa = PBXGroup;
+			children = (
+				9450184A2A4593C5008C6945 /* SpeakingView.swift */,
+				9471A3CC2A54241600D512BB /* SpeakingTextVariable.swift */,
+				944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */,
+			);
+			path = Speaking;
 			sourceTree = "<group>";
 		};
 		94582F8F2A42E59A00F8B131 = {
@@ -407,6 +410,7 @@
 				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
 				74FCEBF12A44717B006D4877 /* CardView.swift in Sources */,
 				D0F159322A496D9800BE4147 /* TopicsView.swift in Sources */,
+				9471A3CD2A54241600D512BB /* SpeakingTextVariable.swift in Sources */,
 				B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */,
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
 				944EA3AB2A498A6A006E8224 /* SpeechRecognizer.swift in Sources */,
@@ -581,10 +585,10 @@
 				DEVELOPMENT_TEAM = 4QQ5D4534V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio will be recorded";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_FILE = "mc2-2023/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "AZ Duck";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio will be recorded";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -614,10 +618,10 @@
 				DEVELOPMENT_TEAM = 4QQ5D4534V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio will be recorded";
-				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_FILE = "mc2-2023/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "AZ Duck";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio will be recorded";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
