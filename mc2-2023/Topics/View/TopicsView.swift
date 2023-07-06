@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TopicsView: View {
+    @State var showContent: Bool = true
     //Gesture Properties
     @State var offsetY: CGFloat = 0
     @State var currentIndex: CGFloat = 0
@@ -84,6 +85,41 @@ struct TopicsView: View {
             )
             .preferredColorScheme(.light)
         }
+        .overlay(content: {
+            Button {
+                showContent = false
+                
+            } label: {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .opacity(showContent ? 1 : 0)
+                    .ignoresSafeArea()
+            }
+        })
+        .overlay(content: {
+            VStack {
+                Text("Swipe up and down on the buildings to change topics")
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 25)
+
+                HStack{
+                    Image("Topic1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 250, height: 250)
+                        .padding(.leading, 40)
+                    Image("updown")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 80, height: 80)
+                        .padding(.leading, -60)
+                        .padding(.top, -100)
+                       
+                }
+            }
+            .opacity(showContent ? 1 : 0)
+            
+        })
     }
     
     
