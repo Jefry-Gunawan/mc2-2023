@@ -60,7 +60,7 @@ struct ScoreView: View {
                     .frame(maxWidth: .infinity)
                     .background{
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("Yellow"))
+                            .fill(Color("Dark Blue"))
                     }
             }
             .padding(.top, 15)

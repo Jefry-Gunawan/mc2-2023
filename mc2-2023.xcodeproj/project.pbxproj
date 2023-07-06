@@ -149,7 +149,6 @@
 		9758709B2A4C45BC009B1A8D /* Summary */ = {
 			isa = PBXGroup;
 			children = (
-				9758709C2A4C45C8009B1A8D /* SummaryView.swift */,
 			);
 			path = Summary;
 			sourceTree = "<group>";
@@ -165,6 +164,7 @@
 		D0F1593D2A497D2E00BE4147 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9758709C2A4C45C8009B1A8D /* SummaryView.swift */,
 				B9D95EA92A4AC7C20021B054 /* QuizView.swift */,
 				D0F1593E2A497EB100BE4147 /* ScoreView.swift */,
 				D061D49F2A4984FD00F06578 /* ScratchCardView.swift */,

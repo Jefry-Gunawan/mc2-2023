@@ -13,10 +13,7 @@ struct QuizView: View {
     @State private var currentIndex: Int = 0
     
     @State private var doneAnswering = false
-    @State private var color_1 = "black"
-    @State private var color_2 = "black"
-    @State private var color_3 = "black"
-    @State private var color_4 = "black"
+    @State private var selectedAnswer = ""
     
     struct Quiz: Identifiable {
         var id: UUID = .init()
@@ -73,26 +70,31 @@ struct QuizView: View {
         Rectangle()
             .fill(.white)
             .cornerRadius(10)
-            .overlay(alignment: .topTrailing){
+            .overlay(alignment: .topLeading){
                 HStack {
+                    
+                    Text("\(currentIndex+1) / \(quizList.count)")
+                        .fontWeight(.bold)
+                        .font(.title2)
+                        .padding(.bottom, 10)
                     Spacer()
-                    Text("\(currentIndex + 1) / \(quizList.count)")
-                        .font(.system(size: 25))
+//                    Text("\(currentIndex + 1) / \(quizList.count)")
+//                        .font(.system(size: 25))
                 }
                 .frame(width: 100)
                 .padding(.top, 25)
-                .padding(.trailing, 30)
+                .padding(.leading, 20)
             }
             .overlay(alignment: .topLeading) {
                 VStack {
                     HStack {
                         Text("Question \(currentIndex + 1)")
-                            .font(.largeTitle)
+                            .font(.title)
                             .fontWeight(.bold)
                         Spacer()
                     }
                     .padding(.horizontal)
-                    .padding(.top, 40)
+                    .padding(.top, 20)
                     .padding(.bottom, 20)
                     VStack(alignment: .leading) {
                         HStack {
@@ -106,34 +108,69 @@ struct QuizView: View {
                     .frame(width: size, height: 130)
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(quizList[currentIndex].answerOptions, id: \.self) { item in
-                            Button {
-                                
-                                //cek bener atau salah
-                                if (item == quizList[currentIndex].correctAnswer) {
-                                    print("bener")
-                                }
-                                else {
-                                    print("salah")
-                                }
-                                if currentIndex == 4 {
-                                    currentIndex = 0
-                                }
-                                else {
-                                    currentIndex += 1
-                                }
-                                
-                            } label: {
-                                HStack {
-                                    Spacer()
-                                    Text(item)
-                                        .foregroundColor(.black)
-                                    Spacer()
-                                }
-                                .padding(12)
-                                .background(Color("Light Blue"))
+                            Rectangle()
                                 .cornerRadius(10)
-                            }
+                                .frame(width: 100, height: 50)
+                                .overlay(alignment: .center) {
+                                    HStack {
+                                        Spacer()
+                                        Text(item)
+                                        Spacer()
+                                    }
+                                    .frame(width: 130, height: 50)
+                                    .padding(12)
+                                    .background(Color("Light Blue"))
+                                    .overlay {
+                                        RoundedRectangle(cornerRadius: 10)
+                                            .stroke(selectedAnswer == item ? Color("Dark Blue") : Color("Light Blue"), lineWidth: 7)
+                                    }
+                                    .cornerRadius(10)
+                                }
+                                .onTapGesture {
+                                    selectedAnswer = item
+                                }
+                                .padding(.bottom, 20)
                         }
+                    }
+                    .padding()
+                    Spacer()
+                    Button {
+                        // cek apakah user sudah memilih jawaban
+                        if (selectedAnswer != "") {
+                            // cek benar atau salah sblm next question
+                            if (selectedAnswer == quizList[currentIndex].correctAnswer) {
+                                print("benar")
+                            }
+                            else {
+                                print("salah")
+                            }
+                            
+                            if currentIndex == 4 {
+                                currentIndex = 0
+                            }
+                            else {
+                                currentIndex += 1
+                            }
+                            
+                            selectedAnswer = ""
+                        }
+                        else {
+                            
+                        }
+                        
+                    } label: {
+                        HStack {
+                            Spacer()
+                            Text("NEXT QUESTION")
+                                .frame(height: 40)
+                                .font(.body)
+                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                            Spacer()
+                        }
+                        .padding(12)
+                        .background(Color("Dark Blue"))
+                        .cornerRadius(10)
                     }
                     .padding()
                 }
