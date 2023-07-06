@@ -50,8 +50,8 @@ struct ScoreView: View {
                    .padding(.vertical)
            }
             
-            Button {
-                
+            NavigationLink {
+                SummaryView()
             } label: {
                 Text("CONTINUE")
                     .fontWeight(.semibold)
@@ -64,6 +64,7 @@ struct ScoreView: View {
                     }
             }
             .padding(.top, 15)
+            .navigationBarHidden(true)
         }
         .padding(15)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -76,6 +77,14 @@ struct ScoreView: View {
                 .fill(.ultraThinMaterial)
                 .opacity(showContent ? 1 : 0)
                 .ignoresSafeArea()
+                .onTapGesture {
+                    showContent = false
+                    
+                    withAnimation(.easeInOut(duration: 0.35).delay(0.1)){
+                        expandCard = false
+                    }
+                }
+                .transition(.opacity)
             
         })
         .overlay(content: {
@@ -95,25 +104,6 @@ struct ScoreView: View {
                 }
             }
             .padding(30)
-        })
-        .overlay(alignment: .topTrailing, content: {
-            Button {
-                withAnimation {
-                    showContent = false
-                }
-                
-                withAnimation(.easeInOut(duration: 0.35).delay(0.1)){
-                    expandCard = false
-                }
-            } label: {
-                Image(systemName: "xmark")
-                    .font(.title2)
-                    .foregroundColor(.white)
-                    .padding(15)
-            }
-            .opacity(showContent ? 1 : 0)
-
-            
         })
     }
     

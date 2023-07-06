@@ -72,7 +72,7 @@ struct ChapterView: View {
                     }
                     .padding(2)
                     
-                    NavigationLink(destination: EmptyView()) {
+                    NavigationLink(destination: QuizView()) {
                         CardView(title: "Quiz")
                     }
                     .padding(2)

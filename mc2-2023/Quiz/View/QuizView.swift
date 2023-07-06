@@ -12,6 +12,8 @@ struct QuizView: View {
     
     @State private var doneAnswering = false
     @State private var selectedAnswer = ""
+    @State private var isLastQuestion = false
+    
     
     struct Quiz: Identifiable {
         var id: UUID = .init()
@@ -36,7 +38,7 @@ struct QuizView: View {
                     ForEach(quizList.indices, id: \.self) { index in
                         if currentIndex == index {
                             QuestionView(quizList[currentIndex], geometry.size.width)
-//                                .transition(.asymmetric(insertion: .move(edge: .trailing), removal: .move(edge: .leading)))
+
                         }
                         
                     }
@@ -47,6 +49,7 @@ struct QuizView: View {
             .padding(.vertical, 50)
             .background(Color("Pale Blue"))
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
     
     func CheckAnswer(questionNumber: Int, userAnswer: String) -> String {
@@ -76,8 +79,6 @@ struct QuizView: View {
                         .font(.title2)
                         .padding(.bottom, 10)
                     Spacer()
-//                    Text("\(currentIndex + 1) / \(quizList.count)")
-//                        .font(.system(size: 25))
                 }
                 .frame(width: 100)
                 .padding(.top, 25)
@@ -132,6 +133,8 @@ struct QuizView: View {
                     }
                     .padding()
                     Spacer()
+                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
+                        .navigationBarHidden(true)
                     Button {
                         // cek apakah user sudah memilih jawaban
                         if (selectedAnswer != "") {
@@ -144,7 +147,7 @@ struct QuizView: View {
                             }
                             
                             if currentIndex == 4 {
-                                currentIndex = 0
+                                isLastQuestion = true
                             }
                             else {
                                 currentIndex += 1
