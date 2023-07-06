@@ -27,34 +27,11 @@ struct Home: View {
     @State private var timeoutTask: DispatchWorkItem?
     @State private var isFinishedPlaying: Bool = false
     
-    @State private var isShowingTooltip: Bool = false
-    
     //video seeker properties
     @GestureState private var isDragging: Bool = false
     @State private var isSeeking: Bool = false
     @State private var progress: CGFloat = 0
     @State private var lastDraggedProgress: CGFloat = 0
-    
-    struct conversation: Identifiable {
-        var id: UUID = .init()
-        var name: String
-        var convo: String
-        var vocab: String?
-        var personNumber: Int
-        var toolTip: String
-    }
-    
-    let conversationList: [conversation] = [
-        .init(name:"Budi", convo: "Hello, my name is Budi. I like Mathematics and Physics very much. How about you?", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "Hello Budi. Nice to meet you, I’m Ayu. I like English and Biology.", vocab: "", personNumber: 2, toolTip: ""),
-        .init(name: "Budi", convo: "Do you take private classes for them?", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "No, I like to study independently. I usually look for materials online. What about you?", vocab: "independently", personNumber: 2, toolTip: "independently adverb\n/ˌindəˈpendəntlē/\nmandiri\n1 in a way that is free from outside control or influence\n2 without outside help\n3 in a way that is not connected with another; individually"),
-        .init(name: "Budi", convo: "I take a private class for Maths. I get more excercise materials from the private class.", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", vocab: "", personNumber: 2, toolTip: ""),
-        .init(name: "Budi", convo: "Quisque lacinia tortor vitae enim luctus, nec tincidunt nunc sagittis.", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "Fusce viverra augue a magna aliquam, ut commodo nisi vehicula.", vocab: "", personNumber: 2, toolTip: ""),
-        .init(name: "Budi", convo: "Phasellus non libero aliquet, ultricies urna nec, rhoncus libero.", vocab: "", personNumber: 1, toolTip: "")
-    ]
 
     var body: some View {
         VStack(spacing: 10) {
@@ -91,78 +68,7 @@ struct Home: View {
                 }
             }
             .frame(width: videoPlayerSize.width, height: videoPlayerSize.height)
-            
-            ScrollView(.vertical, showsIndicators: false) {
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("School Encounter")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .padding(.bottom, 0)
-                            .padding(.horizontal, 5)
-                        Text("Video Transcript")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                            .padding(.horizontal, 5)
-                        VStack(alignment: .leading) {
-                            ForEach(conversationList) { conversation in
-                                HStack {
-                                    VStack(alignment: .leading) {
-                                        HStack {
-                                            Text(conversation.name)
-                                            Spacer()
-                                        }
-                                        .padding(.vertical, 5)
-                                        .frame(width: 60)
-                                        Spacer()
-                                    }
-                                    HStack{
-                                        if (conversation.vocab != "") {
-                                            let split = conversation.convo.split(separator: conversation.vocab ?? "")
-                                            Text(.init(split[0] + "**\(conversation.vocab ?? "nil")**" + split[1]))
-                                                .onTapGesture {
-                                                    if conversation.toolTip != "" {
-                                                        isShowingTooltip.toggle()
-                                                    }
-                                                }
-                                        }
-                                        else {
-                                            Text(conversation.convo)
-                                                .onTapGesture {
-                                                    if conversation.toolTip != "" {
-                                                        isShowingTooltip.toggle()
-                                                    }
-                                                }
-                                        }
-                                        Spacer()
-                                    }
-                                    .padding(8)
-                                    .background(conversation.personNumber == 1 ? Color("Blue") : Color("Pale Blue"))
-                                    .cornerRadius(8)
-                                    .overlay(alignment: .top) {
-                                        if conversation.toolTip != "" && isShowingTooltip {
-                                            GeometryReader { geometry in
-                                                PopOver(text: conversation.toolTip)
-                                                    .offset(y: -geometry.size.height-50)
-                                            }
-                                        }
-                                    }
-                                    .overlay(alignment: .topLeading) {
-                                        Image(systemName: "arrowtriangle.left.fill")
-                                            .font(.title2)
-                                            .offset(x: -15, y: 5)
-                                        //                                            .rotationEffect(.degrees(5))
-                                            .foregroundColor(conversation.personNumber == 1 ? Color("Blue") : Color("Pale Blue"))
-                                    }
-                                }
-                                .padding(.bottom, 5)
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 15)
-                    .padding(.bottom, 10)
-                }
-            }
+            ConversationView()
         }
         .padding(.top, safeArea.top)
         .onAppear{
@@ -363,6 +269,109 @@ struct Home_Previews: PreviewProvider {
     }
 }
 
+struct ConversationView : View {
+    
+    @State private var isShowingTooltip: Bool = false
+    struct conversation: Identifiable {
+        var id: UUID = .init()
+        var name: String
+        var convo: String
+        var vocab: String?
+        var personNumber: Int
+        var toolTip: String
+    }
+    
+    let conversationList: [conversation] = [
+        .init(name:"Budi", convo: "Hello, my name is Budi. I like Mathematics and Physics very much. How about you?", vocab: "", personNumber: 1, toolTip: ""),
+        .init(name: "Ayu", convo: "Hello Budi. Nice to meet you, I’m Ayu. I like English and Biology.", vocab: "", personNumber: 2, toolTip: ""),
+        .init(name: "Budi", convo: "Do you take private classes for them?", vocab: "", personNumber: 1, toolTip: ""),
+        .init(name: "Ayu", convo: "No, I like to study independently. I usually look for materials online. What about you?", vocab: "independently", personNumber: 2, toolTip: "independently adverb\n/ˌindəˈpendəntlē/\nmandiri\n1 in a way that is free from outside control or influence\n2 without outside help\n3 in a way that is not connected with another; individually"),
+        .init(name: "Budi", convo: "I take a private class for Maths. I get more excercise materials from the private class.", vocab: "", personNumber: 1, toolTip: ""),
+        .init(name: "Ayu", convo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", vocab: "", personNumber: 2, toolTip: ""),
+        .init(name: "Budi", convo: "Quisque lacinia tortor vitae enim luctus, nec tincidunt nunc sagittis.", vocab: "", personNumber: 1, toolTip: ""),
+        .init(name: "Ayu", convo: "Fusce viverra augue a magna aliquam, ut commodo nisi vehicula.", vocab: "", personNumber: 2, toolTip: ""),
+        .init(name: "Budi", convo: "Phasellus non libero aliquet, ultricies urna nec, rhoncus libero.", vocab: "", personNumber: 1, toolTip: "")
+    ]
+    
+    var body : some View {
+        VStack{
+            ScrollView(.vertical, showsIndicators: false) {
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("School Encounter")
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
+                            .padding(.bottom, 0)
+                            .padding(.horizontal, 5)
+                        Text("Video Transcript")
+                            .font(.title2)
+                            .fontWeight(.semibold)
+                            .padding(.horizontal, 5)
+                        VStack(alignment: .leading) {
+                            ForEach(conversationList) { conversation in
+                                HStack {
+                                    VStack(alignment: .leading) {
+                                        HStack {
+                                            Text(conversation.name)
+                                            Spacer()
+                                        }
+                                        .padding(.vertical, 5)
+                                        .frame(width: 60)
+                                        Spacer()
+                                    }
+                                    HStack{
+                                        if (conversation.vocab != "") {
+                                            let split = conversation.convo.split(separator: conversation.vocab ?? "")
+                                            Text(.init(split[0] + "**\(conversation.vocab ?? "nil")**" + split[1]))
+                                                .onTapGesture {
+                                                    if conversation.toolTip != "" {
+                                                        isShowingTooltip.toggle()
+                                                    }
+                                                }
+                                        }
+                                        else {
+                                            Text(conversation.convo)
+                                                .onTapGesture {
+                                                    if conversation.toolTip != "" {
+                                                        isShowingTooltip.toggle()
+                                                    }
+                                                }
+                                        }
+                                        Spacer()
+                                    }
+                                    .padding(8)
+                                    .background(conversation.personNumber == 1 ? Color("Blue") : Color("Pale Blue"))
+                                    .cornerRadius(10)
+                                    .overlay(alignment: .top) {
+                                        if conversation.toolTip != "" && isShowingTooltip {
+                                            GeometryReader { geometry in
+                                                PopOver(text: conversation.toolTip)
+                                                    .offset(y: -geometry.size.height-50)
+                                            }
+                                        }
+                                    }
+                                    .overlay(alignment: .topLeading) {
+                                        Image(systemName: "arrowtriangle.left.fill")
+                                            .font(.title2)
+                                            .offset(x: -15, y: 5)
+                                        //                                            .rotationEffect(.degrees(5))
+                                            .foregroundColor(conversation.personNumber == 1 ? Color("Blue") : Color("Pale Blue"))
+                                    }
+                                }
+                                .padding(.bottom, 5)
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 15)
+                    .padding(.bottom, 10)
+                }
+            }
+        }
+    }
+}
+
+
+
 struct PopOver : View {
     var text: String
     @State var size: CGSize = .zero
@@ -377,7 +386,7 @@ struct PopOver : View {
         .frame(maxHeight: 180)
         .fixedSize(horizontal: false, vertical: true)
         .background(Color("Light Yellow"))
-        .cornerRadius(8)
+        .cornerRadius(10)
         .shadow(radius: 5)
         .overlay(alignment: .bottomLeading) {
             Image(systemName: "arrowtriangle.down.fill")
