@@ -11,6 +11,7 @@ struct ScoreView: View {
     @State var expandCard: Bool = false
     @State var showContent: Bool = false
     @State var isPass: Bool = false
+    @State var isScratched: Bool = false
     @Namespace var animation
     var body: some View {
         VStack{
@@ -28,43 +29,45 @@ struct ScoreView: View {
             CardView()
             
             //Footer Content
-            if isPass {
-               Text("Congratulations!")
-                   .font(.system(size: 35, weight: .bold))
-                   .foregroundColor(Color("Dark Blue"))
-               
-               Text("You've managed to pass the quiz and completed this chapter! To reveal your score, you can scratch the card above.")
-                   .foregroundColor(Color("Dark Blue"))
-                   .kerning(1.02)
-                   .multilineTextAlignment(.center)
-                   .padding(.vertical)
-           } else {
-               Text("Oh No!")
-                   .font(.system(size: 35, weight: .bold))
-                   .foregroundColor(Color("Dark Blue"))
-               
-               Text("Unfortunately, you didn't pass the quiz. It seems like you have not understand our material yet. Scratch the card above to know how you did on this quiz.")
-                   .foregroundColor(Color("Dark Blue"))
-                   .kerning(1.02)
-                   .multilineTextAlignment(.center)
-                   .padding(.vertical)
-           }
-            
-            NavigationLink {
-                SummaryView()
-            } label: {
-                Text("CONTINUE")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 17)
-                    .frame(maxWidth: .infinity)
-                    .background{
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("Dark Blue"))
-                    }
+            if isScratched{
+                if isPass {
+                   Text("Congratulations!")
+                       .font(.system(size: 35, weight: .bold))
+                       .foregroundColor(Color("Dark Blue"))
+                   
+                   Text("You've managed to pass the quiz and completed this chapter! To reveal your score, you can scratch the card above.")
+                       .foregroundColor(Color("Dark Blue"))
+                       .kerning(1.02)
+                       .multilineTextAlignment(.center)
+                       .padding(.vertical)
+               } else {
+                   Text("Oh No!")
+                       .font(.system(size: 35, weight: .bold))
+                       .foregroundColor(Color("Dark Blue"))
+                   
+                   Text("Unfortunately, you didn't pass the quiz. It seems like you have not understand our material yet. Scratch the card above to know how you did on this quiz.")
+                       .foregroundColor(Color("Dark Blue"))
+                       .kerning(1.02)
+                       .multilineTextAlignment(.center)
+                       .padding(.vertical)
+               }
+                
+                NavigationLink {
+                    SummaryView()
+                } label: {
+                    Text("CONTINUE")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                        .padding(.vertical, 17)
+                        .frame(maxWidth: .infinity)
+                        .background{
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color("Dark Blue"))
+                        }
+                }
+                .padding(.top, 15)
+                .navigationBarHidden(true)
             }
-            .padding(.top, 15)
-            .navigationBarHidden(true)
         }
         .padding(15)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -79,6 +82,7 @@ struct ScoreView: View {
                 .ignoresSafeArea()
                 .onTapGesture {
                     showContent = false
+                    isScratched = true
                     
                     withAnimation(.easeInOut(duration: 0.35).delay(0.1)){
                         expandCard = false
@@ -120,7 +124,7 @@ struct ScoreView: View {
                 }
                 
             } overlay: {
-                Image("cardbg")
+                Image("scratch")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: size.width * 0.95, height: size.width * 0.95, alignment: .topLeading)
