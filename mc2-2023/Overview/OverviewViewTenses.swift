@@ -255,6 +255,8 @@ struct OverviewViewTenses: View {
                             .padding(.bottom, 10)
                         
                     }
+                    .background(.white)
+                    .cornerRadius(10)
                 }
             }
             
