@@ -25,8 +25,11 @@
 		975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074ED2A4976A900341011 /* OverviewViewTenses.swift */; };
 		975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074EF2A4976BB00341011 /* OverviewViewVocab.swift */; };
 		9758709F2A4EAE5D009B1A8D /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9758709E2A4EAE5D009B1A8D /* OverviewView.swift */; };
-		9760B66B2A58165E00F5E380 /* VocabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9760B66A2A58165E00F5E380 /* VocabView.swift */; };
-		97A124272A580677004328F1 /* TensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A124262A580677004328F1 /* TensesView.swift */; };
+		97C9C95A2A5882B60060C33C /* PositiveFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9C9592A5882B60060C33C /* PositiveFormView.swift */; };
+		97C9C95C2A5883330060C33C /* NegativeFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9C95B2A5883330060C33C /* NegativeFormView.swift */; };
+		97C9C95E2A58836A0060C33C /* QuestionFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9C95D2A58836A0060C33C /* QuestionFormView.swift */; };
+		97C9C9602A5883EF0060C33C /* UsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9C95F2A5883EF0060C33C /* UsageView.swift */; };
+		97C9C9622A5886EE0060C33C /* NewVocabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97C9C9612A5886EE0060C33C /* NewVocabView.swift */; };
 		B9D4B3E42A44314400989FC7 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B9D4B3E32A44314400989FC7 /* video.mp4 */; };
 		B9D4B3EA2A44326500989FC7 /* VideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3E92A44326500989FC7 /* VideoView.swift */; };
 		B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3EB2A44327200989FC7 /* Home.swift */; };
@@ -80,8 +83,11 @@
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
 		9758709E2A4EAE5D009B1A8D /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
-		9760B66A2A58165E00F5E380 /* VocabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabView.swift; sourceTree = "<group>"; };
-		97A124262A580677004328F1 /* TensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensesView.swift; sourceTree = "<group>"; };
+		97C9C9592A5882B60060C33C /* PositiveFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositiveFormView.swift; sourceTree = "<group>"; };
+		97C9C95B2A5883330060C33C /* NegativeFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NegativeFormView.swift; sourceTree = "<group>"; };
+		97C9C95D2A58836A0060C33C /* QuestionFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionFormView.swift; sourceTree = "<group>"; };
+		97C9C95F2A5883EF0060C33C /* UsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageView.swift; sourceTree = "<group>"; };
+		97C9C9612A5886EE0060C33C /* NewVocabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVocabView.swift; sourceTree = "<group>"; };
 		B9D4B3E32A44314400989FC7 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		B9D4B3E92A44326500989FC7 /* VideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoView.swift; sourceTree = "<group>"; };
 		B9D4B3EB2A44327200989FC7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -201,8 +207,11 @@
 				975074ED2A4976A900341011 /* OverviewViewTenses.swift */,
 				975074EF2A4976BB00341011 /* OverviewViewVocab.swift */,
 				9758709E2A4EAE5D009B1A8D /* OverviewView.swift */,
-				97A124262A580677004328F1 /* TensesView.swift */,
-				9760B66A2A58165E00F5E380 /* VocabView.swift */,
+				97C9C9592A5882B60060C33C /* PositiveFormView.swift */,
+				97C9C95B2A5883330060C33C /* NegativeFormView.swift */,
+				97C9C95D2A58836A0060C33C /* QuestionFormView.swift */,
+				97C9C95F2A5883EF0060C33C /* UsageView.swift */,
+				97C9C9612A5886EE0060C33C /* NewVocabView.swift */,
 			);
 			name = Overview;
 			path = "mc2-2023/Overview";
@@ -397,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9D4B3EA2A44326500989FC7 /* VideoView.swift in Sources */,
+				97C9C95E2A58836A0060C33C /* QuestionFormView.swift in Sources */,
 				D0F1592B2A496D0900BE4147 /* FontManager.swift in Sources */,
 				D0F1593A2A496F8600BE4147 /* Topic.swift in Sources */,
 				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
@@ -404,17 +414,19 @@
 				D0F159322A496D9800BE4147 /* TopicsView.swift in Sources */,
 				B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */,
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
-				9760B66B2A58165E00F5E380 /* VocabView.swift in Sources */,
+				97C9C9602A5883EF0060C33C /* UsageView.swift in Sources */,
 				940A35192A44290B00274414 /* ChapterListView.swift in Sources */,
 				74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */,
+				97C9C95A2A5882B60060C33C /* PositiveFormView.swift in Sources */,
 				94582FA82A42E59B00F8B131 /* mc2_2023.xcdatamodeld in Sources */,
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				940A351B2A4440F100274414 /* ProgressBar.swift in Sources */,
+				97C9C95C2A5883330060C33C /* NegativeFormView.swift in Sources */,
 				B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
 				975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */,
 				9758709F2A4EAE5D009B1A8D /* OverviewView.swift in Sources */,
-				97A124272A580677004328F1 /* TensesView.swift in Sources */,
+				97C9C9622A5886EE0060C33C /* NewVocabView.swift in Sources */,
 				975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -30,9 +30,9 @@ struct OverviewView: View {
                 .padding(.horizontal, 10)
                 
                 if currentSection == "Grammar" {
-                    TensesView()
+                    OverviewViewTenses()
                 } else if currentSection == "Vocabulary" {
-                    VocabView()
+                    OverviewViewVocab()
                 }
             }
             .background(Color("Pale Blue"))
