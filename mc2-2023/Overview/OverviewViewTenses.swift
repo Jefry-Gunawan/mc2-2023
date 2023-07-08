@@ -24,13 +24,7 @@ struct OverviewViewTenses: View {
                                       .padding(.top, 20)
                               }
                               
-                              // MARK: Positive Form
-                              PositiveFormView()
-                              // MARK: Negative Form
-                              NegativeFormView()
-                              
-                              //MARK: Question Form
-                              QuestionFormView()
+                              StructureView()
                               
                               
                               //MARK: Usage
