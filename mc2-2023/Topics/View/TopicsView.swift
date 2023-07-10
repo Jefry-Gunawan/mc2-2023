@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import TabularData
 
 struct TopicsView: View {
     @State var showContent: Bool = true
@@ -13,6 +14,7 @@ struct TopicsView: View {
     //Gesture Properties
     @State var offsetY: CGFloat = 0
     @State var currentIndex: CGFloat = 0
+        
     var body: some View {
         NavigationStack {
             GeometryReader{
@@ -145,14 +147,9 @@ struct TopicsView: View {
                 HStack(spacing: 0) {
                     ForEach(topicList){topic in
                         VStack(spacing: 10) {
-                            Text(topic.topicTitle)
+                            Text(topic.topicName)
                                 .font(.title.bold())
                                 .multilineTextAlignment(.center)
-                                .foregroundColor(Color("White"))
-                            
-                            Text(topic.difficulty)
-                                .font(.callout)
-                                .padding(.top, -9)
                                 .foregroundColor(Color("White"))
                             
                             NavigationLink(destination: ChapterListView()) {

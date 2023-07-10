@@ -6,7 +6,7 @@ struct ChapterView: View {
                 VStack{
                     Rectangle()
                         .fill(Color("Blue"))
-                        .frame(width: .infinity, height: 200)
+                        .frame(maxWidth: .infinity, maxHeight: 200)
                         .padding(EdgeInsets(.init(top: 25, leading: -10, bottom: -10, trailing: -10)))
                     
                     HStack(alignment: .top){
@@ -72,7 +72,7 @@ struct ChapterView: View {
                     }
                     .padding(2)
                     
-                    NavigationLink(destination: QuizView()) {
+                    NavigationLink(destination: SummaryView()) {
                         CardView(title: "Quiz")
                     }
                     .padding(2)

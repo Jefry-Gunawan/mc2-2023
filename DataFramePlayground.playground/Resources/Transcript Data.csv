@@ -1,0 +1,145 @@
+id;name;conversation;tooltip
+1;Ashlie;Accident and Emergency. This is what we need.;
+1;Stephen;Right. Because this is an emergency.;
+1;Ashlie;"No, but it is an accident. Come on, you wait here, Poppy. Come on, then. Let’s go.
+Hi!";
+1;Receptionist ;Hello. Can I help you?;
+1;Stephen;Yes. I think I’ve broken my ankle and my elbow. I think I need an X-ray.;ankle
+1;Receptionist ;Can I have your name, please?;
+1;Ashlie;It’s Walker. Stephen Walker.;
+1;Receptionist ;OK. Thank you. Could you wait over there, please, and someone will see you as soon as they can.;
+1;Ashlie;Great, thanks.;
+1;Nurse;Mr Walker?;
+1;Stephen;Yes.;
+1;Nurse;The doctor’s ready to see you now.;
+1;Stephen;Great.;
+1;Ashlie;Good luck.;
+1;Doctor;OK, Mr Walker. We’re going to X-ray your elbow and your ankle. But first the nurse just needs to do some tests.;
+1;Nurse;OK, can I just have a look at your tongue, please. Just open your mouth.;
+1;Stephen;Yes, but it’s my ankle.;
+1;Nurse;Yes, but we just need a quick examination, Mr Walker. If you open wide.;examination
+1;Nurse;Now say ‘ahhhh’.;
+1;Stephen;Ahhhhhh.;
+1;Nurse;Yes, very good. We’re just going to have a quick listen. If you could turn round for me.;
+1;Stephen;My elbow really hurts.;
+1;Nurse;That’s nice. Very good. Almost finished. If you could roll up your sleeve, please. ;roll up
+1;Stephen;Ah, my elbow…;
+1;Nurse;No, I just need to take your blood pressure.;
+1;Nurse;Yeah, that seems normal. Right, you say it’s your ankle then, is it?;
+1;Stephen;Yes. And my elbow. I fell off my skateboard, you see…;
+1;Doctor;OK. Well, let’s look at your elbow first, shall we? Can you tell me where it hurts?;
+1;Stephen;Yeah, just here.;
+1;Doctor;And does it hurt when I do this?;
+1;Stephen;Arghh!;
+1;Doctor;OK. And how about your ankle? OK. Is that painful?;
+1;Stephen;Arghh! Yes!;
+1;Doctor;Well, I suppose we’d better get an X-ray. Here, take this down to the X-ray unit.;
+1;Nurse;Are you lost?;
+1;Ashlie;We’re looking for the X-Ray Unit.;
+1;Nurse;Yeah, follow me.;
+1;Ashlie;Great. Thank you.;
+1;Stephen;Do you think my ankle’s broken, Ash?;
+1;Ashlie;I don’t know, Stephen. I’m not a doctor.;
+1;Stephen;If you hadn’t let Poppy run away…;
+1;Ashlie;Stephen, it’s not my fault you fell over. Mr Clumsy.;
+1;Stephen;It might be months before I can walk properly again.;
+1;Ashlie;Oh, Stephen.;
+1;Stephen;You’ll have to look after me.;
+1;X-Ray Technician;Your form, please?;
+1;Doctor;Well, I’m pleased to tell you that neither your ankle nor your elbow is broken.;
+1;Stephen;Neither of them? Not even a little bit?;
+1;Doctor;Neither of them. They’re both bruised, but not broken. You’ll need to rest them for a couple of weeks. So no skateboarding. I’ll give you a prescription for some painkillers. Take one of these three times a day with food.;bruised
+1;Ashlie;"Thank you, Doctor. Come on then, Stephen. Let’s get you out of here, eh? No way. Come on you.
+Come on. Let’s get you home, eh?";
+2;Rob;How are you feeling now, Stephen?;
+2;Stephen;I’m okay now, thanks Rob.;
+2;Rob;I see Ashlie brought you some grapes. We often take grapes to people in hospital. I wonder if that's the same everywhere.;
+2;Stephen;I’m sure you can tell us.;
+2;Rob;Anyway, let’s talk about how Stephen ended up in the hospital. Have a look at this.;
+2;Stephen;Do you think my ankle’s broken, Ash?;
+2;Ashlie;I don’t know Stephen, I’m not a doctor.;
+2;Stephen;If you hadn’t let Poppy run away…;
+2;Rob;Let’s look at that last bit. If you hadn’t let Poppy run away. How would you finish that sentence, Stephen?;
+2;Stephen;Well, I was going to say, If you hadn’t let Poppy run away, I wouldn’t have hurt my ankle.;
+2;Rob;Okay. That’s what we call a conditional sentence. If Ashlie hadn’t let Poppy run away, Stephen wouldn’t have hurt his ankle. Did Ashlie let Poppy run away?;
+2;Stephen;Yes, she did.;
+2;Rob;Right, she let Poppy run away, and because she let Poppy run away, Stephen hurt his ankle. That’s what happened.;
+2;Stephen;Okay;
+2;Rob;Can you think of another example of this kind of conditional sentence?;
+2;Stephen;Hmm.. If I’d seen Poppy, I wouldn’t have fallen over.;
+2;Rob;Yeah. If you’d seen Poppy, you wouldn’t have fallen over. Did you see Poppy?;
+2;Stephen;No, of course not.;
+2;Rob;You didn’t see her, but if you had seen her, you wouldn’t have fallen over. You see?;
+2;Stephen;Yeah.;
+2;Rob;So, it’s a conditional sentence about what didn’t happen in the past. Now, which two parts of your body did you injure, Stephen?;
+2;Stephen;My elbow, and my ankle.;
+2;Rob;But in the hospital, they did some other tests. Let’s have a look.;
+2;Nurse;Roll up your sleeve, please.;
+2;Stephen;Ah, my elbow.;
+2;Nurse;No, I just need to take your blood pressure. Yeah, that seems normal.;blood pressure
+2;Rob;So the nurse took your blood pressure there.;
+2;X-Ray Technician;Your form, please?;
+2;Rob;And then they took an X-ray.;X-Ray
+2;Doctor;I’ll give you a prescription for some painkillers. Take one of these 3 times a day with food.;prescription 
+2;Rob;And the doctor gave you a prescription for some painkillers. But your ankle and your elbow weren’t broken, were they?;painkillers
+2;Stephen;No, they weren’t;
+2;Rob;See what the doctor said.;
+2;Doctor;Well, I’m pleased to tell you that neither your ankle nor your elbow was broken.;
+2;Stephen;Neither of them? Not even a little bit?;
+2;Doctor;Neither of them.;
+2;Rob;Neither your ankle, nor your elbow. Why neither and nor?;
+2;Stephen;Because it’s negative.;
+2;Rob;That’s right. We know “either or” for a choice of 2 things. You can either have a blue one or a red one. But it’s “neither nor” for negative things. It’s neither hot nor cold. It’s in between.;
+2;Stephen;But is it ˈnēT͟Hər or ˈnīT͟Hər. What’s the correct pronunciation?;
+2;Rob;ēT͟Hər, ˈīT͟Hər. ˈnēT͟Hər, ˈnīT͟Hər.;
+2;Stephen;So, they’re both okay?;
+2;Rob;Yea.;
+2;Stephen;Okay, thanks Rob.;
+3;Ashlie;What’s the time? She should be here by now.;
+3;Stephen;It’s five past nine. She’ll be here in a minute.;
+3;Ashlie;We’re at Paddington Station with our friend Tristan.;
+3;Tristan;Hi.;
+3;Ashlie;And we’re waiting for Tristan’s friend Jay Marie to arrive from the airport. She’s just flown in from the States.;
+3;Tristan;Here she is! Hi, Jay Marie!;
+3;Jay Marie;Hi!;
+3;Tristan;Stephen, Ashlie, this is Jay Marie.;
+3;Stephen;Hello.;
+3;Jay Marie;Hi! I’ve heard so much about you guys. It’s great to meet you. It’s so awesome to be in London.;
+3;Ashlie;Ah, great. So are you guys ready for some sightseeing?;sightsee
+3;Jay Marie;Sure. Sounds cool.;
+3;Stephen;OK – let’s drop off your bags, and we’re ready to go.;
+3;Jay Marie;Cool!;
+3;Ashlie;OK, guys. So we’re going to take a double-decker tour around the city.;double-decker
+3;Jay Marie;A what?;
+3;Ashlie;A double-decker. You know, a bus with two floors. It should be here any minute now.;
+3;Stephen;Ah!;
+3;Jay Marie;Oh! Oh no, Stephen! I’m so sorry. All over your pants.;
+3;Stephen;My pants? No, no, no. It just went on my trousers. I’m fine.;trousers
+3;Ashlie;Oh, look. I think that must be our bus coming.;
+3;Jay Marie;The one without a roof?;
+3;Ashlie;Yeah, so we can see more.;
+3;Jay Marie;Oh, great!;
+3;Stephen;Come on, let’s jump on.;
+3;Tour Guide;All aboard!;aboard
+3;Tour Guide;Ladies and gentlemen, to your left is St Paul’s Cathedral...;
+3;Jay Marie;I didn’t catch any of that. What did he say?;
+3;Tristan;I think he’s talking about that building over there.;
+3;Tour Guide;It was on this site that the original St Paul’s was destroyed...;
+3;Jay Marie;No. I didn’t get a single word of that.;
+3;Stephen;Look, tell you what. I’ve got my guide book here. Why don’t I take over as your personal guide?;
+3;Jay Marie;Well, OK!;
+3;Stephen;OK, let’s see. Piccadilly Circus. Did you know that Piccadilly Circus was built in 1819 to connect Regent Street and the major shopping street of Piccadilly? The fountain with its famous statue of the Greek god Eros was added in 1893. Piccadilly Circus...;
+3;Ashlie;Oh Stephen, that is so boring! Listen, I’ve just looked it up on my phone and here is an interesting fact for you. Did you know that British people say, ‘It’s like Piccadilly Circus’ to mean that somewhere is busy and crowded and full of people?;
+3;Jay Marie;Really?;
+3;Stephen;Err, Ashlie. I’ve got the guide book. A book for guides!;
+3;Ashlie;Whatever, Stephen.;
+3;Stephen;Did you know that Tower Bridge was built between 1886 and...;
+3;Ashlie;And you know that song ‘London Bridge is falling down, falling down’? Well, most people think it’s about this bridge, but actually it’s about another bridge.;
+3;Stephen;And it was painted blue to match the colour of the Queen’s eyes.;
+3;Stephen;Trafalgar Square. Did you know the column is 51.5 metres tall from the ground to the tip of the Admiral's hat? It was built between 1840…;Admiral
+3;Ashlie;Did you know that one of the statues in the Square changes once a year to a new piece of art? At the moment, it’s that big blue one over there.;
+3;Stephen;All right. That’s it! Give me that phone.;
+3;Ashlie;Give me that book!;
+3;Stephen;Jay Marie! Jay Marie! Who do you want to be your guide? Me with my expert guide book or Ashlie with her stupid internet facts?;
+3;Jay Marie;Huh? Well I was just listening to the audio tour. Sorry guys!;
+3;Stephen;What? Jay Marie!;

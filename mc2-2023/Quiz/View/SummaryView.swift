@@ -9,6 +9,10 @@ import SwiftUI
 
 struct SummaryView: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
+    @State private var showScoreModal = true
+    
     struct Answers: Identifiable {
         var id: UUID = .init()
         var answer: String
@@ -43,92 +47,97 @@ struct SummaryView: View {
     ]
     
     var body: some View {
-        VStack(alignment: .leading){
-            Text("Summary")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-            ScrollView(.vertical){
-                ForEach(quizList.indices, id: \.self) { index in
-                    VStack(alignment: .leading) {
-                        Text("\(index+1) / \(quizList.count)")
-                            .fontWeight(.bold)
-                            .font(.title2)
-                            .padding(.bottom, 10)
-                        Text(quizList[index].question)
-                        //                                        .font(.headline)
-                            .font(.title2)
-                            .padding(.bottom, 20)
-                        LazyVGrid(columns: layout, spacing: 10) {
-                            ForEach(quizList[index].answerOptions.indices) { idx in
-                                Rectangle()
-                                    .cornerRadius(10)
-                                    .frame(width: 100, height: 50)
-                                    .overlay(alignment: .center) {
-                                        HStack {
-                                            Spacer()
-                                            Text(quizList[index].answerOptions[idx])
-                                            Spacer()
-                                        }
-                                        .frame(width: 130, height: 50)
-                                        .padding(12)
-                                        .background(Color("Light Blue"))
-                                        .overlay {
-                                            RoundedRectangle(cornerRadius: 10)
-                                                .stroke((quizList[index].correctAnswer == quizList[index].answerOptions[idx]) ? Color.green :
-                                                            (userAnswer[index].answer == quizList[index].answerOptions[idx] ? Color.red : Color("Light Blue")), lineWidth: 7)
-                                        }
+        if showScoreModal {
+            ScoreView(showScoreModal: $showScoreModal)
+        } else {
+            VStack(alignment: .leading){
+                Text("Summary")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                ScrollView(.vertical){
+                    ForEach(quizList.indices, id: \.self) { index in
+                        VStack(alignment: .leading) {
+                            Text("\(index+1) / \(quizList.count)")
+                                .fontWeight(.bold)
+                                .font(.title2)
+                                .padding(.bottom, 10)
+                            Text(quizList[index].question)
+                            //                                        .font(.headline)
+                                .font(.title2)
+                                .padding(.bottom, 20)
+                            LazyVGrid(columns: layout, spacing: 10) {
+                                ForEach(quizList[index].answerOptions.indices) { idx in
+                                    Rectangle()
                                         .cornerRadius(10)
-                                    }
-                                    .padding(.bottom, 20)
+                                        .frame(width: 100, height: 50)
+                                        .overlay(alignment: .center) {
+                                            HStack {
+                                                Spacer()
+                                                Text(quizList[index].answerOptions[idx])
+                                                Spacer()
+                                            }
+                                            .frame(width: 130, height: 50)
+                                            .padding(12)
+                                            .background(Color("Light Blue"))
+                                            .overlay {
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .stroke((quizList[index].correctAnswer == quizList[index].answerOptions[idx]) ? Color.green :
+                                                                (userAnswer[index].answer == quizList[index].answerOptions[idx] ? Color.red : Color("Light Blue")), lineWidth: 7)
+                                            }
+                                            .cornerRadius(10)
+                                        }
+                                        .padding(.bottom, 20)
+                                }
+                            }
+                            VStack {
+                                Text("The answer is AAA because Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc erat neque, feugiat nec ligula eu, tempor suscipit lectus.")
                             }
                         }
-                        VStack {
-                            Text("The answer is AAA because Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc erat neque, feugiat nec ligula eu, tempor suscipit lectus.")
-                        }
+                        .padding(.horizontal, 20)
+                        .padding(.vertical, 20)
+                        .background(.white)
+                        .cornerRadius(20)
+                        .padding(.bottom,5)
+                        
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 20)
-                    .background(.white)
-                    .cornerRadius(20)
-                    .padding(.bottom,5)
                     
-                }
-                
-                NavigationLink {
-                    ChapterListView()
-                } label: {
-                    Text("CLOSE")
-                        .frame(width: 360, height: 40)
-                        .font(.body)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(Color("Dark Blue"))
-                }
-                .frame(width: 340, height: 50)
-                .cornerRadius(10)
-                .navigationBarHidden(true)
+    //                NavigationLink {
+    //                    ChapterListView()
+    //                } label: {
+    //                    Text("CLOSE")
+    //                        .frame(width: 360, height: 40)
+    //                        .font(.body)
+    //                        .fontWeight(.bold)
+    //                        .foregroundColor(.white)
+    //                        .padding()
+    //                        .background(Color("Dark Blue"))
+    //                }
+    //                .frame(width: 340, height: 50)
+    //                .cornerRadius(10)
+    //                .navigationBarHidden(true)
 
-                
-//                //BUTTON CLOSE
-//                Button(action: {
-//
-//                }) {
-//                    Text("CLOSE")
-//                        .frame(width: 360, height: 40)
-//                        .font(.body)
-//                        .fontWeight(.bold)
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .background(Color("Dark Blue"))
-//
-//                }
-//                .frame(width: 340, height: 50)
-//                .cornerRadius(10)
+                    
+                    //BUTTON CLOSE
+                    Button(action: {
+                        presentationMode.wrappedValue.dismiss()
+                    }) {
+                        Text("CLOSE")
+                            .frame(width: 360, height: 40)
+                            .font(.body)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Color("Dark Blue"))
+
+                    }
+                    .frame(width: 340, height: 50)
+                    .cornerRadius(10)
+                }
             }
+            .padding(.horizontal, 20)
+            .background(Color("Pale Blue"))
+            .navigationBarHidden(true)
         }
-        .padding(.horizontal, 20)
-        .background(Color("Pale Blue"))
     }
 }
 
