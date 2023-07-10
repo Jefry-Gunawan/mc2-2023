@@ -24,6 +24,8 @@
 		94582FBC2A42E59B00F8B131 /* mc2_2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */; };
 		94582FBE2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */; };
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
+		9468ECD92A5C00C100B860FB /* Topic Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9468ECD82A5C00C100B860FB /* Topic Data.csv */; };
+		9468ECDD2A5C00FB00B860FB /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468ECDC2A5C00FB00B860FB /* TopicData.swift */; };
 		9471A3CD2A54241600D512BB /* SpeakingTextVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9471A3CC2A54241600D512BB /* SpeakingTextVariable.swift */; };
 		975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074ED2A4976A900341011 /* OverviewViewTenses.swift */; };
 		975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975074EF2A4976BB00341011 /* OverviewViewVocab.swift */; };
@@ -88,6 +90,8 @@
 		94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITests.swift; sourceTree = "<group>"; };
 		94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9468ECD82A5C00C100B860FB /* Topic Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Topic Data.csv"; sourceTree = "<group>"; };
+		9468ECDC2A5C00FB00B860FB /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
 		9471A3CC2A54241600D512BB /* SpeakingTextVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingTextVariable.swift; sourceTree = "<group>"; };
 		975074ED2A4976A900341011 /* OverviewViewTenses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewTenses.swift; sourceTree = "<group>"; };
 		975074EF2A4976BB00341011 /* OverviewViewVocab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewViewVocab.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		94582F9A2A42E59A00F8B131 /* mc2-2023 */ = {
 			isa = PBXGroup;
 			children = (
+				9468ECD72A5C00A500B860FB /* Data Files */,
 				D0F159202A496CD900BE4147 /* Font */,
 				B9D4B3E52A44319700989FC7 /* Video */,
 				97BCF1542A442E92008A79F6 /* Overview */,
@@ -223,6 +228,31 @@
 				94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */,
 			);
 			path = "mc2-2023UITests";
+			sourceTree = "<group>";
+		};
+		9468ECD72A5C00A500B860FB /* Data Files */ = {
+			isa = PBXGroup;
+			children = (
+				9468ECDB2A5C00E200B860FB /* Script */,
+				9468ECDA2A5C00D100B860FB /* Files */,
+			);
+			path = "Data Files";
+			sourceTree = "<group>";
+		};
+		9468ECDA2A5C00D100B860FB /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				9468ECD82A5C00C100B860FB /* Topic Data.csv */,
+			);
+			path = Files;
+			sourceTree = "<group>";
+		};
+		9468ECDB2A5C00E200B860FB /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				9468ECDC2A5C00FB00B860FB /* TopicData.swift */,
+			);
+			path = Script;
 			sourceTree = "<group>";
 		};
 		97BCF1542A442E92008A79F6 /* Overview */ = {
@@ -410,6 +440,7 @@
 				B9D4B3E42A44314400989FC7 /* video.mp4 in Resources */,
 				94582FA32A42E59B00F8B131 /* Preview Assets.xcassets in Resources */,
 				D0F159272A496D0900BE4147 /* Lora-Bold.ttf in Resources */,
+				9468ECD92A5C00C100B860FB /* Topic Data.csv in Resources */,
 				D0F1592A2A496D0900BE4147 /* Poppins-Black.ttf in Resources */,
 				D0F159292A496D0900BE4147 /* Poppins-Regular.ttf in Resources */,
 				94582FCB2A42E5E700F8B131 /* .gitignore in Resources */,
@@ -445,6 +476,7 @@
 				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
 				74FCEBF12A44717B006D4877 /* CardView.swift in Sources */,
 				D0F159322A496D9800BE4147 /* TopicsView.swift in Sources */,
+				9468ECDD2A5C00FB00B860FB /* TopicData.swift in Sources */,
 				9471A3CD2A54241600D512BB /* SpeakingTextVariable.swift in Sources */,
 				B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */,
 				94582FA52A42E59B00F8B131 /* Persistence.swift in Sources */,
