@@ -11,101 +11,115 @@ struct ScoreView: View {
     @State var expandCard: Bool = false
     @State var showContent: Bool = false
     @State var isPass: Bool = false
+    @State var isScratched: Bool = false
     @Namespace var animation
+    
+    @Binding var showScoreModal: Bool
+    
+    @State var showQuizModal: Bool = true
+    
     var body: some View {
-        VStack{
-            //Header
-            HStack{
+        if showQuizModal {
+            QuizView(showQuizModal: $showQuizModal)
+        } else {
+            VStack{
+                //Header
                 HStack{
-                    Image(systemName: "medal.fill")
-                    Text("Result")
-                }
-                .font(.title.bold())
-                .foregroundColor(Color("Dark Blue"))
-                Spacer()
-            }
-            
-            CardView()
-            
-            //Footer Content
-            if isPass {
-               Text("Congratulations!")
-                   .font(.system(size: 35, weight: .bold))
-                   .foregroundColor(Color("Dark Blue"))
-               
-               Text("You've managed to pass the quiz and completed this chapter! To reveal your score, you can scratch the card above.")
-                   .foregroundColor(Color("Dark Blue"))
-                   .kerning(1.02)
-                   .multilineTextAlignment(.center)
-                   .padding(.vertical)
-           } else {
-               Text("Oh No!")
-                   .font(.system(size: 35, weight: .bold))
-                   .foregroundColor(Color("Dark Blue"))
-               
-               Text("Unfortunately, you didn't pass the quiz. It seems like you have not understand our material yet. Scratch the card above to know how you did on this quiz.")
-                   .foregroundColor(Color("Dark Blue"))
-                   .kerning(1.02)
-                   .multilineTextAlignment(.center)
-                   .padding(.vertical)
-           }
-            
-            NavigationLink {
-                SummaryView()
-            } label: {
-                Text("CONTINUE")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .padding(.vertical, 17)
-                    .frame(maxWidth: .infinity)
-                    .background{
-                        RoundedRectangle(cornerRadius: 10)
-                            .fill(Color("Dark Blue"))
+                    HStack{
+                        Image(systemName: "medal.fill")
+                        Text("Result")
                     }
-            }
-            .padding(.top, 15)
-            .navigationBarHidden(true)
-        }
-        .padding(15)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .background{
-            Color("Pale Blue")
-                .ignoresSafeArea()
-        }
-        .overlay(content: {
-            Rectangle()
-                .fill(.ultraThinMaterial)
-                .opacity(showContent ? 1 : 0)
-                .ignoresSafeArea()
-                .onTapGesture {
-                    showContent = false
-                    
-                    withAnimation(.easeInOut(duration: 0.35).delay(0.1)){
-                        expandCard = false
-                    }
+                    .font(.title.bold())
+                    .foregroundColor(Color("Dark Blue"))
+                    Spacer()
                 }
-                .transition(.opacity)
-            
-        })
-        .overlay(content: {
-            GeometryReader{proxy in
-                let size = proxy.size
                 
-                if expandCard{
-                    ResultView(size: size)
-                        .matchedGeometryEffect(id: "RESULT", in: animation)
-                        .transition(.asymmetric(insertion: .identity, removal: .offset(x:1)))
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .onAppear{
-                            withAnimation(.easeInOut(duration: 0.35)){
-                                showContent = true
+                CardView()
+                
+                //Footer Content
+                if isScratched{
+                    if isPass {
+                        Text("Congratulations!")
+                            .font(.system(size: 35, weight: .bold))
+                            .foregroundColor(Color("Dark Blue"))
+                        
+                        Text("You've managed to pass the quiz and completed this chapter! To reveal your score, you can scratch the card above.")
+                            .foregroundColor(Color("Dark Blue"))
+                            .kerning(1.02)
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical)
+                    } else {
+                        Text("Oh No!")
+                            .font(.system(size: 35, weight: .bold))
+                            .foregroundColor(Color("Dark Blue"))
+                        
+                        Text("Unfortunately, you didn't pass the quiz. It seems like you have not understand our material yet. Scratch the card above to know how you did on this quiz.")
+                            .foregroundColor(Color("Dark Blue"))
+                            .kerning(1.02)
+                            .multilineTextAlignment(.center)
+                            .padding(.vertical)
+                    }
+
+                    Button(action: {
+                        self.showScoreModal.toggle()
+                    }, label: {
+                        Text("CONTINUE")
+                            .fontWeight(.semibold)
+                            .foregroundColor(.white)
+                            .padding(.vertical, 17)
+                            .frame(maxWidth: .infinity)
+                            .background{
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color("Dark Blue"))
                             }
-                        }
+                    })
+                    .padding(.top, 15)
+                    .navigationBarHidden(true)
                 }
             }
-            .padding(30)
-        })
+            .padding(15)
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+            .background{
+                Color("Pale Blue")
+                    .ignoresSafeArea()
+            }
+            .overlay(content: {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                    .opacity(showContent ? 1 : 0)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        showContent = false
+                        isScratched = true
+                        
+                        withAnimation(.easeInOut(duration: 0.35).delay(0.1)){
+                            expandCard = false
+                        }
+                    }
+                    .transition(.opacity)
+                
+            })
+            .overlay(content: {
+                GeometryReader{proxy in
+                    let size = proxy.size
+                    
+                    if expandCard{
+                        ResultView(size: size)
+                            .matchedGeometryEffect(id: "RESULT", in: animation)
+                            .transition(.asymmetric(insertion: .identity, removal: .offset(x:1)))
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .onAppear{
+                                withAnimation(.easeInOut(duration: 0.35)){
+                                    showContent = true
+                                }
+                            }
+                    }
+                }
+                .padding(30)
+            })
+        }
     }
+    
     
     @ViewBuilder
     func CardView()->some View{
@@ -120,7 +134,7 @@ struct ScoreView: View {
                 }
                 
             } overlay: {
-                Image("cardbg")
+                Image("scratch")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: size.width * 0.95, height: size.width * 0.95, alignment: .topLeading)
@@ -138,7 +152,7 @@ struct ScoreView: View {
                     showContent = false
                 }
             }
-
+            
         }
         .padding(15)
     }
@@ -184,8 +198,8 @@ struct ScoreView: View {
     }
 }
 
-struct ScoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScoreView()
-    }
-}
+//struct ScoreView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScoreView()
+//    }
+//}

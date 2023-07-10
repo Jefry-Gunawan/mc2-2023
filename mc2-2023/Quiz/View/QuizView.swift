@@ -14,6 +14,7 @@ struct QuizView: View {
     @State private var selectedAnswer = ""
     @State private var isLastQuestion = false
     
+    @Binding var showQuizModal: Bool
     
     struct Quiz: Identifiable {
         var id: UUID = .init()
@@ -32,24 +33,23 @@ struct QuizView: View {
     ]
     
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading) {
-                GeometryReader { geometry in
-                    ForEach(quizList.indices, id: \.self) { index in
-                        if currentIndex == index {
-                            QuestionView(quizList[currentIndex], geometry.size.width)
 
-                        }
-                        
+        VStack(alignment: .leading) {
+            GeometryReader { geometry in
+                ForEach(quizList.indices, id: \.self) { index in
+                    if currentIndex == index {
+                        QuestionView(quizList[currentIndex], geometry.size.width)
+
                     }
-                   
+                    
                 }
+               
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 50)
-            .background(Color("Pale Blue"))
         }
-        .navigationBarTitleDisplayMode(.inline)
+        .padding(.horizontal, 20)
+        .padding(.vertical, 50)
+        .background(Color("Pale Blue"))
+
     }
     
     func CheckAnswer(questionNumber: Int, userAnswer: String) -> String {
@@ -133,8 +133,8 @@ struct QuizView: View {
                     }
                     .padding()
                     Spacer()
-                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
-                        .navigationBarHidden(true)
+//                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
+//                        .navigationBarHidden(true)
                     Button {
                         // cek apakah user sudah memilih jawaban
                         if (selectedAnswer != "") {
@@ -148,6 +148,7 @@ struct QuizView: View {
                             
                             if currentIndex == 4 {
                                 isLastQuestion = true
+                                self.showQuizModal.toggle()
                             }
                             else {
                                 currentIndex += 1
@@ -177,12 +178,13 @@ struct QuizView: View {
                 }
                 .padding(.top, 40)
             }
+            .navigationBarHidden(true)
     }
 }
 
-struct QuizView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuizView()
-    }
-}
+//struct QuizView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        QuizView()
+//    }
+//}
 

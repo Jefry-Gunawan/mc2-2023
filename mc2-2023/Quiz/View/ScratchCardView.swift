@@ -26,6 +26,7 @@ struct ScratchCardView<Content: View, Overlay: View>: View {
     @State var disableGesture: Bool = false
     @State var dragPoints: [CGPoint] = []
     @State var animateCard: [Bool] = [false, false]
+    
     var body: some View {
         GeometryReader{proxy in
             let size = proxy.size
@@ -94,6 +95,7 @@ struct ScratchCardView<Content: View, Overlay: View>: View {
             }
             
         }
+        .navigationBarHidden(true)
     }
 }
 
@@ -119,8 +121,8 @@ struct PointShape: Shape{
 
 
 
-struct ScratchCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ScoreView()
-    }
-}
+//struct ScratchCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ScoreView()
+//    }
+//}

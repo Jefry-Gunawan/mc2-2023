@@ -11,6 +11,7 @@
 		74FCEBED2A445266006D4877 /* ChapterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCEBEC2A445266006D4877 /* ChapterView.swift */; };
 		74FCEBF12A44717B006D4877 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCEBF02A44717B006D4877 /* CardView.swift */; };
 		940A35192A44290B00274414 /* ChapterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 940A35182A44290B00274414 /* ChapterListView.swift */; };
+		944C4E472A58139F00EB2508 /* Variables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944C4E462A58139F00EB2508 /* Variables.swift */; };
 		944EA3AB2A498A6A006E8224 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */; };
 		9450184B2A4593C5008C6945 /* SpeakingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9450184A2A4593C5008C6945 /* SpeakingView.swift */; };
 		94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582F9B2A42E59A00F8B131 /* mc2_2023App.swift */; };
@@ -67,6 +68,8 @@
 		74FCEBEC2A445266006D4877 /* ChapterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterView.swift; sourceTree = "<group>"; };
 		74FCEBF02A44717B006D4877 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		940A35182A44290B00274414 /* ChapterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListView.swift; sourceTree = "<group>"; };
+		94273BAF2A5BAE4D00C5CCF1 /* DataFramePlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DataFramePlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		944C4E462A58139F00EB2508 /* Variables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Variables.swift; sourceTree = "<group>"; };
 		944EA3AA2A498A6A006E8224 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		9450184A2A4593C5008C6945 /* SpeakingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingView.swift; sourceTree = "<group>"; };
 		94582F982A42E59A00F8B131 /* mc2-2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mc2-2023.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +154,7 @@
 		94582F8F2A42E59A00F8B131 = {
 			isa = PBXGroup;
 			children = (
+				94273BAF2A5BAE4D00C5CCF1 /* DataFramePlayground.playground */,
 				B9D4B3E32A44314400989FC7 /* video.mp4 */,
 				94582FCA2A42E5E700F8B131 /* .gitignore */,
 				94582F9A2A42E59A00F8B131 /* mc2-2023 */,
@@ -185,6 +189,7 @@
 				945018492A459392008C6945 /* Speaking */,
 				940A35132A44251500274414 /* Topics */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
+				944C4E462A58139F00EB2508 /* Variables.swift */,
 			);
 			path = "mc2-2023";
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				94582F9E2A42E59A00F8B131 /* ContentView.swift in Sources */,
 				B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
+				944C4E472A58139F00EB2508 /* Variables.swift in Sources */,
 				975074EE2A4976A900341011 /* OverviewViewTenses.swift in Sources */,
 				9758709F2A4EAE5D009B1A8D /* OverviewView.swift in Sources */,
 				975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */,
