@@ -37,6 +37,7 @@ struct OverviewView: View {
             }
             .background(Color("Pale Blue"))
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 

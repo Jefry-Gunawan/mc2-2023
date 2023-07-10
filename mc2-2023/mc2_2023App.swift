@@ -13,9 +13,9 @@ struct mc2_2023App: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-            //VocabView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TopicsView()
+//            ContentView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
