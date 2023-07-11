@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ChapterListView: View {
+    var topicId: Int
+    var topicName: String
     
     let chapterStatusList = ["done", "progress", "locked", "locked", "locked"]
     
@@ -102,7 +104,7 @@ struct ChapterListView: View {
                 .scaleEffect(CGSize(width: 1.3, height: 1.3))
                 .opacity(0.2)
         )
-        .navigationTitle("School")
+        .navigationTitle(topicName)
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -110,7 +112,7 @@ struct ChapterListView: View {
 struct ChapterListView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            ChapterListView()
+            ChapterListView(topicId: 1, topicName: "")
         }
     }
 }

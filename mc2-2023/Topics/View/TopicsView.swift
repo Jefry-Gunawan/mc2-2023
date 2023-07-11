@@ -152,7 +152,7 @@ struct TopicsView: View {
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(Color("White"))
                             
-                            NavigationLink(destination: ChapterListView()) {
+                            NavigationLink(destination: ChapterListView(topicId: topic.topicId, topicName: topic.topicName)) {
                                 Text("CHOOSE")
                                     .font(.caption2.bold())
                                     .foregroundColor(.white)

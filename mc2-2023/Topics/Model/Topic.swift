@@ -12,6 +12,7 @@ import TabularData
 
 struct Topic: Identifiable{
     var id: UUID = .init()
+    var topicId: Int
     var imageName: String
     var topicName: String
 }
@@ -38,8 +39,9 @@ var topicList: [Topic] = {
     var topics: [Topic] = []
     
     for row in topicDf.rows {
-        if let name = row["name"] as? String {
-            let topic = Topic(imageName: name, topicName: name)
+        if let name = row["name"] as? String,
+            let topicId = row["id"] as? Int {
+            let topic = Topic(topicId: topicId, imageName: name, topicName: name)
             topics.append(topic)
         }
     }
