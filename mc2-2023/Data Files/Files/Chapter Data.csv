@@ -1,4 +1,4 @@
-topic_id;id;name;tenses_id;description;
-1;1;Emergency;;;
-1;2;Discussion 1;;;
-2;1;London;;;
+topic_id;id;name;tenses_id;description;vocab_id
+1;1;Emergency;2;Ashlie and Stephen go to the hospital because Stephen injured himself. Follow their experience to find out what is wrong with Stephen.;1\\2\\3\\4
+1;2;Discussion 1;2;Rob and Stephen talk about Stephen’s experience in the hospital. They also discuss about the third conditional, some medical vocabulary, and the use of ‘neither … nor’;5\\6\\7\\8
+2;1;London;3;Tristan’s friend Jay Marie is visiting London, and Stephen and Ashlie are fighting to be her guide. They visit some of the most famous historic sites in London while riding the double-decker bus. ;9\\10\\11\\12\\13
