@@ -10,12 +10,14 @@ import TabularData
 
 struct Tenses: Identifiable{
     var id: UUID = .init()
-    var tensesName: String
+    var name: String
     var positive: String
     var negative: String
     var question: String
     var usage: String
     var specialCharacters: String
+    var topicId: Int
+    var chapterId: Int
 }
 
 
@@ -26,16 +28,21 @@ var tensesDf: DataFrame {
     tensesData.df
 }
 
-//var topicList: [Topic] = {
-//    var topics: [Topic] = []
-//
-//    for row in topicDf.rows {
-//        if let name = row["name"] as? String {
-//            let topic = Topic(imageName: name, topicName: name)
-//            topics.append(topic)
-//        }
-//    }
-//
-//    return topics
-//}()
-
+var tensesList: [Tenses] = {
+    var tenses: [Tenses] = []
+    
+    for row in tensesDf.rows {
+        if let name = row["name"] as? String,
+           let positive = row["positive"] as? String,
+           let negative = row["negative"] as? String,
+           let question = row["question"] as? String,
+           let usage = row["usage"] as? String,
+           let specialCharacters = row["special_characters"] as? String {
+            
+            let tense = Tenses(name: name, positive: positive, negative: negative, question: question, usage: usage, specialCharacters: specialCharacters)
+            tenses.append(tense)
+        }
+    }
+    
+    return tenses
+}()
