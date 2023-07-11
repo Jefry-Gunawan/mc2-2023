@@ -52,6 +52,7 @@
 		B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */; };
 		B9D95EAA2A4AC7C20021B054 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D95EA92A4AC7C20021B054 /* QuizView.swift */; };
 		D061D4A02A4984FD00F06578 /* ScratchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061D49F2A4984FD00F06578 /* ScratchCardView.swift */; };
+		D0ED1FAE2A5D4EBD0082DA2E /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED1FAD2A5D4EBD0082DA2E /* Chapter.swift */; };
 		D0F159272A496D0900BE4147 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159212A496D0900BE4147 /* Lora-Bold.ttf */; };
 		D0F159282A496D0900BE4147 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = D0F159222A496D0900BE4147 /* OFL.txt */; };
 		D0F159292A496D0900BE4147 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */; };
@@ -130,6 +131,7 @@
 		B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		B9D95EA92A4AC7C20021B054 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		D061D49F2A4984FD00F06578 /* ScratchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardView.swift; sourceTree = "<group>"; };
+		D0ED1FAD2A5D4EBD0082DA2E /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		D0F159212A496D0900BE4147 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
 		D0F159222A496D0900BE4147 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		D0F159232A496D0900BE4147 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F159392A496F8600BE4147 /* Topic.swift */,
+				D0ED1FAD2A5D4EBD0082DA2E /* Chapter.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				97C9C9662A594F0D0060C33C /* StructureView.swift in Sources */,
 				D0F1592B2A496D0900BE4147 /* FontManager.swift in Sources */,
 				97D798E52A5D5159006360F6 /* VocabModel.swift in Sources */,
+				D0ED1FAE2A5D4EBD0082DA2E /* Chapter.swift in Sources */,
 				D0F1593A2A496F8600BE4147 /* Topic.swift in Sources */,
 				7453293F2A45928900D95025 /* RoundedCorner.swift in Sources */,
 				74FCEBF12A44717B006D4877 /* CardView.swift in Sources */,
