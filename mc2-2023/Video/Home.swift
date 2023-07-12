@@ -34,6 +34,7 @@ struct Home: View {
     @State private var lastDraggedProgress: CGFloat = 0
 
     var body: some View {
+        
         VStack(spacing: 10) {
             let videoPlayerSize: CGSize = .init(width: size.width, height: size.height / 3.5)
             
@@ -281,24 +282,57 @@ struct ConversationView : View {
         var toolTip: String
     }
     
-    let conversationList: [conversation] = [
-        .init(name:"Budi", convo: "Hello, my name is Budi. I like Mathematics and Physics very much. How about you?", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "Hello Budi. Nice to meet you, I’m Ayu. I like English and Biology.", vocab: "", personNumber: 2, toolTip: ""),
-        .init(name: "Budi", convo: "Do you take private classes for them?", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "No, I like to study independently. I usually look for materials online. What about you?", vocab: "independently", personNumber: 2, toolTip: "independently adverb\n/ˌindəˈpendəntlē/\nmandiri\n1 in a way that is free from outside control or influence\n2 without outside help\n3 in a way that is not connected with another; individually"),
-        .init(name: "Budi", convo: "I take a private class for Maths. I get more excercise materials from the private class.", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", vocab: "", personNumber: 2, toolTip: ""),
-        .init(name: "Budi", convo: "Quisque lacinia tortor vitae enim luctus, nec tincidunt nunc sagittis.", vocab: "", personNumber: 1, toolTip: ""),
-        .init(name: "Ayu", convo: "Fusce viverra augue a magna aliquam, ut commodo nisi vehicula.", vocab: "", personNumber: 2, toolTip: ""),
-        .init(name: "Budi", convo: "Phasellus non libero aliquet, ultricies urna nec, rhoncus libero.", vocab: "", personNumber: 1, toolTip: "")
-    ]
-    
+//    let conversationList: [conversation] = [
+//        .init(name:"Budi", convo: "Hello, my name is Budi. I like Mathematics and Physics very much. How about you?", vocab: "", personNumber: 1, toolTip: ""),
+//        .init(name: "Ayu", convo: "Hello Budi. Nice to meet you, I’m Ayu. I like English and Biology.", vocab: "", personNumber: 2, toolTip: ""),
+//        .init(name: "Budi", convo: "Do you take private classes for them?", vocab: "", personNumber: 1, toolTip: ""),
+//        .init(name: "Ayu", convo: "No, I like to study independently. I usually look for materials online. What about you?", vocab: "independently", personNumber: 2, toolTip: "independently adverb\n/ˌindəˈpendəntlē/\nmandiri\n1 in a way that is free from outside control or influence\n2 without outside help\n3 in a way that is not connected with another; individually"),
+//        .init(name: "Budi", convo: "I take a private class for Maths. I get more excercise materials from the private class.", vocab: "", personNumber: 1, toolTip: ""),
+//        .init(name: "Ayu", convo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", vocab: "", personNumber: 2, toolTip: ""),
+//        .init(name: "Budi", convo: "Quisque lacinia tortor vitae enim luctus, nec tincidunt nunc sagittis.", vocab: "", personNumber: 1, toolTip: ""),
+//        .init(name: "Ayu", convo: "Fusce viverra augue a magna aliquam, ut commodo nisi vehicula.", vocab: "", personNumber: 2, toolTip: ""),
+//        .init(name: "Budi", convo: "Phasellus non libero aliquet, ultricies urna nec, rhoncus libero.", vocab: "", personNumber: 1, toolTip: "")
+//    ]
+//
     var body : some View {
+        let transcriptList: [Transcript] = {
+            var transcripts: [Transcript] = []
+            
+            
+            if let topicId = topicID,
+               let chapterId = chapterID {
+                
+                let filtered1 = transcriptDf.filter(on: "topic_id", Int.self, {$0 == topicId})
+                let filtered2 = filtered1.filter(on: "id", Int.self, {$0 == chapterId})
+                
+                for row in filtered2.rows {
+                    if let transcriptId = row["id"] as? Int,
+                       let name = row["name"] as? String,
+                       let convo = row["conversation"] as? String,
+                       let chapterId = row["chapter_id"] as? Int,
+                       let topicId = row["topic_id"] as? Int{
+                        
+                        let topicfilter = chapterDf.filter(on: "topic_id", Int.self, {$0 == topicId})
+                        let chapterfilter = topicfilter.filter(on: "id", Int.self, {$0 == chapterId})
+                        
+                        for chapterrow in chapterfilter.rows{
+                            if let chaptername = chapterrow["name"] as? String{
+                                let transcript = Transcript(transcriptId: transcriptId, name: name, convo: convo, chapterId: chapterId, topicId: topicId, toolTip: "", chapterName: chaptername)
+                                transcripts.append(transcript)
+                                print(transcripts)
+                            }
+                        }
+                    }
+                }
+            }
+            return transcripts
+        }()
+        
         VStack{
             ScrollView(.vertical, showsIndicators: false) {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("School Encounter")
+                        Text(transcriptList[0].chapterName)
                             .font(.largeTitle)
                             .fontWeight(.bold)
                             .padding(.bottom, 0)
@@ -308,45 +342,34 @@ struct ConversationView : View {
                             .fontWeight(.semibold)
                             .padding(.horizontal, 5)
                         VStack(alignment: .leading) {
-                            ForEach(conversationList) { conversation in
+                            ForEach(transcriptList.indices, id: \.self) { index in
+                                let transcript = transcriptList[index]
                                 HStack {
                                     VStack(alignment: .leading) {
                                         HStack {
-                                            Text(conversation.name)
+                                            Text(transcript.name)
                                             Spacer()
                                         }
                                         .padding(.vertical, 5)
-                                        .frame(width: 60)
+                                        .frame(width: 75)
                                         Spacer()
                                     }
-                                    HStack{
-                                        if (conversation.vocab != "") {
-                                            let split = conversation.convo.split(separator: conversation.vocab ?? "")
-                                            Text(.init(split[0] + "**\(conversation.vocab ?? "nil")**" + split[1]))
-                                                .onTapGesture {
-                                                    if conversation.toolTip != "" {
-                                                        isShowingTooltip.toggle()
-                                                    }
+                                    HStack {
+                                        Text(transcript.convo)
+                                            .onTapGesture {
+                                                if transcript.toolTip != "" {
+                                                    isShowingTooltip.toggle()
                                                 }
-                                        }
-                                        else {
-                                            Text(conversation.convo)
-                                                .onTapGesture {
-                                                    if conversation.toolTip != "" {
-                                                        isShowingTooltip.toggle()
-                                                    }
-                                                }
-                                        }
-                                        Spacer()
+                                            }
                                     }
                                     .padding(8)
-                                    .background(conversation.personNumber == 1 ? Color("Blue") : Color("Pale Blue"))
+                                    .background(index % 2 == 0 ? Color("Blue") : Color("Pale Blue"))
                                     .cornerRadius(10)
                                     .overlay(alignment: .top) {
-                                        if conversation.toolTip != "" && isShowingTooltip {
+                                        if transcript.toolTip != "" && isShowingTooltip {
                                             GeometryReader { geometry in
-                                                PopOver(text: conversation.toolTip)
-                                                    .offset(y: -geometry.size.height-50)
+                                                PopOver(text: transcript.toolTip)
+                                                    .offset(y: -geometry.size.height - 50)
                                             }
                                         }
                                     }
@@ -354,47 +377,47 @@ struct ConversationView : View {
                                         Image(systemName: "arrowtriangle.left.fill")
                                             .font(.title2)
                                             .offset(x: -15, y: 5)
-                                        //                                            .rotationEffect(.degrees(5))
-                                            .foregroundColor(conversation.personNumber == 1 ? Color("Blue") : Color("Pale Blue"))
+                                            .foregroundColor(index % 2 == 0 ? Color("Blue") : Color("Pale Blue"))
                                     }
                                 }
                                 .padding(.bottom, 5)
                             }
                         }
+                        .padding(.horizontal, 15)
+                        .padding(.bottom, 10)
+                        
                     }
-                    .padding(.horizontal, 15)
-                    .padding(.bottom, 10)
                 }
             }
         }
     }
-}
-
-
-
-struct PopOver : View {
-    var text: String
-    @State var size: CGSize = .zero
     
-    var body : some View {
-        VStack(alignment: .leading) {
-            Text(text)
-                .font(.system(size: 12))
-//                .lineLimit(10)
-        }
-        .padding(10)
-        .frame(maxHeight: 180)
-        .fixedSize(horizontal: false, vertical: true)
-        .background(Color("Light Yellow"))
-        .cornerRadius(10)
-        .shadow(radius: 5)
-        .overlay(alignment: .bottomLeading) {
-            Image(systemName: "arrowtriangle.down.fill")
-                .font(.system(size:30))
-                .offset(x:75, y: 15)
-                .foregroundColor(Color("Light Yellow"))
-        }
+    
+    
+    struct PopOver : View {
+        var text: String
+        @State var size: CGSize = .zero
         
-        
+        var body : some View {
+            VStack(alignment: .leading) {
+                Text(text)
+                    .font(.system(size: 12))
+                //                .lineLimit(10)
+            }
+            .padding(10)
+            .frame(maxHeight: 180)
+            .fixedSize(horizontal: false, vertical: true)
+            .background(Color("Light Yellow"))
+            .cornerRadius(10)
+            .shadow(radius: 5)
+            .overlay(alignment: .bottomLeading) {
+                Image(systemName: "arrowtriangle.down.fill")
+                    .font(.system(size:30))
+                    .offset(x:75, y: 15)
+                    .foregroundColor(Color("Light Yellow"))
+            }
+            
+            
+        }
     }
 }

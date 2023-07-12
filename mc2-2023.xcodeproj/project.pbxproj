@@ -53,6 +53,7 @@
 		B9D4B3EC2A44327200989FC7 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3EB2A44327200989FC7 /* Home.swift */; };
 		B9D4B3EE2A44338F00989FC7 /* CustomVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */; };
 		B9D95EAA2A4AC7C20021B054 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D95EA92A4AC7C20021B054 /* QuizView.swift */; };
+		D06182C02A5EB04500C2E268 /* Transcript.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06182BF2A5EB04500C2E268 /* Transcript.swift */; };
 		D061D4A02A4984FD00F06578 /* ScratchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D061D49F2A4984FD00F06578 /* ScratchCardView.swift */; };
 		D0ED1FAE2A5D4EBD0082DA2E /* Chapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0ED1FAD2A5D4EBD0082DA2E /* Chapter.swift */; };
 		D0F159272A496D0900BE4147 /* Lora-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D0F159212A496D0900BE4147 /* Lora-Bold.ttf */; };
@@ -134,6 +135,7 @@
 		B9D4B3EB2A44327200989FC7 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomVideoPlayer.swift; sourceTree = "<group>"; };
 		B9D95EA92A4AC7C20021B054 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		D06182BF2A5EB04500C2E268 /* Transcript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transcript.swift; sourceTree = "<group>"; };
 		D061D49F2A4984FD00F06578 /* ScratchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardView.swift; sourceTree = "<group>"; };
 		D0ED1FAD2A5D4EBD0082DA2E /* Chapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter.swift; sourceTree = "<group>"; };
 		D0F159212A496D0900BE4147 /* Lora-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lora-Bold.ttf"; sourceTree = "<group>"; };
@@ -331,11 +333,20 @@
 		B9D4B3E52A44319700989FC7 /* Video */ = {
 			isa = PBXGroup;
 			children = (
+				D06182BE2A5EB02A00C2E268 /* Model */,
 				B9D4B3EB2A44327200989FC7 /* Home.swift */,
 				B9D4B3E92A44326500989FC7 /* VideoView.swift */,
 				B9D4B3ED2A44338F00989FC7 /* CustomVideoPlayer.swift */,
 			);
 			path = Video;
+			sourceTree = "<group>";
+		};
+		D06182BE2A5EB02A00C2E268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D06182BF2A5EB04500C2E268 /* Transcript.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D0F159202A496CD900BE4147 /* Font */ = {
@@ -537,6 +548,7 @@
 			files = (
 				B9D4B3EA2A44326500989FC7 /* VideoView.swift in Sources */,
 				97D798E72A5D5162006360F6 /* TensesModel.swift in Sources */,
+				D06182C02A5EB04500C2E268 /* Transcript.swift in Sources */,
 				97C9C9662A594F0D0060C33C /* StructureView.swift in Sources */,
 				D0F1592B2A496D0900BE4147 /* FontManager.swift in Sources */,
 				97D798E52A5D5159006360F6 /* VocabModel.swift in Sources */,
