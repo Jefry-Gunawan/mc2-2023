@@ -11,22 +11,21 @@ struct ChapterView: View {
                     
                     HStack(alignment: .top){
                         VStack(alignment: .leading){
-                            Text("Beginner")
-                            
+                            Spacer().frame(height: 10)
                             HStack{
                                 Text(chapterList[0].tensesName)
-                                    .font(.system(size: 8))
+                                    .font(.system(size: 10))
                                     .lineLimit(1)
+                                    .padding(4)
                                     .frame(height: 20)
                                     .background(Color("White"))
                                     .cornerRadius(5)
                             }
-                            .padding(.top, -5)
-                            
                             Text(chapterList[0].description)
                                 .font(.body)
                                 .lineLimit(7)
                                 .padding(.top, 10)
+                            Spacer()
                         }
                         .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 0))
                         
