@@ -16,8 +16,6 @@ struct Tenses: Identifiable{
     var question: String
     var usage: String
     var specialCharacters: String
-    var topicId: Int
-    var chapterId: Int
 }
 
 

@@ -16,8 +16,6 @@ struct Vocab: Identifiable{
     var example: String
     var translation: String
     var pos: String
-    var topicId: Int
-    var chapterId: Int
 }
 
 

@@ -24,9 +24,11 @@
 		94582FBC2A42E59B00F8B131 /* mc2_2023UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */; };
 		94582FBE2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */; };
 		94582FCB2A42E5E700F8B131 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 94582FCA2A42E5E700F8B131 /* .gitignore */; };
+		945F11E12A5E97D0003067DC /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 945F11E02A5E97D0003067DC /* GlobalVariables.swift */; };
 		9466E2522A5D59BF00FF156D /* Quiz Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9466E24F2A5D59BF00FF156D /* Quiz Data.csv */; };
 		9466E2532A5D59BF00FF156D /* Chapter Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9466E2502A5D59BF00FF156D /* Chapter Data.csv */; };
 		9466E2542A5D59BF00FF156D /* Transcript Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9466E2512A5D59BF00FF156D /* Transcript Data.csv */; };
+		9466E2572A5D5C3F00FF156D /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9466E2562A5D5C3F00FF156D /* Quiz.swift */; };
 		9468ECD92A5C00C100B860FB /* Topic Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9468ECD82A5C00C100B860FB /* Topic Data.csv */; };
 		9468ECDD2A5C00FB00B860FB /* TopicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9468ECDC2A5C00FB00B860FB /* TopicData.swift */; };
 		9468ECE42A5C0FB800B860FB /* Tenses Data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 9468ECDF2A5C0FB800B860FB /* Tenses Data.csv */; };
@@ -103,9 +105,11 @@
 		94582FBB2A42E59B00F8B131 /* mc2_2023UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITests.swift; sourceTree = "<group>"; };
 		94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mc2_2023UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		94582FCA2A42E5E700F8B131 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		945F11E02A5E97D0003067DC /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
 		9466E24F2A5D59BF00FF156D /* Quiz Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Quiz Data.csv"; sourceTree = "<group>"; };
 		9466E2502A5D59BF00FF156D /* Chapter Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Chapter Data.csv"; sourceTree = "<group>"; };
 		9466E2512A5D59BF00FF156D /* Transcript Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Transcript Data.csv"; sourceTree = "<group>"; };
+		9466E2562A5D5C3F00FF156D /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		9468ECD82A5C00C100B860FB /* Topic Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Topic Data.csv"; sourceTree = "<group>"; };
 		9468ECDC2A5C00FB00B860FB /* TopicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicData.swift; sourceTree = "<group>"; };
 		9468ECDF2A5C0FB800B860FB /* Tenses Data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Tenses Data.csv"; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				940A35132A44251500274414 /* Topics */,
 				94582FA12A42E59B00F8B131 /* Preview Content */,
 				944C4E462A58139F00EB2508 /* Variables.swift */,
+				945F11E02A5E97D0003067DC /* GlobalVariables.swift */,
 			);
 			path = "mc2-2023";
 			sourceTree = "<group>";
@@ -254,6 +259,14 @@
 				94582FBD2A42E59B00F8B131 /* mc2_2023UITestsLaunchTests.swift */,
 			);
 			path = "mc2-2023UITests";
+			sourceTree = "<group>";
+		};
+		9466E2552A5D5C2D00FF156D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9466E2562A5D5C3F00FF156D /* Quiz.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9468ECD72A5C00A500B860FB /* Data Files */ = {
@@ -362,6 +375,7 @@
 		D0F1593C2A497D1C00BE4147 /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				9466E2552A5D5C2D00FF156D /* Model */,
 				D0F1593D2A497D2E00BE4147 /* View */,
 			);
 			path = Quiz;
@@ -555,7 +569,9 @@
 				9468ECED2A5C0FDF00B860FB /* TensesData.swift in Sources */,
 				975074F02A4976BB00341011 /* OverviewViewVocab.swift in Sources */,
 				D061D4A02A4984FD00F06578 /* ScratchCardView.swift in Sources */,
+				945F11E12A5E97D0003067DC /* GlobalVariables.swift in Sources */,
 				9468ECE92A5C0FCA00B860FB /* ChapterData.swift in Sources */,
+				9466E2572A5D5C3F00FF156D /* Quiz.swift in Sources */,
 				94582F9C2A42E59A00F8B131 /* mc2_2023App.swift in Sources */,
 				9468ECF12A5C0FEC00B860FB /* VocabularyData.swift in Sources */,
 				D0F1593F2A497EB100BE4147 /* ScoreView.swift in Sources */,

@@ -16,21 +16,24 @@ struct QuizView: View {
     
     @Binding var showQuizModal: Bool
     
-    struct Quiz: Identifiable {
-        var id: UUID = .init()
-        var question: String
-        var answerOptions: [String]
-        var correctAnswer: String
-    }
-    
-
-    let quizList: [Quiz] = [
-        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
-        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
-        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
-        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
-        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
-    ]
+    var topicId: Int
+    var chapterId: Int
+//
+//    struct Quiz: Identifiable {
+//        var id: UUID = .init()
+//        var question: String
+//        var answerOptions: [String]
+//        var correctAnswer: String
+//    }
+//
+//
+//    let quizList: [Quiz] = [
+//        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
+//        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
+//        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
+//        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
+//        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
+//    ]
     
     var body: some View {
 

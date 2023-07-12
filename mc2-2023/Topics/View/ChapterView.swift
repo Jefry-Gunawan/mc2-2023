@@ -72,9 +72,13 @@ struct ChapterView: View {
                     }
                     .padding(2)
                     
-                    NavigationLink(destination: SummaryView()) {
+                    NavigationLink(destination: SummaryView(topicId: 1, chapterId: 1)) {
                         CardView(title: "Quiz")
                     }
+                    .simultaneousGesture(TapGesture().onEnded{
+                        topicID = 2
+                        chapterID = 1
+                    })
                     .padding(2)
                 }
                 .background(Color("White"))

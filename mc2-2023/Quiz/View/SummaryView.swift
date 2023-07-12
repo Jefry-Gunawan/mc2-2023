@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SummaryView: View {
+    var topicId: Int
+    var chapterId: Int
     
     @Environment(\.presentationMode) var presentationMode
     
@@ -48,7 +50,7 @@ struct SummaryView: View {
     
     var body: some View {
         if showScoreModal {
-            ScoreView(showScoreModal: $showScoreModal)
+            ScoreView(showScoreModal: $showScoreModal, topicId: topicId, chapterId: chapterId)
         } else {
             VStack(alignment: .leading){
                 Text("Summary")
@@ -101,22 +103,6 @@ struct SummaryView: View {
                         
                     }
                     
-    //                NavigationLink {
-    //                    ChapterListView()
-    //                } label: {
-    //                    Text("CLOSE")
-    //                        .frame(width: 360, height: 40)
-    //                        .font(.body)
-    //                        .fontWeight(.bold)
-    //                        .foregroundColor(.white)
-    //                        .padding()
-    //                        .background(Color("Dark Blue"))
-    //                }
-    //                .frame(width: 340, height: 50)
-    //                .cornerRadius(10)
-    //                .navigationBarHidden(true)
-
-                    
                     //BUTTON CLOSE
                     Button(action: {
                         presentationMode.wrappedValue.dismiss()
@@ -143,6 +129,6 @@ struct SummaryView: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView()
+        SummaryView(topicId: 1, chapterId: 1)
     }
 }
