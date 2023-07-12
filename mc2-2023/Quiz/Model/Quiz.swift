@@ -24,7 +24,7 @@ var quizDf: DataFrame {
     quizData.df
 }
 
-var quizList: [Quiz] = {
+var quizList: [Quiz] = { 
     var quizs: [Quiz] = []
     
     if let topicId = topicID,

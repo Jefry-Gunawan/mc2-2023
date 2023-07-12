@@ -35,6 +35,10 @@ struct ChapterListView: View {
                                     .font(.title)
                             }
                         })
+                        .simultaneousGesture(TapGesture().onEnded{
+                            topicID = topicId
+                            chapterID = 1
+                        })
                         
                         if i < 5 {
                             ForEach(1...3, id: \.self){ j in
@@ -57,6 +61,9 @@ struct ChapterListView: View {
                                     .clipShape(Circle())
                                     .font(.title)
                             }
+                        }) .simultaneousGesture(TapGesture().onEnded{
+                            topicID = topicId
+                            chapterID = 2
                         })
                         
                         if i < 5 {

@@ -14,13 +14,7 @@ struct ChapterView: View {
                             Text("Beginner")
                             
                             HStack{
-                                Text(" Simple Present Tense ")
-                                    .font(.system(size: 8))
-                                    .lineLimit(1)
-                                    .frame(height: 20)
-                                    .background(Color("White"))
-                                    .cornerRadius(5)
-                                Text(" Simple Past Tense ")
+                                Text(chapterList[0].tensesName)
                                     .font(.system(size: 8))
                                     .lineLimit(1)
                                     .frame(height: 20)
@@ -29,7 +23,7 @@ struct ChapterView: View {
                             }
                             .padding(.top, -5)
                             
-                            Text("In this session, you will learn how to use Simple Present Tense and Simple Past Tense. Help Ducker to solve some of the puzzles and problems in the class. Good Luck!")
+                            Text(chapterList[0].description)
                                 .font(.body)
                                 .lineLimit(7)
                                 .padding(.top, 10)
@@ -44,7 +38,7 @@ struct ChapterView: View {
                             
                     }
                     .background(Color("Blue"))
-                    .navigationTitle("Classroom")
+                    .navigationTitle(chapterList[0].name)
                     .navigationBarTitleDisplayMode(.large)
                     .toolbarBackground(
                         Color("Blue"),

@@ -7,5 +7,5 @@
 
 import Foundation
 
-var topicID: Int?
-var chapterID: Int?
+var topicID: Int? = 1
+var chapterID: Int? = 1
