@@ -8,9 +8,6 @@
 import SwiftUI
 
 struct SummaryView: View {
-    var topicId: Int
-    var chapterId: Int
-    
     @Environment(\.presentationMode) var presentationMode
     
     @State private var showScoreModal = true
@@ -20,20 +17,50 @@ struct SummaryView: View {
         var answer: String
     }
     
-    struct Quiz: Identifiable {
-        var id: UUID = .init()
-        var question: String
-        var answerOptions: [String]
-        var correctAnswer: String
-    }
+//    struct Quiz: Identifiable {
+//        var id: UUID = .init()
+//        var question: String
+//        var answerOptions: [String]
+//        var correctAnswer: String
+//    }
     
-    let quizList: [Quiz] = [
-        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
-        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
-        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
-        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
-        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
-    ]
+//    let quizList: [Quiz] = [
+//        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
+//        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
+//        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
+//        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
+//        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
+//    ]
+    
+    var quizList: [Quiz] = {
+        var quizs: [Quiz] = []
+        
+        if let topicId = topicID,
+           let chapterId = chapterID {
+            
+            let filtered1 = quizDf.filter(on: "topic_id", Int.self, {$0 == topicId})
+            let filtered2 = filtered1.filter(on: "chapter_id", Int.self, {$0 == chapterId})
+            
+            for row in filtered2.rows {
+                if let question = row["question"] as? String,
+                   let answer = row["answer"] as? String,
+                   let options = row["options"] as? String,
+                   let explanation = row["explanation"] as? String,
+                   let topicId = row["topic_id"] as? Int,
+                   let chapterId = row["chapter_id"] as? Int {
+                    
+                    var answerOptions = options.components(separatedBy: "\\")
+                    answerOptions = answerOptions.filter({$0 != ""})
+                    
+                    let quiz = Quiz(question: question, correctAnswer: answer, answerOptions: answerOptions, explanation: explanation, topicId: topicId, chapterId: chapterId)
+                    
+                    quizs.append(quiz)
+                }
+            }
+        }
+        
+        return quizs
+    }()
     
     let userAnswer: [Answers] = [
         .init(answer: "Duck you!"),
@@ -50,7 +77,7 @@ struct SummaryView: View {
     
     var body: some View {
         if showScoreModal {
-            ScoreView(showScoreModal: $showScoreModal, topicId: topicId, chapterId: chapterId)
+            ScoreView(showScoreModal: $showScoreModal)
         } else {
             VStack(alignment: .leading){
                 Text("Summary")
@@ -129,6 +156,6 @@ struct SummaryView: View {
 
 struct SummaryView_Previews: PreviewProvider {
     static var previews: some View {
-        SummaryView(topicId: 1, chapterId: 1)
+        SummaryView()
     }
 }

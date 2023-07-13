@@ -18,12 +18,9 @@ struct ScoreView: View {
     
     @State var showQuizModal: Bool = true
     
-    var topicId: Int
-    var chapterId: Int
-    
     var body: some View {
         if showQuizModal {
-            QuizView(showQuizModal: $showQuizModal, topicId: topicId, chapterId: chapterId)
+            QuizView(showQuizModal: $showQuizModal)
         } else {
             VStack{
                 //Header

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct OverviewViewVocab: View {
+    
+    var vocabId: String
+    
     var body: some View {
         ScrollView(.vertical){
             
@@ -19,7 +22,7 @@ struct OverviewViewVocab: View {
                         .padding(.vertical, 20)
                 }
                 
-                NewVocabView()
+                NewVocabView(vocabId: vocabId)
                     .padding(.bottom, 20)
                 
             }
@@ -39,7 +42,7 @@ struct OverviewViewVocab: View {
 struct OverviewViewVocab_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            OverviewViewVocab()
+            OverviewViewVocab(vocabId: "1//2//3//4")
         }
     }
 }

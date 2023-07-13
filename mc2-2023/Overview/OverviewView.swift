@@ -12,6 +12,9 @@ struct OverviewView: View {
     @State private var currentSection = "Grammar"
     var section = ["Grammar", "Vocabulary"]
     
+    var tensesId: Int
+    var vocabId: String
+    
     var body: some View {
         NavigationStack{
             VStack(alignment: .leading) {
@@ -32,7 +35,7 @@ struct OverviewView: View {
                 if currentSection == "Grammar" {
                     OverviewViewTenses()
                 } else if currentSection == "Vocabulary" {
-                    OverviewViewVocab()
+                    OverviewViewVocab(vocabId: vocabId)
                 }
             }
             .background(Color("Pale Blue"))
@@ -43,6 +46,6 @@ struct OverviewView: View {
 
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewView()
+        OverviewView(tensesId: 1, vocabId: "1//2//3//4")
     }
 }

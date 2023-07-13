@@ -15,10 +15,7 @@ struct QuizView: View {
     @State private var isLastQuestion = false
     
     @Binding var showQuizModal: Bool
-    
-    var topicId: Int
-    var chapterId: Int
-//
+
 //    struct Quiz: Identifiable {
 //        var id: UUID = .init()
 //        var question: String
@@ -35,8 +32,38 @@ struct QuizView: View {
 //        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
 //    ]
     
-    var body: some View {
+    var quizList: [Quiz] = {
+        var quizs: [Quiz] = []
+        
+        if let topicId = topicID,
+           let chapterId = chapterID {
+            
+            let filtered1 = quizDf.filter(on: "topic_id", Int.self, {$0 == topicId})
+            let filtered2 = filtered1.filter(on: "chapter_id", Int.self, {$0 == chapterId})
+            
+            for row in filtered2.rows {
+                if let question = row["question"] as? String,
+                   let answer = row["answer"] as? String,
+                   let options = row["options"] as? String,
+                   let explanation = row["explanation"] as? String,
+                   let topicId = row["topic_id"] as? Int,
+                   let chapterId = row["chapter_id"] as? Int {
+                    
+                    var answerOptions = options.components(separatedBy: "\\")
+                    answerOptions = answerOptions.filter({$0 != ""})
+                    
+                    let quiz = Quiz(question: question, correctAnswer: answer, answerOptions: answerOptions, explanation: explanation, topicId: topicId, chapterId: chapterId)
+                    
+                    quizs.append(quiz)
+                }
+            }
+        }
+        
+        return quizs
+    }()
 
+    
+    var body: some View {
         VStack(alignment: .leading) {
             GeometryReader { geometry in
                 ForEach(quizList.indices, id: \.self) { index in
@@ -152,6 +179,7 @@ struct QuizView: View {
                             if currentIndex == 4 {
                                 isLastQuestion = true
                                 self.showQuizModal.toggle()
+                                print(showQuizModal)
                             }
                             else {
                                 currentIndex += 1

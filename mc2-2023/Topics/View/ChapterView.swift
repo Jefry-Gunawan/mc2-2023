@@ -10,7 +10,7 @@ struct ChapterView: View {
     
     
     var body: some View {
-        var chapterList: [Chapter] = {
+        let chapterList: [Chapter] = {
             var chapters: [Chapter] = []
 
             
@@ -89,7 +89,7 @@ struct ChapterView: View {
                 
                 //VStack for List
                 VStack {
-                    NavigationLink(destination: OverviewView()) {
+                    NavigationLink(destination: OverviewView(tensesId: chapterList[0].tensesId ,vocabId: chapterList[0].vocabId)) {
                         CardView(title: "Overview")
                     }
                     .padding(2)
@@ -104,7 +104,7 @@ struct ChapterView: View {
                     }
                     .padding(2)
                     
-                    NavigationLink(destination: SummaryView(topicId: 1, chapterId: 1)) {
+                    NavigationLink(destination: SummaryView()) {
                         CardView(title: "Quiz")
                     }
                     .simultaneousGesture(TapGesture().onEnded{
