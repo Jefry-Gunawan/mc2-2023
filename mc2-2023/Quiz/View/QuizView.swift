@@ -15,6 +15,14 @@ struct QuizView: View {
     @State private var isLastQuestion = false
     
     @Binding var showQuizModal: Bool
+    
+    @Binding var userAnswer: [String]
+    
+    @Binding var score: Int
+    @Binding var isPass: Bool
+    
+    @State var confirmationModal: Bool = true
+    @Environment(\.presentationMode) var presentationMode
 
 //    struct Quiz: Identifiable {
 //        var id: UUID = .init()
@@ -64,22 +72,44 @@ struct QuizView: View {
 
     
     var body: some View {
-        VStack(alignment: .leading) {
-            GeometryReader { geometry in
-                ForEach(quizList.indices, id: \.self) { index in
-                    if currentIndex == index {
-                        QuestionView(quizList[currentIndex], geometry.size.width)
-
+        if confirmationModal {
+            VStack {
+                Spacer()
+                VStack {
+                    Text("U cant back")
+                    Button {
+                        confirmationModal = false
+                    } label: {
+                        Text("ok")
                     }
-                    
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("cancel")
+                    }
                 }
-               
+                .background(Color.white)
+                Spacer()
             }
-        }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 50)
-        .background(Color("Pale Blue"))
+            .padding()
+            .background(Color("Pale Blue"))
+        } else {
+            VStack(alignment: .leading) {
+                GeometryReader { geometry in
+                    ForEach(quizList.indices, id: \.self) { index in
+                        if currentIndex == index {
+                            QuestionView(quizList[currentIndex], geometry.size.width)
 
+                        }
+                        
+                    }
+                   
+                }
+            }
+            .padding(.horizontal, 20)
+            .padding(.vertical, 50)
+            .background(Color("Pale Blue"))
+        }
     }
     
     func CheckAnswer(questionNumber: Int, userAnswer: String) -> String {
@@ -127,26 +157,28 @@ struct QuizView: View {
                     .padding(.bottom, 20)
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(quizList[currentIndex].question)
-                                .font(.title2)
+                            Text(quizList[currentIndex].question.replacingOccurrences(of: "\\n", with: "\n"))
+                                .multilineTextAlignment(.leading)
+                                .font(.headline)
+                                .fixedSize(horizontal: false, vertical: true)
                             Spacer()
                         }
                         Spacer()
                     }
                     .padding(.horizontal)
-                    .frame(width: size, height: 130)
+                    .frame(width: size, height: 140)
+                    
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(quizList[currentIndex].answerOptions, id: \.self) { item in
                             Rectangle()
                                 .cornerRadius(10)
-                                .frame(width: 100, height: 50)
+                                .frame(width: 100, height: 100)
                                 .overlay(alignment: .center) {
                                     HStack {
-                                        Spacer()
                                         Text(item)
-                                        Spacer()
+                                            .font(.callout)
                                     }
-                                    .frame(width: 130, height: 50)
+                                    .frame(width: 130, height: 100)
                                     .padding(12)
                                     .background(Color("Light Blue"))
                                     .overlay {
@@ -170,9 +202,15 @@ struct QuizView: View {
                         if (selectedAnswer != "") {
                             // cek benar atau salah sblm next question
                             if (selectedAnswer == quizList[currentIndex].correctAnswer) {
+                                userAnswer.append(selectedAnswer)
+                                score = score + 20
+                                if score >= 60 {
+                                    isPass = true
+                                }
                                 print("benar")
                             }
                             else {
+                                userAnswer.append(selectedAnswer)
                                 print("salah")
                             }
                             
@@ -194,7 +232,7 @@ struct QuizView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("NEXT QUESTION")
+                            Text("NEXT")
                                 .frame(height: 40)
                                 .font(.body)
                                 .foregroundColor(.white)
