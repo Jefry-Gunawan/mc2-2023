@@ -17,7 +17,6 @@ struct OverviewViewVocab: View {
                         .fontWeight(.bold)
                         .font(.title)
                         .padding(.vertical, 20)
-                        .padding(.leading, -70)
                 }
                 
                 NewVocabView()
