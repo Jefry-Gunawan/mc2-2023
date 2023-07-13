@@ -40,9 +40,17 @@ struct NewVocabView: View {
 
             if let topicId = topicID,
                let chapterId = chapterID {
+                
+                let filtered = vocabDf.filter { row in
+                    if let vocabId = row["id"] as? Int {
+                        let vocabIds = chapterList.flatMap { $0.vocabId.split(separator: "\\").map(String.init) }
+                        return vocabIds.contains(String(vocabId))
+                    }
+                    return false
+                }
 
 
-                for row in vocabDf.rows {
+                for row in filtered.rows {
                     if let name = row["name"] as? String,
                        let definition = row["definition"] as? String,
                        let phonetic = row["phonetic"] as? String,
