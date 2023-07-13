@@ -13,14 +13,17 @@ struct ScoreView: View {
     @State var isPass: Bool = false
     @State var isScratched: Bool = false
     @Namespace var animation
+    @State var score: Int = 0
     
     @Binding var showScoreModal: Bool
     
     @State var showQuizModal: Bool = true
     
+    @Binding var userAnswer: [String]
+    
     var body: some View {
         if showQuizModal {
-            QuizView(showQuizModal: $showQuizModal)
+            QuizView(showQuizModal: $showQuizModal, userAnswer: $userAnswer, score: $score, isPass: $isPass)
         } else {
             VStack{
                 //Header
@@ -184,7 +187,7 @@ struct ScoreView: View {
             
             HStack{
                 Image(systemName: "graduationcap.fill")
-                Text("95")
+                Text("\(score)")
             }
             .font(.callout.bold())
             .foregroundColor(Color("Dark Blue"))
