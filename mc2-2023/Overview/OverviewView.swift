@@ -33,7 +33,7 @@ struct OverviewView: View {
                 .padding(.horizontal, 10)
                 
                 if currentSection == "Grammar" {
-                    OverviewViewTenses()
+                    OverviewViewTenses(tensesId: tensesId)
                 } else if currentSection == "Vocabulary" {
                     OverviewViewVocab(vocabId: vocabId)
                 }
@@ -46,6 +46,6 @@ struct OverviewView: View {
 
 struct OverviewView_Previews: PreviewProvider {
     static var previews: some View {
-        OverviewView(tensesId: 1, vocabId: "1//2//3//4")
+        OverviewView(tensesId: 2, vocabId: "1//2//3//4")
     }
 }
