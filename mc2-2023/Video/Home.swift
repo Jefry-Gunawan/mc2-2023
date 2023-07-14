@@ -32,7 +32,7 @@ struct Home: View {
     @State private var isSeeking: Bool = false
     @State private var progress: CGFloat = 0
     @State private var lastDraggedProgress: CGFloat = 0
-
+    
     var body: some View {
         
         VStack(spacing: 10) {
@@ -44,7 +44,7 @@ struct Home: View {
                     CustomVideoPlayer(player: player)
                         .overlay {
                             Rectangle()
-                                .fill(.black.opacity(0.4))
+                                .fill(.black.opacity(0.3))
                                 .opacity(showPlayerControls || isDragging ? 1 : 0)
                             //animating dragging state
                                 .animation(.easeInOut(duration: 0.35), value: isDragging)
@@ -75,7 +75,7 @@ struct Home: View {
         .onAppear{
             //adding observer to update seeker when the video is playing
             player?.addPeriodicTimeObserver(forInterval: .init(seconds: 1, preferredTimescale: 1), queue: .main, using: { time in
-                 //calculating video progress
+                //calculating video progress
                 if let currentPlayerItem = player?.currentItem {
                     let totalDuration = currentPlayerItem.duration.seconds
                     guard let currentDuration = player?.currentTime().seconds else { return }
@@ -167,52 +167,52 @@ struct Home: View {
     //playback controls view
     @ViewBuilder
     func PlayBackControls() -> some View {
-        NavigationView {
-            
+        //        NavigationView {
         
-            HStack(spacing: 25) {
-                Button {
-                    if isFinishedPlaying {
-                        //set video to start and play again
-                        isFinishedPlaying = false
-                        player?.seek(to: .zero)
-                        progress = .zero
-                        lastDraggedProgress = .zero
-                    }
-                    
-                    // changing video status to play/pause based on user input
-                    if isPlaying {
-                        //pause video
-                        player?.pause()
-                        //cancelling timeout task when the video is paused
-                        if let timeoutTask {
-                            timeoutTask.cancel()
-                        }
-                    }
-                    else {
-                        //play video
-                        player?.play()
-                        timeoutControls()
-                    }
-                    
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        isPlaying.toggle()
-                    }
-                } label: {
-                    // changing icon based on video status
-                    // changing icon when video was finished playing
-                    Image(systemName: isFinishedPlaying ? "arrow.clockwise" : (isPlaying ? "pause.fill" : "play.fill"))
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .padding(15)
-                        .background {
-                            Circle()
-                                .fill(.black.opacity(0.35))
-                        }
+        
+        HStack(spacing: 25) {
+            Button {
+                if isFinishedPlaying {
+                    //set video to start and play again
+                    isFinishedPlaying = false
+                    player?.seek(to: .zero)
+                    progress = .zero
+                    lastDraggedProgress = .zero
                 }
-                .scaleEffect(1.1)
                 
+                // changing video status to play/pause based on user input
+                if isPlaying {
+                    //pause video
+                    player?.pause()
+                    //cancelling timeout task when the video is paused
+                    if let timeoutTask {
+                        timeoutTask.cancel()
+                    }
+                }
+                else {
+                    //play video
+                    player?.play()
+                    timeoutControls()
+                }
+                
+                withAnimation(.easeInOut(duration: 0.2)) {
+                    isPlaying.toggle()
+                }
+            } label: {
+                // changing icon based on video status
+                // changing icon when video was finished playing
+                Image(systemName: isFinishedPlaying ? "arrow.clockwise" : (isPlaying ? "pause.fill" : "play.fill"))
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .padding(15)
+                    .background {
+                        Circle()
+                            .fill(.black.opacity(0.35))
+                    }
             }
+            .scaleEffect(1.1)
+            
+            //            }
         }
         //hiding controls when dragging
         .opacity(showPlayerControls && !isDragging ? 1 : 0)

@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct ChapterView: View {  
+struct ChapterView: View {
     var body: some View {
         let chapterList: [Chapter] = {
             var chapters: [Chapter] = []
