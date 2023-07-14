@@ -46,7 +46,7 @@ struct ScoreView: View {
                             .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color("Dark Blue"))
                         
-                        Text("You've managed to pass the quiz and completed this chapter! To reveal your score, you can scratch the card above.")
+                        Text("You've managed to pass the quiz and completed this chapter!")
                             .foregroundColor(Color("Dark Blue"))
                             .kerning(1.02)
                             .multilineTextAlignment(.center)
@@ -56,7 +56,7 @@ struct ScoreView: View {
                             .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color("Dark Blue"))
                         
-                        Text("Unfortunately, you didn't pass the quiz. It seems like you have not understand our material yet. Scratch the card above to know how you did on this quiz.")
+                        Text("Unfortunately, you didn't pass the quiz. It seems like you have not understand our material yet.")
                             .foregroundColor(Color("Dark Blue"))
                             .kerning(1.02)
                             .multilineTextAlignment(.center)

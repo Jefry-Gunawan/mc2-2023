@@ -127,7 +127,6 @@ struct SpeakingView: View {
         
         for out in speakingVariable {
             let temp = Text(out.text + " ").foregroundColor(out.color)
-            print(out.color)
             output = output + temp
         }
         

@@ -16,7 +16,7 @@ struct SpeakingTextVariable: Identifiable {
 
 var speakingVariable1: [SpeakingTextVariable] {
     var out: [SpeakingTextVariable] = []
-    let text = "I'll give you a prescription for some painkillers"
+    let text = "I am pleased to tell you that neither your ankle nor your elbow is broken"
     let tempTranscript = text.components(separatedBy: " ")
     
     for i in tempTranscript {
