@@ -42,7 +42,7 @@ struct ScoreView: View {
                 //Footer Content
                 if isScratched{
                     if isPass {
-                        Text("Congratulations!")
+                        Text("Duck Yeah!")
                             .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color("Dark Blue"))
                         
@@ -52,7 +52,7 @@ struct ScoreView: View {
                             .multilineTextAlignment(.center)
                             .padding(.vertical)
                     } else {
-                        Text("Oh No!")
+                        Text("Oh Duck!")
                             .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color("Dark Blue"))
                         
@@ -164,7 +164,7 @@ struct ScoreView: View {
     func ResultView(size: CGSize)->some View{
         VStack(spacing: 18){
             if isPass{
-                Image("trophy")
+                Image("Quiz_pass")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 160, height: 160)
@@ -174,7 +174,7 @@ struct ScoreView: View {
                     .foregroundColor(Color("Dark Blue"))
                 
             } else {
-                Image("sadduck")
+                Image("Quiz_fail")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 160, height: 160)

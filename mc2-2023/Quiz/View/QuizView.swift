@@ -23,22 +23,22 @@ struct QuizView: View {
     
     @State var confirmationModal: Bool = true
     @Environment(\.presentationMode) var presentationMode
-
-//    struct Quiz: Identifiable {
-//        var id: UUID = .init()
-//        var question: String
-//        var answerOptions: [String]
-//        var correctAnswer: String
-//    }
-//
-//
-//    let quizList: [Quiz] = [
-//        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
-//        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
-//        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
-//        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
-//        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
-//    ]
+    
+    //    struct Quiz: Identifiable {
+    //        var id: UUID = .init()
+    //        var question: String
+    //        var answerOptions: [String]
+    //        var correctAnswer: String
+    //    }
+    //
+    //
+    //    let quizList: [Quiz] = [
+    //        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
+    //        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
+    //        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
+    //        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
+    //        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
+    //    ]
     
     var quizList: [Quiz] = {
         var quizs: [Quiz] = []
@@ -69,45 +69,54 @@ struct QuizView: View {
         
         return quizs
     }()
-
+    
     
     var body: some View {
-        if confirmationModal {
+        GeometryReader { geometry in
             VStack {
-                Spacer()
-                VStack {
-                    Text("U cant back")
-                    Button {
-                        confirmationModal = false
-                    } label: {
-                        Text("ok")
-                    }
-                    Button {
-                        presentationMode.wrappedValue.dismiss()
-                    } label: {
-                        Text("cancel")
-                    }
-                }
-                .background(Color.white)
-                Spacer()
-            }
-            .padding()
-            .background(Color("Pale Blue"))
-        } else {
-            VStack(alignment: .leading) {
-                GeometryReader { geometry in
-                    ForEach(quizList.indices, id: \.self) { index in
-                        if currentIndex == index {
-                            QuestionView(quizList[currentIndex], geometry.size.width)
-
+                if confirmationModal {
+                    Spacer()
+                    VStack {
+                        Text("Once you do the quiz, you cannot go back. Are you sure you want to continue?")
+                            .padding(0)
+                        Spacer()
+                        HStack {
+                            //                    Button {
+                            //                        presentationMode.wrappedValue.dismiss()
+                            //                    } label: {
+                            //                        Text("Cancel")
+                            //                    }
+                            Spacer()
+                            Button {
+                                confirmationModal = false
+                            } label: {
+                                Text("Continue")
+                            }
                         }
-                        
                     }
-                   
+                    .frame(height: 130)
+                    .padding(15)
+                    .background(Color("White"))
+                    .cornerRadius(10)
+                    .padding(20)
+                    .padding(.bottom, 100)
+                    Spacer()
+                } else {
+                    VStack(alignment: .leading) {
+                        GeometryReader { geometry in
+                            ForEach(quizList.indices, id: \.self) { index in
+                                if currentIndex == index {
+                                    QuestionView(quizList[currentIndex], geometry.size.width)
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 50)
+                    .background(Color("Pale Blue"))
                 }
             }
-            .padding(.horizontal, 20)
-            .padding(.vertical, 50)
+            .frame(width: geometry.size.width, height: geometry.size.height)
             .background(Color("Pale Blue"))
         }
     }
@@ -195,8 +204,8 @@ struct QuizView: View {
                     }
                     .padding()
                     Spacer()
-//                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
-//                        .navigationBarHidden(true)
+                    //                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
+                    //                        .navigationBarHidden(true)
                     Button {
                         // cek apakah user sudah memilih jawaban
                         if (selectedAnswer != "") {

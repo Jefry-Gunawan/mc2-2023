@@ -68,13 +68,13 @@ struct ChapterView: View {
                     }
                     .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 0))
                     
-                    Image("Ducker")
+                    Image(chapterList[0].topicId == 1 ? "Duck_doctor" : "Duck_tour_guide")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 150)
                         .padding(.top, 75)
-                    
                 }
+                .padding(.bottom, 0)
                 .background(Color("Blue"))
                 .navigationTitle(chapterList[0].name)
                 .navigationBarTitleDisplayMode(.large)
