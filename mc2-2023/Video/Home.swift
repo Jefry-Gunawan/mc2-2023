@@ -15,7 +15,7 @@ struct Home: View {
     
     //view properties
     @State private var player: AVPlayer? = {
-        if let bundle = Bundle.main.path(forResource: "video", ofType: "mp4") {
+        if let bundle = Bundle.main.path(forResource: chapterName, ofType: "mp4") {
             return .init(url: URL(filePath: bundle))
         }
         
@@ -167,81 +167,60 @@ struct Home: View {
     //playback controls view
     @ViewBuilder
     func PlayBackControls() -> some View {
-        HStack(spacing: 25) {
-//            Button {
-//
-//            } label: {
-//                Image(systemName: "backward.end.fill")
-//                    .font(.title2)
-//                    .fontWeight(.ultraLight)
-//                    .foregroundColor(.white)
-//                    .padding(15)
-//                    .background {
-//                        Circle()
-//                            .fill(.black.opacity(0.35))
-//                    }
-//            }
-//            .disabled(true)
-//            .opacity(0.6)
+        NavigationView {
             
-            Button {
-                if isFinishedPlaying {
-                    //set video to start and play again
-                    isFinishedPlaying = false
-                    player?.seek(to: .zero)
-                    progress = .zero
-                    lastDraggedProgress = .zero
-                }
-                
-                // changing video status to play/pause based on user input
-                if isPlaying {
-                    //pause video
-                    player?.pause()
-                    //cancelling timeout task when the video is paused
-                    if let timeoutTask {
-                        timeoutTask.cancel()
+        
+            HStack(spacing: 25) {
+                Button {
+                    if isFinishedPlaying {
+                        //set video to start and play again
+                        isFinishedPlaying = false
+                        player?.seek(to: .zero)
+                        progress = .zero
+                        lastDraggedProgress = .zero
                     }
-                }
-                else {
-                    //play video
-                    player?.play()
-                    timeoutControls()
-                }
-                
-                withAnimation(.easeInOut(duration: 0.2)) {
-                    isPlaying.toggle()
-                }
-            } label: {
-                // changing icon based on video status
-                // changing icon when video was finished playing
-                Image(systemName: isFinishedPlaying ? "arrow.clockwise" : (isPlaying ? "pause.fill" : "play.fill"))
-                    .font(.title)
-                    .foregroundColor(.white)
-                    .padding(15)
-                    .background {
-                        Circle()
-                            .fill(.black.opacity(0.35))
+                    
+                    // changing video status to play/pause based on user input
+                    if isPlaying {
+                        //pause video
+                        player?.pause()
+                        //cancelling timeout task when the video is paused
+                        if let timeoutTask {
+                            timeoutTask.cancel()
+                        }
                     }
+                    else {
+                        //play video
+                        player?.play()
+                        timeoutControls()
+                    }
+                    
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        isPlaying.toggle()
+                    }
+                } label: {
+                    // changing icon based on video status
+                    // changing icon when video was finished playing
+                    Image(systemName: isFinishedPlaying ? "arrow.clockwise" : (isPlaying ? "pause.fill" : "play.fill"))
+                        .font(.title)
+                        .foregroundColor(.white)
+                        .padding(15)
+                        .background {
+                            Circle()
+                                .fill(.black.opacity(0.35))
+                        }
+                }
+                .scaleEffect(1.1)
+                
             }
-            .scaleEffect(1.1)
-            
-//            Button {
-//
-//            } label: {
-//                Image(systemName: "forward.end.fill")
-//                    .font(.title2)
-//                    .fontWeight(.ultraLight)
-//                    .foregroundColor(.white)
-//                    .padding(15)
-//                    .background {
-//                        Circle()
-//                            .fill(.black.opacity(0.35))
-//                    }
-//            }
         }
         //hiding controls when dragging
         .opacity(showPlayerControls && !isDragging ? 1 : 0)
         .animation(.easeInOut(duration: 0.2), value: showPlayerControls && !isDragging)
+        .onDisappear{
+            isPlaying = false
+            player?.pause()
+        }
     }
     
     //timming oyt play back controls after some 2-5 seconds
@@ -282,18 +261,6 @@ struct ConversationView : View {
         var toolTip: String
     }
     
-//    let conversationList: [conversation] = [
-//        .init(name:"Budi", convo: "Hello, my name is Budi. I like Mathematics and Physics very much. How about you?", vocab: "", personNumber: 1, toolTip: ""),
-//        .init(name: "Ayu", convo: "Hello Budi. Nice to meet you, I’m Ayu. I like English and Biology.", vocab: "", personNumber: 2, toolTip: ""),
-//        .init(name: "Budi", convo: "Do you take private classes for them?", vocab: "", personNumber: 1, toolTip: ""),
-//        .init(name: "Ayu", convo: "No, I like to study independently. I usually look for materials online. What about you?", vocab: "independently", personNumber: 2, toolTip: "independently adverb\n/ˌindəˈpendəntlē/\nmandiri\n1 in a way that is free from outside control or influence\n2 without outside help\n3 in a way that is not connected with another; individually"),
-//        .init(name: "Budi", convo: "I take a private class for Maths. I get more excercise materials from the private class.", vocab: "", personNumber: 1, toolTip: ""),
-//        .init(name: "Ayu", convo: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", vocab: "", personNumber: 2, toolTip: ""),
-//        .init(name: "Budi", convo: "Quisque lacinia tortor vitae enim luctus, nec tincidunt nunc sagittis.", vocab: "", personNumber: 1, toolTip: ""),
-//        .init(name: "Ayu", convo: "Fusce viverra augue a magna aliquam, ut commodo nisi vehicula.", vocab: "", personNumber: 2, toolTip: ""),
-//        .init(name: "Budi", convo: "Phasellus non libero aliquet, ultricies urna nec, rhoncus libero.", vocab: "", personNumber: 1, toolTip: "")
-//    ]
-//
     var body : some View {
         let transcriptList: [Transcript] = {
             var transcripts: [Transcript] = []
@@ -303,7 +270,7 @@ struct ConversationView : View {
                let chapterId = chapterID {
                 
                 let filtered1 = transcriptDf.filter(on: "topic_id", Int.self, {$0 == topicId})
-                let filtered2 = filtered1.filter(on: "id", Int.self, {$0 == chapterId})
+                let filtered2 = filtered1.filter(on: "chapter_id", Int.self, {$0 == chapterId})
                 
                 for row in filtered2.rows {
                     if let transcriptId = row["id"] as? Int,

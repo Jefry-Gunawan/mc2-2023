@@ -153,16 +153,30 @@ struct TopicsView: View {
                                 .foregroundColor(Color("White"))
                             
                             NavigationLink(destination: ChapterListView(topicId: topic.topicId, topicName: topic.topicName)) {
-                                Text("CHOOSE")
-                                    .font(.caption2.bold())
-                                    .foregroundColor(.white)
-                                    .padding(.vertical, 8)
-                                    .padding(.horizontal, 15) // Adjust the horizontal padding to shorten the button length
-                                    .background{
-                                        RoundedRectangle(cornerRadius: 10)
-                                            .fill(Color("Dark Blue"))
-                                    }
+                                if topic.topicName == "Coffee Shop" {
+                                    Text("LOCKED")
+                                        .font(.caption2.bold())
+                                        .foregroundColor(.white)
+                                        .padding(.vertical, 8)
+                                        .padding(.horizontal, 15)
+                                        .background {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color.gray)
+                                        }
+                                } else {
+                                    Text("CHOOSE")
+                                        .font(.caption2.bold())
+                                        .foregroundColor(.white)
+                                        .padding(.vertical, 8)
+                                        .padding(.horizontal, 15)
+                                        .background {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .fill(Color("Dark Blue"))
+                                        }
+                                }
                             }
+                            .disabled(topic.topicName == "Coffee Shop")
+
                         }
                         .frame(width: size.width)
                         

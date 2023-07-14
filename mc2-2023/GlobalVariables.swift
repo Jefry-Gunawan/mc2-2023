@@ -9,3 +9,5 @@ import Foundation
 
 var topicID: Int? = 1
 var chapterID: Int? = 1
+
+var chapterName: String? = "Emergency"
