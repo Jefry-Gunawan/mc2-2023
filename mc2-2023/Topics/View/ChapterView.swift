@@ -6,9 +6,7 @@
 
 import SwiftUI
 
-struct ChapterView: View {
-    
-    
+struct ChapterView: View {  
     var body: some View {
         let chapterList: [Chapter] = {
             var chapters: [Chapter] = []
@@ -67,26 +65,8 @@ struct ChapterView: View {
                         Spacer()
                     }
                     .padding(EdgeInsets(top: 10, leading: 20, bottom: 10, trailing: 0))
-                    
+
                     Image(chapterList[0].topicId == 1 ? "Duck_doctor" : "Duck_tour_guide")
-                    NavigationLink(destination: VideoView()) {
-                        CardView(title: "Video")
-                    }
-                    .simultaneousGesture(TapGesture().onEnded{
-                        chapterName = chapterList[0].name
-                    })
-                    .padding(2)
-                    
-                    NavigationLink(destination: SpeakingView()) {
-                        CardView(title: "Speaking")
-                    }
-                    .padding(2)
-                    
-                    NavigationLink(destination: SummaryView()) {
-                        CardView(title: "Quiz")
-                    }
-                    .padding(2)
-                    Image("Ducker")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 150)
