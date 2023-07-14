@@ -79,13 +79,9 @@ struct QuizView: View {
                     VStack {
                         Text("Once you do the quiz, you cannot go back. Are you sure you want to continue?")
                             .padding(0)
+                            .font(.title3)
                         Spacer()
                         HStack {
-                            //                    Button {
-                            //                        presentationMode.wrappedValue.dismiss()
-                            //                    } label: {
-                            //                        Text("Cancel")
-                            //                    }
                             Spacer()
                             Button {
                                 confirmationModal = false
