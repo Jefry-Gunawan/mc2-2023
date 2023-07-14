@@ -8,15 +8,50 @@
 import Foundation
 import SwiftUI
 
-class SpeakingTextVariable: Identifiable {
+struct SpeakingTextVariable: Identifiable {
     var id: String = UUID().uuidString
-    @Published var text: String
-    @Published var color: Color = Color.black
-    
-    init(text: String) {
-        self.text = text
-    }
+    var text: String
+    var color: Color = Color.black
 }
+
+var speakingVariable1: [SpeakingTextVariable] {
+    var out: [SpeakingTextVariable] = []
+    let text = "I'll give you a prescription for some painkillers"
+    let tempTranscript = text.components(separatedBy: " ")
+    
+    for i in tempTranscript {
+        let tempVar = SpeakingTextVariable(text: i)
+        out.append(tempVar)
+    }
+    
+    return out
+}
+
+//var speakingVariable2: [SpeakingTextVariable] {
+//    var out: [SpeakingTextVariable] = []
+//    let text = "My name is Jehn"
+//    let tempTranscript = text.components(separatedBy: " ")
+//
+//    for i in tempTranscript {
+//        let tempVar = SpeakingTextVariable(text: i)
+//        out.append(tempVar)
+//    }
+//
+//    return out
+//}
+//
+//var speakingVariable3: [SpeakingTextVariable] {
+//    var out: [SpeakingTextVariable] = []
+//    let text = "My name is Jihn"
+//    let tempTranscript = text.lowercased().components(separatedBy: " ")
+//
+//    for i in tempTranscript {
+//        let tempVar = SpeakingTextVariable(text: i)
+//        out.append(tempVar)
+//    }
+//
+//    return out
+//}
 
 //class SpeakingTextViewModel: ObservableObject {
 //    @Published var textArray: [SpeakingTextVariable] = []
