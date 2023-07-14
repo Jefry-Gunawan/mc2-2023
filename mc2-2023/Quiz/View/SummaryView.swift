@@ -12,10 +12,10 @@ struct SummaryView: View {
     
     @State private var showScoreModal = true
     
-    struct Answers: Identifiable {
-        var id: UUID = .init()
-        var answer: String
-    }
+//    struct Answers: Identifiable {
+//        var id: UUID = .init()
+//        var answer: String
+//    }
     
 //    struct Quiz: Identifiable {
 //        var id: UUID = .init()
@@ -62,13 +62,15 @@ struct SummaryView: View {
         return quizs
     }()
     
-    let userAnswer: [Answers] = [
-        .init(answer: "Duck you!"),
-        .init(answer: "Eating"),
-        .init(answer: "Sebelas bang"),
-        .init(answer: "Makanan"),
-        .init(answer: "Semua benar")
-    ]
+    @State var userAnswer: [String] = []
+    
+//    let userAnswer: [Answers] = [
+//        .init(answer: "Duck you!"),
+//        .init(answer: "Eating"),
+//        .init(answer: "Sebelas bang"),
+//        .init(answer: "Makanan"),
+//        .init(answer: "Semua benar")
+//    ]
     
     let layout = [
         GridItem(.flexible()),
@@ -77,7 +79,7 @@ struct SummaryView: View {
     
     var body: some View {
         if showScoreModal {
-            ScoreView(showScoreModal: $showScoreModal)
+            ScoreView(showScoreModal: $showScoreModal, userAnswer: $userAnswer)
         } else {
             VStack(alignment: .leading){
                 Text("Summary")
@@ -90,28 +92,28 @@ struct SummaryView: View {
                                 .fontWeight(.bold)
                                 .font(.title2)
                                 .padding(.bottom, 10)
-                            Text(quizList[index].question)
-                            //                                        .font(.headline)
-                                .font(.title2)
+                            Text(quizList[index].question.replacingOccurrences(of: "\\n", with: "\n"))
+                                .multilineTextAlignment(.leading)
+                                .font(.headline)
+                                .fixedSize(horizontal: false, vertical: true)
                                 .padding(.bottom, 20)
                             LazyVGrid(columns: layout, spacing: 10) {
                                 ForEach(quizList[index].answerOptions.indices) { idx in
                                     Rectangle()
                                         .cornerRadius(10)
-                                        .frame(width: 100, height: 50)
+                                        .frame(width: 100, height: 100)
                                         .overlay(alignment: .center) {
                                             HStack {
-                                                Spacer()
                                                 Text(quizList[index].answerOptions[idx])
-                                                Spacer()
+                                                    .font(.callout)
                                             }
-                                            .frame(width: 130, height: 50)
+                                            .frame(width: 130, height: 100)
                                             .padding(12)
                                             .background(Color("Light Blue"))
                                             .overlay {
                                                 RoundedRectangle(cornerRadius: 10)
                                                     .stroke((quizList[index].correctAnswer == quizList[index].answerOptions[idx]) ? Color.green :
-                                                                (userAnswer[index].answer == quizList[index].answerOptions[idx] ? Color.red : Color("Light Blue")), lineWidth: 7)
+                                                                (userAnswer[index] == quizList[index].answerOptions[idx] ? Color.red : Color("Light Blue")), lineWidth: 7)
                                             }
                                             .cornerRadius(10)
                                         }
@@ -119,7 +121,7 @@ struct SummaryView: View {
                                 }
                             }
                             VStack {
-                                Text("The answer is AAA because Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc erat neque, feugiat nec ligula eu, tempor suscipit lectus.")
+                                Text(quizList[index].explanation)
                             }
                         }
                         .padding(.horizontal, 20)

@@ -15,22 +15,30 @@ struct QuizView: View {
     @State private var isLastQuestion = false
     
     @Binding var showQuizModal: Bool
-
-//    struct Quiz: Identifiable {
-//        var id: UUID = .init()
-//        var question: String
-//        var answerOptions: [String]
-//        var correctAnswer: String
-//    }
-//
-//
-//    let quizList: [Quiz] = [
-//        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
-//        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
-//        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
-//        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
-//        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
-//    ]
+    
+    @Binding var userAnswer: [String]
+    
+    @Binding var score: Int
+    @Binding var isPass: Bool
+    
+    @State var confirmationModal: Bool = true
+    @Environment(\.presentationMode) var presentationMode
+    
+    //    struct Quiz: Identifiable {
+    //        var id: UUID = .init()
+    //        var question: String
+    //        var answerOptions: [String]
+    //        var correctAnswer: String
+    //    }
+    //
+    //
+    //    let quizList: [Quiz] = [
+    //        .init(question: "What is the name of Ducker's friend?", answerOptions: ["Ducker", "Duckster", "Mother Ducker", "Duck you!"] , correctAnswer: "Duckster"),
+    //        .init(question: "What was duckster doing?", answerOptions: ["Smoking", "Eating", "Studying", "Sleeping"], correctAnswer: "Eating"),
+    //        .init(question: "1 + 1 = brapa yaa", answerOptions: ["Jendela", "Duah", "Sebelas bang", "satu"], correctAnswer: "Duah"),
+    //        .init(question: "What's on the menu today?", answerOptions: ["Me N U", "Makanan", "Minuman", "Kosong"], correctAnswer: "Me N U"),
+    //        .init(question: "Siapa nama mentor kita?????", answerOptions: ["Yus", "Yulibar", "Kak Yus", "Semua benar"], correctAnswer: "Semua benar")
+    //    ]
     
     var quizList: [Quiz] = {
         var quizs: [Quiz] = []
@@ -61,25 +69,52 @@ struct QuizView: View {
         
         return quizs
     }()
-
+    
     
     var body: some View {
-        VStack(alignment: .leading) {
-            GeometryReader { geometry in
-                ForEach(quizList.indices, id: \.self) { index in
-                    if currentIndex == index {
-                        QuestionView(quizList[currentIndex], geometry.size.width)
-
+        GeometryReader { geometry in
+            VStack {
+                if confirmationModal {
+                    Spacer()
+                    VStack {
+                        Text("Once you do the quiz, you cannot go back. Are you sure you want to continue?")
+                            .padding(0)
+                            .font(.title3)
+                        Spacer()
+                        HStack {
+                            Spacer()
+                            Button {
+                                confirmationModal = false
+                            } label: {
+                                Text("Continue")
+                            }
+                        }
                     }
-                    
+                    .frame(height: 130)
+                    .padding(15)
+                    .background(Color("White"))
+                    .cornerRadius(10)
+                    .padding(20)
+                    .padding(.bottom, 100)
+                    Spacer()
+                } else {
+                    VStack(alignment: .leading) {
+                        GeometryReader { geometry in
+                            ForEach(quizList.indices, id: \.self) { index in
+                                if currentIndex == index {
+                                    QuestionView(quizList[currentIndex], geometry.size.width)
+                                }
+                            }
+                        }
+                    }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 50)
+                    .background(Color("Pale Blue"))
                 }
-               
             }
+            .frame(width: geometry.size.width, height: geometry.size.height)
+            .background(Color("Pale Blue"))
         }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 50)
-        .background(Color("Pale Blue"))
-
     }
     
     func CheckAnswer(questionNumber: Int, userAnswer: String) -> String {
@@ -127,26 +162,28 @@ struct QuizView: View {
                     .padding(.bottom, 20)
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(quizList[currentIndex].question)
-                                .font(.title2)
+                            Text(quizList[currentIndex].question.replacingOccurrences(of: "\\n", with: "\n"))
+                                .multilineTextAlignment(.leading)
+                                .font(.headline)
+                                .fixedSize(horizontal: false, vertical: true)
                             Spacer()
                         }
                         Spacer()
                     }
                     .padding(.horizontal)
-                    .frame(width: size, height: 130)
+                    .frame(width: size, height: 140)
+                    
                     LazyVGrid(columns: columns, spacing: 20) {
                         ForEach(quizList[currentIndex].answerOptions, id: \.self) { item in
                             Rectangle()
                                 .cornerRadius(10)
-                                .frame(width: 100, height: 50)
+                                .frame(width: 100, height: 100)
                                 .overlay(alignment: .center) {
                                     HStack {
-                                        Spacer()
                                         Text(item)
-                                        Spacer()
+                                            .font(.callout)
                                     }
-                                    .frame(width: 130, height: 50)
+                                    .frame(width: 130, height: 100)
                                     .padding(12)
                                     .background(Color("Light Blue"))
                                     .overlay {
@@ -163,16 +200,22 @@ struct QuizView: View {
                     }
                     .padding()
                     Spacer()
-//                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
-//                        .navigationBarHidden(true)
+                    //                    NavigationLink("", destination: ScoreView(), isActive: $isLastQuestion)
+                    //                        .navigationBarHidden(true)
                     Button {
                         // cek apakah user sudah memilih jawaban
                         if (selectedAnswer != "") {
                             // cek benar atau salah sblm next question
                             if (selectedAnswer == quizList[currentIndex].correctAnswer) {
+                                userAnswer.append(selectedAnswer)
+                                score = score + 20
+                                if score >= 60 {
+                                    isPass = true
+                                }
                                 print("benar")
                             }
                             else {
+                                userAnswer.append(selectedAnswer)
                                 print("salah")
                             }
                             
@@ -194,7 +237,7 @@ struct QuizView: View {
                     } label: {
                         HStack {
                             Spacer()
-                            Text("NEXT QUESTION")
+                            Text("NEXT")
                                 .frame(height: 40)
                                 .font(.body)
                                 .foregroundColor(.white)

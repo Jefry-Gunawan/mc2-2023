@@ -13,14 +13,17 @@ struct ScoreView: View {
     @State var isPass: Bool = false
     @State var isScratched: Bool = false
     @Namespace var animation
+    @State var score: Int = 0
     
     @Binding var showScoreModal: Bool
     
     @State var showQuizModal: Bool = true
     
+    @Binding var userAnswer: [String]
+    
     var body: some View {
         if showQuizModal {
-            QuizView(showQuizModal: $showQuizModal)
+            QuizView(showQuizModal: $showQuizModal, userAnswer: $userAnswer, score: $score, isPass: $isPass)
         } else {
             VStack{
                 //Header
@@ -39,7 +42,7 @@ struct ScoreView: View {
                 //Footer Content
                 if isScratched{
                     if isPass {
-                        Text("Congratulations!")
+                        Text("Duck Yeah!")
                             .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color("Dark Blue"))
                         
@@ -49,7 +52,7 @@ struct ScoreView: View {
                             .multilineTextAlignment(.center)
                             .padding(.vertical)
                     } else {
-                        Text("Oh No!")
+                        Text("Oh Duck!")
                             .font(.system(size: 35, weight: .bold))
                             .foregroundColor(Color("Dark Blue"))
                         
@@ -161,7 +164,7 @@ struct ScoreView: View {
     func ResultView(size: CGSize)->some View{
         VStack(spacing: 18){
             if isPass{
-                Image("trophy")
+                Image("Quiz_pass")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 160, height: 160)
@@ -171,7 +174,7 @@ struct ScoreView: View {
                     .foregroundColor(Color("Dark Blue"))
                 
             } else {
-                Image("sadduck")
+                Image("Quiz_fail")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 160, height: 160)
@@ -184,7 +187,7 @@ struct ScoreView: View {
             
             HStack{
                 Image(systemName: "graduationcap.fill")
-                Text("95")
+                Text("\(score)")
             }
             .font(.callout.bold())
             .foregroundColor(Color("Dark Blue"))

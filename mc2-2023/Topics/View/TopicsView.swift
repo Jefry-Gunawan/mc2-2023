@@ -109,7 +109,7 @@ struct TopicsView: View {
                         .padding(.bottom, 25)
 
                     HStack{
-                        Image("Hotel")
+                        Image("Hospital")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250, height: 250)

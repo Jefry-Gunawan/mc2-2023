@@ -6,11 +6,34 @@ struct SpeakingView: View {
     
     @State private var changeText = false
     
-    @State var textOut = [SpeakingTextVariable(text: "I"), SpeakingTextVariable(text: "like"), SpeakingTextVariable(text: "physics"), SpeakingTextVariable(text: "and"), SpeakingTextVariable(text: "mathematics"), SpeakingTextVariable(text: "very"), SpeakingTextVariable(text: "much")]
+//    @State var speakingVariable = [SpeakingTextVariable(text: "I"), SpeakingTextVariable(text: "like"), SpeakingTextVariable(text: "physics"), SpeakingTextVariable(text: "and"), SpeakingTextVariable(text: "mathematics"), SpeakingTextVariable(text: "very"), SpeakingTextVariable(text: "much")]
+    
+    @State var speakingVariable: [SpeakingTextVariable] = speakingVariable1
+    
+//    @State var speakingVariable: [SpeakingTextVariable] {
+//        var out: [SpeakingTextVariable] = []
+//        let text = "My name is John"
+//        let tempTranscript = text.components(separatedBy: " ")
+//
+//        for i in tempTranscript {
+//            let tempVar = SpeakingTextVariable(text: i)
+//            out.append(tempVar)
+//        }
+//
+//        return out
+//    }
     
     var body: some View {
         VStack(alignment: .center) {
             Spacer()
+            
+            if isRecording == false {
+                Text("Read the sentences below")
+                    .padding(.bottom, 10)
+            } else {
+                Text("Press the stop button to check")
+                    .padding(.bottom, 10)
+            }
             
             if changeText {
                 outputText()
@@ -28,8 +51,8 @@ struct SpeakingView: View {
             }
             
             
-            //            Text("^Read the sentences above^")
-            Text(speechRecognizer.transcript)
+//            Text("^Read the sentences above^")
+//            Text(speechRecognizer.transcript)
             
             Spacer()
             
@@ -80,21 +103,31 @@ struct SpeakingView: View {
         let tempTranscript = speechRecognizer.transcript.lowercased().components(separatedBy: " ")
         print(tempTranscript)
         
-        for out in textOut {
-            if tempTranscript.contains(out.text.lowercased()) {
-                out.color = .green
+//        speakingVariable = speakingVariable.map { out in
+//            if tempTranscript.contains(out.text.lowercased()) {
+//                return out.withColor(Color.green)
+//            } else {
+//                return out.withColor(Color.red)
+//            }
+//        }
+        
+        for i in 0..<speakingVariable.count {
+            if tempTranscript.contains(speakingVariable[i].text.lowercased()) {
+                speakingVariable[i].color = .green
             } else {
-                out.color = .red
+                speakingVariable[i].color = .red
             }
         }
+        
+        changeText = true
     }
     
     func outputText() -> some View{
         var output = Text("")
         
-        for out in textOut {
+        for out in speakingVariable {
             let temp = Text(out.text + " ").foregroundColor(out.color)
-            
+            print(out.color)
             output = output + temp
         }
         
